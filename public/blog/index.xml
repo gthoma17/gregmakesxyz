@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Introduction</title>
+    <link>http://gregmakes.xyz/blog/</link>
+    <description>Recent content in Blog on Introduction</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Jun 2021 18:56:41 -0600</lastBuildDate><atom:link href="http://gregmakes.xyz/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why A Generated Site?</title>
+      <link>http://gregmakes.xyz/blog/whyageneratedsite/</link>
+      <pubDate>Wed, 30 Jun 2021 19:47:47 -0600</pubDate>
+      
+      <guid>http://gregmakes.xyz/blog/whyageneratedsite/</guid>
+      <description>Some folks asked me why I decided to use a static site generator (Hugo) even though I make software including website professionally.
+At first pass it might seem like a good idea &amp;ndash; why not take this opportunity to show off my web dev skillz.</description>
+    </item>
+    
+  </channel>
+</rss>
