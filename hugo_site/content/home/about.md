@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: "profile.jpg"
+image: "space.jpg"
 weight: 8
 ---
 
@@ -12,7 +12,7 @@ This is my webiste. I probably won't update it especially often, but hopefully i
 
 * Blog: All my inside thoughts on the outside! 
   * updated when I have an axe to grind
-* Projects: Fun things I'm up to 
+* Projects: Cool things I've been working on
   * updated when I feel like showing something off
 * Resume: Coming soon!
   * updated roughly quarterly

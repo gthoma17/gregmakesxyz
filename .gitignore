@@ -64,3 +64,8 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+
+# Hugo stuff
+hugo_site/resources/_gen
+hugo_site/public
