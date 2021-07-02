@@ -7,8 +7,8 @@ build:
 	cp -r hugo_site/public .
 
 publish:
-	ssh gregmakesxyz_gregmakesxyz@ssh.phx.nearlyfreespeech.net -C rm -r "/home/public/*"; \
-	sftp gregmakesxyz_gregmakesxyz@ssh.phx.nearlyfreespeech.net <<< $'put -r public/*'
+	./scripts/updateSite.sh
+	
 
 serve:
 	cd hugo_site; \
