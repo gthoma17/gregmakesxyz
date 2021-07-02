@@ -4,7 +4,7 @@ DefaultContentLanguage: en
 summaryLength: 35
 params:
   # themeStyle: auto
-  themeStyle: dark
+  themeStyle: auto
   favicon: /img/fav.ico
   showRSSButton: false
   fadeIn: true
