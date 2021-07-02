@@ -1,0 +1,68 @@
+baseURL: http://gregmakes.xyz/
+theme: introduction
+DefaultContentLanguage: en
+summaryLength: 35
+params:
+  # themeStyle: auto
+  themeStyle: dark
+  favicon: /img/fav.ico
+  showRSSButton: false
+  fadeIn: true
+  fadeInIndex: false
+  dateFormat: Jan 2, 2006
+  email: greg@gregmakes.xyz
+  home:
+    introHeight: fullheight
+    showLatest: true
+    showAllPosts: false
+    allPostsArchiveFormat: true
+    numberOfProjectsToShow: 3
+    localTime: true
+    timeZone: America/Denver
+    timeFormat: en-US
+  projects:
+    useTwoColumns: false
+  share:
+    twitter: true
+    facebook: true
+    pinterest: true
+  social:
+    - url: https://linkedin.com/in/gatlp9
+      icon: linkedin-in
+      icon_pack: fab
+    - url: mailto:greg@gregmakes.xyz
+      icon: paper-plane
+      icon_pack: fas
+taxonomies:
+  tag: tags
+  series: series
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: friendly
+    tabWidth: 4
+languages:
+  en:
+    languageName: English
+    languageCode: en-us
+    weight: 0
+    title: Introduction
+    params:
+      description: Website Description
+  jp:
+    languageName: 日本語
+    languageCode: jp
+    weight: 1
+    title: はじめまして
+    params:
+      description: グレッグのサイト

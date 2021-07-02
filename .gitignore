@@ -65,8 +65,11 @@ node_modules/
 # dotenv environment variables file
 .env
 
+# Mac Stuff
+.DS_Store
 
 # Hugo stuff
 hugo_site/resources/_gen/
 hugo_site/public/
 public/
+
