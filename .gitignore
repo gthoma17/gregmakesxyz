@@ -67,5 +67,6 @@ node_modules/
 
 
 # Hugo stuff
-hugo_site/resources/_gen
-hugo_site/public
+hugo_site/resources/_gen/
+hugo_site/public/
+public/

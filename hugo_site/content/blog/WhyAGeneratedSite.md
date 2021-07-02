@@ -4,7 +4,7 @@ date: 2021-06-30T19:47:47-06:00
 draft: false
 ---
 
-Some folks asked me why I decided to use a static site generator ([Hugo](https://gohugo.io/)) even though I make software including website professionally.
+Some folks asked me why I decided to use a static site generator ([Hugo](https://gohugo.io/)) even though I make software (including websites) professionally.
 
 At first pass it might seem like a good idea -- why not take this opportunity to show off my web dev skillz. 
 
