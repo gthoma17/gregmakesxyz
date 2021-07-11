@@ -6,7 +6,7 @@ weight: 8
 
 ## Hi 👋 I'm Greg
 
-This is my webiste. I probably won't update it especially often, but hopefully it gives you an an idea of what I'm all about
+This is my webiste. I probably won't update it especially often, but hopefully it gives you an idea of what I'm all about
 
 ### Features
 

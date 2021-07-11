@@ -72,4 +72,5 @@ node_modules/
 hugo_site/resources/_gen/
 hugo_site/public/
 public/
-
+secrets.env
+*.with_secrets.*
