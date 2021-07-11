@@ -9,23 +9,28 @@ remove_old_build(){
     set -e
 }
 
-build_new_site(){
+build_hugo_site(){
     pushd hugo_site
-    hugo \
-        --config="config.with_secrets.yaml" \
-        --destination="../public/" \
-        --buildDrafts=true \
-        --cleanDestinationDir=true \
-        --enableGitInfo=true \
-        --gc=true \
-        --print-mem=true \
-        --verbose=true
+        hugo \
+            --config="config.with_secrets.yaml" \
+            --destination="../public/" \
+            --buildDrafts=true \
+            --cleanDestinationDir=true \
+            --enableGitInfo=true \
+            --gc=true \
+            --print-mem=true \
+            --verbose=true
     popd
+}
+
+add_static_resources(){
+    cp -a static/. public
 }
 
 main(){
     remove_old_build
-    build_new_site
+    build_hugo_site
+    add_static_resources
 }
 
 main
