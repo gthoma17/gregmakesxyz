@@ -1,0 +1,5 @@
+Header always set Strict-Transport-Security "max-age=3600;" "expr=%{req_novary:X-Forwarded-Proto}=='https'"
+
+Options +Indexes
+
+ErrorDocument 404 /404.html
