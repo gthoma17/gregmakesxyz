@@ -10,9 +10,9 @@ This is my webiste. I probably won't update it especially often, but hopefully i
 
 ### Features
 
-* Blog: All my inside thoughts on the outside! 
+* [Blog](/blog): All my inside thoughts on the outside! 
   * updated when I have an axe to grind
-* Projects: Cool things I've been working on
+* [Projects](/projects): Cool things I've been working on
   * updated when I feel like showing something off
-* Resume: Coming soon!
+* [Résumé](/static/internet_facing_resume_last_updated_july_2021.pdf): A few things about my career that I _do_ want to talk about
   * updated roughly quarterly

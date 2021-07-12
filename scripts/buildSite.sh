@@ -23,14 +23,14 @@ build_hugo_site(){
     popd
 }
 
-add_static_resources(){
-    cp -a static/. public
+add_non_hugo_assets(){
+    cp -a non_hugo_assets/. public
 }
 
 main(){
     remove_old_build
     build_hugo_site
-    add_static_resources
+    add_non_hugo_assets
 }
 
 main
