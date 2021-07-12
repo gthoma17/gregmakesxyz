@@ -14,5 +14,5 @@ This is my webiste. I probably won't update it especially often, but hopefully i
   * updated when I have an axe to grind
 * [Projects](/projects): Cool things I've been working on
   * updated when I feel like showing something off
-* [Résumé](/static/internet_facing_resume_last_updated_july_2021.pdf): A few things about my career that I _do_ want to talk about
+* [Résumé](/static/resumes/forwarder.html): A few things about my career that I _do_ want to talk about
   * updated roughly quarterly
