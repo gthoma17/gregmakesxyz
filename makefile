@@ -1,16 +1,15 @@
 build: config
-	./scripts/buildSite.sh
+	bash scripts/buildSite.sh
 
 publish:
-	./scripts/updateSite.sh
-	
+	bash scripts/updateSite.sh
+
 config:
-	./scripts/buildConfigWithSecrets.sh
+	bash scripts/buildConfigWithSecrets.sh
 
 serve: config
 	cd hugo_site; \
-	hugo serve -D --config="config.with_secrets.yaml"
+	hugo serve -D --config="config.toml"
 
 deploy: build publish
 	echo "👍"
-

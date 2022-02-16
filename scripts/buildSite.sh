@@ -12,7 +12,7 @@ remove_old_build(){
 build_hugo_site(){
     pushd hugo_site
         hugo \
-            --config="config.with_secrets.yaml" \
+            --config="config.toml" \
             --destination="../public/" \
             --buildDrafts=true \
             --cleanDestinationDir=true \
