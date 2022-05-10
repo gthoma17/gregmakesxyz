@@ -1,6 +1,7 @@
-build: 
-	npx hexo generate --cwd hexo-site; \
-	cp HOMEPAGE.html hexo-site/public/index.html
+update-theme:
+	cd hexo-site/themes/gregmakesxyz-hexo-theme; \
+	git checkout main; \
+	git pull
 
 publish:
 	ssh gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net \
@@ -15,7 +16,11 @@ publish:
 		--recursive \
 		public/ gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/public
 
-serve: build
+build: update-theme
+	npx hexo generate --cwd hexo-site; \
+	cp HOMEPAGE.html hexo-site/public/index.html
+
+serve: update-theme
 	npx hexo server --draft --cwd hexo-site
 
 deploy: build publish
