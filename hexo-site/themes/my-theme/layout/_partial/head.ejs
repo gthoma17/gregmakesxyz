@@ -1,0 +1,24 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon/favicon.ico">
+
+    <%
+        var title = [];
+        if (page.title) title.push(page.title);
+        if (page.category) title.push(page.category);
+        if (page.tag) title.push(page.tag);
+        title.push(config.title);
+    %>
+    <title><%= title.join(' - ') %></title>
+
+    <!-- Bootstrap core CSS -->
+    <%- css('bootstrap/css/bootstrap.min.css') %>
+
+    <!-- Custom styles for this template -->
+    <%- css('css/blog.css') %>
+</head>

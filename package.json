@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "hexo": "^5.4.2"
+    "hexo": "^5.4.2",
+    "hexo-server": "^3.0.0"
   }
 }

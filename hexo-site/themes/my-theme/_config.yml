@@ -1,0 +1,11 @@
+# Header
+menu:
+  Home: /
+  Blog: /blog
+
+# Read More text
+excerpt_link: Read More
+
+# Widgets List
+widgets:
+  tags: true

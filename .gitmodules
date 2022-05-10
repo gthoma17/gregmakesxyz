@@ -1,3 +1,6 @@
 [submodule "hugo_site/themes/introduction"]
 	path = hugo_site/themes/introduction
 	url = https://github.com/victoriadrake/hugo-theme-introduction.git
+[submodule "hexo-site/themes/gregmakesxyz-hexo-theme"]
+	path = hexo-site/themes/gregmakesxyz-hexo-theme
+	url = https://github.com/gthoma17/gregmakesxyz-hexo-theme.git
