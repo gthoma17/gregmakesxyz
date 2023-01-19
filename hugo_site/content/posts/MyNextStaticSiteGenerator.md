@@ -7,6 +7,7 @@ draft: false
 Despite the enthusiasm of my previous post I havn't posted in a while.
 
 Initially this was due to laziness, but for at least the last few months this has been due to a technical issue -- I can't build the site to publish new content.
+<!--more-->
 
 I still think a generated site is the right path forward, but I don't think Hugo was the right choice of generator for me. 
 

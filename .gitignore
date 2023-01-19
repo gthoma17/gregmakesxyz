@@ -74,3 +74,4 @@ hugo_site/public/
 public/
 secrets.env
 *.with_secrets.*
+.hugo_build.lock

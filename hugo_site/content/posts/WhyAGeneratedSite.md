@@ -7,6 +7,7 @@ draft: false
 Some folks asked me why I decided to use a static site generator ([Hugo](https://gohugo.io/)) even though I make software (including websites) professionally.
 
 At first pass it might seem like a good idea -- why not take this opportunity to show off my web dev skillz. 
+<!--more-->
 
 I'd be lying if I didn't say that was the first iteration of this site. 
 
