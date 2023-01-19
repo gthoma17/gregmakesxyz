@@ -19,5 +19,7 @@ jobs:
 
       - name: Check out repository code
         uses: actions/checkout@v2
+        with:
+          submodules: 'true'
 
       - run: make deploy
