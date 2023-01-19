@@ -16,5 +16,4 @@ jobs:
 #        # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
 #        run: git submodule update --init --recursive
 
-      - run: make build
-      - run: cat public/index.html
+      - run: make deploy
