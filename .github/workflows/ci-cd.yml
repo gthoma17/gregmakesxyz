@@ -1,9 +1,17 @@
 name: Build Static Site
 on: [push]
 jobs:
-  Build-Static-Site:
+  Deploy-Site:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_ed25519
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -11,9 +19,5 @@ jobs:
 
       - name: Check out repository code
         uses: actions/checkout@v2
-
-#      - name: Update theme
-#        # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
-#        run: git submodule update --init --recursive
 
       - run: make deploy

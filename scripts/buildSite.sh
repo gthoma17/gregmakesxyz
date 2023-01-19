@@ -11,7 +11,6 @@ build_hugo_site(){
             --cleanDestinationDir=true \
             --enableGitInfo=true \
             --gc=true \
-            --print-mem=true \
             --verbose=true
     popd
 }
