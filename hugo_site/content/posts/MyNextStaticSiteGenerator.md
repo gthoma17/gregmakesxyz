@@ -1,6 +1,6 @@
 ---
 title: "My Next Static Site Generator"
-date: 2022-05-9T16:12:00-06:00
+date: 2022-04-09
 draft: false
 ---
 
@@ -12,7 +12,7 @@ I still think a generated site is the right path forward, but I don't think Hugo
 
 I've decided to look for a new static site generator, without having done any research yet, here's my wishlist:
 
-* Converts markdown files into html with some degree of templating / sitemap generation
+* Converts markdown files into html with some degree of templating / sitemap generations
 * Outputs plain HTML & CSS, should be no JS compatible, no server side rendering. 
 * Implemented in a language I'm familiar with (feels like React should be a good fit?)
 * Able to be built in a Github Action
