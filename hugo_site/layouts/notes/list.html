@@ -1,0 +1,16 @@
+{{- define "main" }}
+<div>
+  <p>{{ .Title }}:</p>
+    {{- range .Paginator.Pages }}
+      <article>
+      	<time datetime="{{ dateFormat "2006-01-02T15:04:05Z07:00" .Date.Local }}">
+      		<small>{{ .Date.Format (default "02 Jan 06 15:04 MST" .Site.Params.noteDateFmt) }}</small>
+    	</time>
+        {{ .Content }}
+        <a href="{{ .RelPermalink }}"><small>Permalink</small></a>
+      </article>
+      <hr />
+    {{- end }}
+</div>
+{{ partial "pagination.html" . }}
+{{- end }}

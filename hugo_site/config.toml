@@ -25,6 +25,7 @@ paginatePath = "page"
     showMeta = true
     showMetaDates = true
     showMetaLinks = true
+    noteDateFmt = "2006-01-02 15:04" 
 
     # Uses Hugo internal templates if set
     opengraph = false
