@@ -1,5 +1,10 @@
 name: Build Static Site
-on: [push]
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'hugo_site/**/*'
 jobs:
   Deploy-Site:
     runs-on: ubuntu-latest
@@ -18,8 +23,9 @@ jobs:
           hugo-version: "0.84.3"
 
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: 'true'
 
       - run: make deploy
+  
