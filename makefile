@@ -1,12 +1,30 @@
 build: 
-	bash scripts/buildSite.sh
+	hugo \
+		--source="hugo_site/" \
+		--destination="../public/" \
+		--buildDrafts=false \
+		--cleanDestinationDir=true \
+		--debug=true \
+		--gc=true \
+		--verbose=true
 
 publish:
-	bash scripts/updateSite.sh
+	rsync \
+		--archive \
+		--verbose \
+		--compress \
+		--human-readable \
+		--progress \
+		--rsh=ssh \
+		--delete \
+		--recursive \
+		public/ \
+		gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/public
 
 serve: 
-	cd hugo_site; \
-	hugo serve -D --config="config.toml"
+	hugo serve \
+		--source="hugo_site/" \
+		--buildDrafts=true
 
 deploy: build publish
 	echo "👍"
