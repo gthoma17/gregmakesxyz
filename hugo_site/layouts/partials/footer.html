@@ -1,0 +1,9 @@
+<footer>
+  {{ partial "author-bio.html" . }}
+  <hr />
+  {{ partial "footer-menu.html" . }}
+</footer>
+<hr />
+<span>
+  {{ .Site.Author.name }} &copy; {{ now.Format "2006" }}
+</span>

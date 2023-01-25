@@ -3,7 +3,6 @@ theme = "slick"
 title = "Greg Thomas"
 languageCode = "en"
 defaultContentLanguage = "en"
-copyright = "Greg Thomas — All rights reserved."
 enableRobotsTXT = true
 canonifyURLs = true
 
@@ -99,9 +98,14 @@ paginatePath = "page"
 
     # Add some footer links to your likings
     [[menu.footer]]
-        name = "Sitemap"
-        url = "/sitemap.xml"
-        weight = 1
+        name = "Github"
+        url = "https://github.com/gthoma17"
+        pre = "rel=me"
+        weight = 100
+    [[menu.footer]]
+        name = "Linkedin"
+        url = "https://linkedin.com/in/gatlp9"
+        weight = 200
     
 [sitemap]
   filename = "sitemap.xml"

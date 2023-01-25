@@ -1,0 +1,22 @@
+<menu>
+  {{- range .Site.Menus.footer }}
+  <li title="{{ .Name }}">
+    <a 
+      {{ if eq .Pre "rel=me" }}rel="me"{{ end }} 
+      href="{{ .URL }}"
+    >
+      {{ .Name }}
+    </a>
+  </li>
+  {{- end }}
+
+  <li title="Sitemap">
+    <a href="{{ absURL $.Site.Home.Sitemap.Filename }}">Sitemap</a>
+  </li>
+
+  {{- with and (default true .Site.Params.showRssLink) (.Site.Home.OutputFormats.Get "RSS") }}
+    <li title="RSS Feed">
+      <a href="{{ .RelPermalink }}">RSS</a>
+    </li>
+  {{- end }}
+</menu>

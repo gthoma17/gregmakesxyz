@@ -11,9 +11,6 @@ series: null
 
 # Hi 👋 I’m Greg
 
-{{< columns >}}
-{{< author-bio >}}
-<--->
 This is my website. I probably won’t update it especially often, but hopefully it gives you an idea of what I’m all about
 
 ### Site Features
@@ -22,12 +19,3 @@ This is my website. I probably won’t update it especially often, but hopefully
 * [Notes](/notes/): Quick thoughts and half-bakes ideas -- like Twitter but with signifiicantly fewer people!
 
 * [Résumé](/documents/resume/): A few things about my career that I do want to talk about 😄
-{{< /columns >}}
-
----
-
-### Social Links
-
-* [Github](https://github.com/gthoma17)
-* [Linkedin](https://linkedin.com/in/gatlp9)
-* [email](mailto:greg@gregmakes.xyz)
