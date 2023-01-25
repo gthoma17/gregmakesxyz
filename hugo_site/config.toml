@@ -25,6 +25,7 @@ paginatePath = "page"
     showMetaDates = true
     showMetaLinks = true
     noteDateFmt = "2006-01-02@3:04pm" 
+    noteProfilePic = "/images/wpap-profile-pic.gif"
 
     # Uses Hugo internal templates if set
     opengraph = false
