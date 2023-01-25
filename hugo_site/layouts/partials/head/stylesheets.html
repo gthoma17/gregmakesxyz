@@ -1,0 +1,11 @@
+{{- with .Site.Params.css }}
+    {{- if resources.Get . }}
+      {{- $styleCustom := resources.Get . | resources.Fingerprint }}
+      <link rel="stylesheet" href="{{ $styleCustom.RelPermalink }}" />
+    {{- else if fileExists (path.Join "static" .) }}
+      <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}" />
+    {{- end }}
+  {{- end }}
+  {{ $sass := resources.Get "main.scss" }}
+  {{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">

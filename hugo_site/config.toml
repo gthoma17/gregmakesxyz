@@ -14,6 +14,7 @@ paginatePath = "page"
     subtitle = "Technologist & Solution Finder"
     description = "The personal website of Greg Thomas, Technologist & Solution Finder."
     favicon = "images/favicon.ico"
+    images = "/images/profile-pic.jpg"
     css = "styles/site.css" # TODO create inside static or assets folder
     dateFmt = "Jan 2, 2006"
     errorPageText = "There's nothing to see here, please try a different page."
