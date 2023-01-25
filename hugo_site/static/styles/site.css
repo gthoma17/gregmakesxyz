@@ -2,4 +2,25 @@
 
 body {
 	background-color: aliceblue;
+	font-family: sans-serif;
 }	
+
+.h-card .p-name, 
+.h-card .p-nickname, 
+.h-card .p-gender-identity,
+.h-card .dt-bday,
+.h-card .u-url,
+.h-card .u-email{
+	display: none;
+}
+
+.h-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.p-locality::after, .p-region::after {
+    content: ',';
+}

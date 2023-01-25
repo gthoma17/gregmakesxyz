@@ -12,7 +12,7 @@ series: null
 # Hi 👋 I’m Greg
 
 {{< columns >}}
-![Profile Picture](/images/profile-pic.jpg)
+{{< author-bio >}}
 <--->
 This is my website. I probably won’t update it especially often, but hopefully it gives you an idea of what I’m all about
 
@@ -31,5 +31,3 @@ This is my website. I probably won’t update it especially often, but hopefully
 * [Github](https://github.com/gthoma17)
 * [Linkedin](https://linkedin.com/in/gatlp9)
 * [email](mailto:greg@gregmakes.xyz)
-
-[1]: _Soon_ may be a bit ambitious, but I'll get to it 😅

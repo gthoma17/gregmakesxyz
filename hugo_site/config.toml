@@ -25,6 +25,7 @@ paginatePath = "page"
     showMeta = true
     showMetaDates = true
     showMetaLinks = true
+    noteDateFmt = "2006-01-02@3:04pm" 
 
     # Uses Hugo internal templates if set
     opengraph = false
@@ -50,6 +51,15 @@ paginatePath = "page"
 [author]
     name = "Greg Thomas"
     email = "Greg@GregMakes.xyz"
+    picture = "/images/profile-pic.jpg"
+    nickname = "Greg"
+    h_card_url = "https://gregmakes.xyz"
+    url = "gregmakes.xyz"
+    locality = "Denver"
+    region = "Colorado"
+    country_name = "USA"
+    bday = "20 Mar 1993"
+    gender_identity = "non-binary"
 
 
 [services.rss]
@@ -65,11 +75,18 @@ paginatePath = "page"
         weight = 100
 
     [[menu.main]]
+        identifier = "notes"
+        name = "Notes"
+        title = "Notes"
+        url = "/notes"
+        weight = 200
+
+    [[menu.main]]
         identifier = "resume"
         name = "Résumé"
         title = "Résumé"
         url = "/documents/resume/"
-        weight = 200
+        weight = 999
 
     # Define the entries for post metadata
     # Identifiers should match with the taxonomy entries

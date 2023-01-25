@@ -26,5 +26,8 @@ serve:
 		--source="hugo_site/" \
 		--buildDrafts=true
 
+note:
+	hugo --source hugo_site new notes/`date +'%Y%m%d%H%M'`.md
+
 deploy: build publish
 	echo "👍"

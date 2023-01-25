@@ -1,0 +1,25 @@
+<div class="h-card">
+  <p class="p-name">{{ .Site.Author.name }}</h1>
+  <p class="p-nickname">{{ .Site.Author.nickname }}</p>
+    <img 
+      class="u-photo"
+      style="
+        flex: none;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        object-fit: cover;
+      "
+      src="{{ .Site.Author.picture }}" 
+  />
+  <p class="p-adr h-adr">
+    <span>📍</span>
+    <span class="p-locality">{{ .Site.Author.locality }}</span>
+    <span class="p-region">{{ .Site.Author.region }}</span>
+    <span class="p-country-name">{{ .Site.Author.country_name }}</span>
+  </p>
+  <a class="u-url" href="{{ .Site.Author.url }}">homepage</a>
+  <a class="u-email" href="{{ .Site.Author.email }}">email</a>
+  <time class="dt-bday">{{ .Site.Author.bday }}</time>
+  <p class="p-gender-identity">{{ .Site.Author.gender_identity }}</p>
+</div>

@@ -1,0 +1,56 @@
+<article class="h-entry"
+  style="
+    margin: 1rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: row;
+  "
+>
+  <img 
+    style="
+      flex: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    "
+    src="{{ .Site.Author.picture }}" 
+  />
+  <div
+    style="
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;"
+    > 
+    <header 
+      style="
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-start;
+        font-size: small;
+      "
+    >
+      <a class="p-author h-card" href="{{ .Site.Author.h_card_url }}">
+        {{ .Site.Author.nickname }}
+      </a>
+      <span>&nbsp;·&nbsp;</span>
+      <time 
+        datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+        class="dt-published"
+      >
+        {{ .Date.Format (default "02 Jan 06 15:04 MST" .Site.Params.noteDateFmt) }}
+      </time>
+    </header>
+    <main>
+      {{ if .Title }}
+      <span class="p-name">
+        {{ .Title }}
+      </span>
+      {{ end }}
+      <div class="e-content">
+          {{ .Content }}
+      </div>
+    </main>
+  </div>
+</article>
