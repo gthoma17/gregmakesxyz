@@ -3,7 +3,51 @@
 body {
 	background-color: aliceblue;
 	font-family: sans-serif;
+	font-size: 16px;
 }	
+
+hr {
+	margin-top: 0;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+}
+
+nav > a {
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	color: #4d4d4c;
+}
+
+nav > a > h1 {
+	font-size: 24px;
+	margin: 0.125rem 0;
+}
+
+nav > a > h2 {
+	font-size: 12px;
+	margin: 0;
+}
+
+nav > menu {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	align-items: flex-end;
+	margin: 0;
+}
+
+nav > menu > li > a {
+	padding: 1rem 1rem 0 1rem;
+}
+nav > menu > li > a:hover {
+	background-color: #F2F0FF;
+}
+
+
 
 .h-card .p-name, 
 .h-card .p-nickname, 

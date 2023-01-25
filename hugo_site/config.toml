@@ -1,6 +1,6 @@
 baseUrl = "/"
 theme = "slick"
-title = "GregMakes.xyz"
+title = "Greg Thomas"
 languageCode = "en"
 defaultContentLanguage = "en"
 copyright = "Greg Thomas — All rights reserved."
@@ -18,7 +18,6 @@ paginatePath = "page"
     css = "styles/site.css" # TODO create inside static or assets folder
     dateFmt = "Jan 2, 2006"
     errorPageText = "There's nothing to see here, please try a different page."
-    showNavHeader = true
     showRssLink = true
     showFullContent = false
     showEmptyPagination = false
@@ -68,23 +67,17 @@ paginatePath = "page"
 
 [menu]
     [[menu.main]]
-        identifier = "post"
         name = "All Posts"
-        title = "All Posts"
         url = "/posts/"
         weight = 100
 
     [[menu.main]]
-        identifier = "notes"
         name = "Notes"
-        title = "Notes"
         url = "/notes"
         weight = 200
 
     [[menu.main]]
-        identifier = "resume"
         name = "Résumé"
-        title = "Résumé"
         url = "/documents/resume/"
         weight = 999
 
