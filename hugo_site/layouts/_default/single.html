@@ -10,13 +10,15 @@
         <a class="p-author h-card" href="{{ .Site.Author.h_card_url }}">
           {{ .Site.Author.nickname }}
         </a>
-        <span> on </span>
-        <time 
-          datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
-          class="dt-published"
-        >
-          {{ .Date.Format (default "02 Jan 06 15:04 MST" .Site.Params.dateFmt) }}
-        </time>
+        {{ with .Date }}
+          <span> on </span>
+          <time 
+            datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+            class="dt-published"
+          >
+            {{ .Date.Format (default "02 Jan 06 15:04 MST" .Site.Params.dateFmt) }}
+          </time>
+        {{- end }}
       </small>
     </header>
     <main>
