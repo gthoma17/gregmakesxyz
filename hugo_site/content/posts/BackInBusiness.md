@@ -26,8 +26,9 @@ Here's a list of features I'd still like to implement:
 
 * ~~Home Page is About Me post, not blog roll~~
 * ~~Completely NoJS friendly~~
-* Indie Web support similar to (Indigo Theme)[https://web-work.tools/indieweb/indigo/features/]
+* ~~Indie Web support similar to (Indigo Theme)[https://web-work.tools/indieweb/indigo/features/]~~
 * Dark Mode
+* Web Mentions support
 
 
 Here's hoping that 2023 seems more updates than 2022 😁

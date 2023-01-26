@@ -1,0 +1,22 @@
+.list {
+	list-style: none;
+
+	hr {
+		border-top: 1px dashed;
+	}
+
+	.h-entry {
+		margin-left: 1rem;
+		display: flex;
+		flex-direction: column;
+
+		header {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			align-self: flex-start;
+			font-size: small;
+		} 
+	}
+}

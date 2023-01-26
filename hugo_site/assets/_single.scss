@@ -1,0 +1,25 @@
+.single {
+	margin: 1rem 1rem 0 1rem;
+	display: flex;
+	flex-direction: row;
+
+	div {
+		margin-left: 1rem;
+		display: flex;
+		flex-direction: column;
+
+		header {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			align-self: flex-start;
+			font-size: small;
+
+			.p-name {
+				margin: 0.25rem 0.25rem 0.25rem 0;
+				font-size: 2rem;
+			}
+		}
+	}
+}

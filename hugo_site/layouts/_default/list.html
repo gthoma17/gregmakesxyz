@@ -1,17 +1,16 @@
 {{- define "main" }}
-<div>
-  <p>{{ .Title }}:</p>
-  <ul>
-    {{- range .Paginator.Pages }}
-    <li>
-      <div class="post-title">
-        {{- if .Draft }}DRAFT: {{ end }}
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </div>
-      {{ partial "post-meta.html" . }}
-    </li>
+<ul class="h-feed list">
+    {{ $posts := (.Paginator.Pages) }}
+    {{ $num_posts := (len $posts) }}
+    {{ range $index, $element := $posts }}
+      <li>
+        {{ partial "post-summary.html" . }}
+        {{ if ne (add $index 1) $num_posts }}
+          <hr/>
+        {{ end }}
+      </li>
     {{- end }}
-  </ul>
-</div>
+</ul>
 {{ partial "pagination.html" . }}
 {{- end }}
+
