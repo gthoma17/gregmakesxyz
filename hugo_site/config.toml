@@ -67,7 +67,7 @@ paginatePath = "page"
 
 [menu]
     [[menu.main]]
-        name = "All Posts"
+        name = "Posts"
         url = "/posts/"
         weight = 100
 
