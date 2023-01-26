@@ -5,21 +5,23 @@
       <h1 class="p-name">
         {{ .Title }}
       </h1>
-      <small>
-        <span>Published by </span>
-        <a class="p-author h-card" href="{{ .Site.Author.h_card_url }}">
-          {{ .Site.Author.nickname }}
-        </a>
-        {{ with .Date }}
-          <span> on </span>
-          <time 
-            datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
-            class="dt-published"
-          >
-            {{ .Date.Format (default "02 Jan 06 15:04 MST" .Site.Params.dateFmt) }}
-          </time>
-        {{- end }}
-      </small>
+      {{ if (ne .Kind "page") }}
+        <small>
+          <span>Published by </span>
+          <a class="p-author h-card" href="{{ .Site.Author.h_card_url }}">
+            {{ .Site.Author.nickname }}
+          </a>
+          {{ with .Date }}
+            <span> on </span>
+            <time 
+              datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+              class="dt-published"
+            >
+              {{ .Date.Format (default "02 Jan 06 15:04 MST" .Site.Params.dateFmt) }}
+            </time>
+          {{- end }}
+        </small>
+      {{ end }}
     </header>
     <main>
       <div class="e-content">
