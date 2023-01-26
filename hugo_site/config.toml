@@ -25,6 +25,7 @@ paginatePath = "page"
     showMetaLinks = true
     noteDateFmt = "2006-01-02@3:04pm" 
     noteProfilePic = "/images/wpap-profile-pic.gif"
+    deploymentUrl = "https://gregmakes.xyz/"
 
     # Uses Hugo internal templates if set
     opengraph = false
@@ -110,9 +111,6 @@ paginatePath = "page"
     
 [sitemap]
   filename = "sitemap.xml"
-  # Values are 'always', 'hourly', 'daily',' weekly', 'monthly', 'yearly', and 'never'. 
-  # Set to empty string to omit inclusion
-  changefreq = "always"
-  # Values range from 0.0 to 1.0. 
-  # Set to -1 to omit inclusion
-  priority =  1
+  changefreq = "always" # 'always', 'hourly', 'daily',' weekly', 'monthly', 'yearly', 'never' or '' (to omit inclusion)  
+  priority =  1 # Values range from 0.0 to 1.0. Set to -1 to omit inclusion
+
