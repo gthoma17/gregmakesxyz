@@ -8,7 +8,6 @@ categories: null
 tags: null
 series: null
 ---
-
 # Hi 👋 I’m Greg
 
 This is my website. I probably won’t update it especially often, but hopefully it gives you an idea of what I’m all about

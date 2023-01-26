@@ -1,3 +1,12 @@
+@media (prefers-color-scheme: dark) {
+	.single a:visited{
+		color: #D0ADF0;
+  	}
+  	.single a {
+  		color: #9da0f8;
+  	}
+}
+
 .single {
 	margin: 1rem 1rem 0 1rem;
 	display: flex;

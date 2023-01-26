@@ -1,3 +1,12 @@
+@media (prefers-color-scheme: dark) {
+	.note-list a:visited{
+		color: #D0ADF0;
+  	}
+  	.note-list a {
+  		color: #9da0f8;
+  	}
+}
+
 .note-list {
 	list-style: none;
 
