@@ -25,7 +25,7 @@ For this site's facelift I chose the `Slick` Hugo theme, which is privacy focuse
 Here's a list of features I'd still like to implement:
 
 * ~~Home Page is About Me post, not blog roll~~
-* Completely NoJS friendly
+* ~~Completely NoJS friendly~~
 * Indie Web support similar to (Indigo Theme)[https://web-work.tools/indieweb/indigo/features/]
 * Dark Mode
 

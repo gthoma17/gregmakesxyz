@@ -1,0 +1,33 @@
+nav {
+	display: flex;
+	flex-direction: row;
+
+	menu {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+
+		li a {
+			padding: 1rem 1rem 0 1rem;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		color: #4d4d4c;
+		margin-right: 2.5rem;
+
+		h1 {
+			font-size: 24px;
+			margin: 0.125rem 0;
+		}
+
+		h2 {
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+}
+	

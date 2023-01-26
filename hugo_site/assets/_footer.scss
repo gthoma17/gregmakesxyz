@@ -1,0 +1,47 @@
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	
+	menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	.h-card {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 0.5rem;
+
+		img{
+			margin-right: 1rem;
+		}
+
+		div {
+			display: grid;
+
+			.p-nickname, 
+			.p-gender-identity,
+			.dt-bday,
+			.u-url{
+				display: none;
+			}
+
+			.p-adr{
+				.p-locality::before{
+					content: '📍 '
+				} 
+				.p-region::after {
+			    	content: ',';
+				}
+			}
+
+			p, a, time {
+				margin-top: 0.25rem;
+				margin-bottom: 0.25rem;
+			}
+		}
+	}
+}

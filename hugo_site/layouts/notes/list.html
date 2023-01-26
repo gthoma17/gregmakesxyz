@@ -1,13 +1,15 @@
 {{- define "main" }}
-<ul>
+<ul class="h-feed note-list">
     {{ $notes := (.Paginator.Pages) }}
     {{ $num_notes := (len $notes) }}
     {{ range $index, $element := $notes }}
-      {{ partial "single-note.html" . }}
-      <a style="margin-left: 1rem" href="{{ .RelPermalink }}"><small>Permalink</small></a>
-      {{ if ne (add $index 1) $num_notes }}
-        <hr/>
-      {{ end }}
+      <li>
+        {{ partial "single-note.html" . }}
+        <a style="margin-left: 1rem" href="{{ .RelPermalink }}"><small>Permalink</small></a>
+        {{ if ne (add $index 1) $num_notes }}
+          <hr/>
+        {{ end }}
+      </li>
     {{- end }}
 </ul>
 {{ partial "pagination.html" . }}
