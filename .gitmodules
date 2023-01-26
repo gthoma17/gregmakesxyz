@@ -1,3 +1,0 @@
-[submodule "hugo_site/themes/slick"]
-	path = hugo_site/themes/slick
-	url = git@github.com:spookey/slick.git

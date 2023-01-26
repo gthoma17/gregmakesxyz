@@ -1,0 +1,53 @@
+{{- define "main" }}
+<article class="h-entry"
+  style="
+    margin: 1rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: row;
+  "
+>
+  <div
+    style="
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;"
+    > 
+    <header 
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        align-self: flex-start;
+        font-size: small;
+      "
+    >
+      <h1 
+        class="p-name"
+        style="
+          margin: 0.25rem;
+          font-size: 2rem;
+        " 
+      >{{ .Title }}</h1>
+      <small>
+        <span>Published by </span>
+        <a class="p-author h-card" href="{{ .Site.Author.h_card_url }}">
+          {{ .Site.Author.nickname }}
+        </a>
+        <span> on </span>
+        <time 
+          datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+          class="dt-published"
+        >
+          {{ .Date.Format (default "02 Jan 06 15:04 MST" .Site.Params.dateFmt) }}
+        </time>
+      </small>
+    </header>
+    <main>
+      <div class="e-content">
+          {{ .Content }}
+      </div>
+    </main>
+  </div>
+</article>
+{{- end }}
