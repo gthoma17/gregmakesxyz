@@ -1,5 +1,5 @@
 <article class="h-entry">
-  <img src="{{ .Site.Params.noteProfilePic }}" />
+  {{ partial "profile-pic-h-card" .Site.Author }}
   <div> 
     <header>
       <a class="p-author h-card" href="{{ .Site.Author.h_card_url }}">
