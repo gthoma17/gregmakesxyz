@@ -22,6 +22,18 @@
       <div class="e-content">
           {{ .Content }}
       </div>
+      <small>
+        {{- if .Params.inReplyTo.url }}
+          in reply to: 
+          <a class="u-in-reply-to" href="{{ .Params.inReplyTo.url }}">
+            {{- if .Params.inReplyTo.author }}
+              {{ .Params.inReplyTo.author }}
+            {{ else }}
+              {{ .Params.inReplyTo.url }}
+            {{- end }}
+          </a>
+        {{- end }}
+      </small>
     </main>
   </div>
 </article>
