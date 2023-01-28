@@ -26,6 +26,9 @@ serve:
 		--source="hugo_site/" \
 		--buildDrafts=true
 
+bootstrap-analytics:
+	cat scripts/bootstrap-analytics.sh | ssh gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net /bin/bash
+
 note:
 	hugo --source hugo_site new notes/`date +'%Y%m%d%H%M'`.md
 
