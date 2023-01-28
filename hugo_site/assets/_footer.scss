@@ -46,6 +46,9 @@ footer {
 				.p-region::after {
 			    	content: ',';
 				}
+				.p-country-name::after {
+			    	content: ' 🇺🇸';
+				}
 			}
 
 			p, a, time {
