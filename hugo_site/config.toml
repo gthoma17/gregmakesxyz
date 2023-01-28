@@ -54,7 +54,7 @@ paginatePath = "page"
 [author]
     name = "Greg Thomas"
     email = "Greg@GregMakes.xyz"
-    picture = "/images/profile-pic.jpg"
+    picture = "http://gregmakes.xyz/images/profile-pic.jpg"
     nickname = "Greg"
     h_card_url = "https://gregmakes.xyz"
     url = "gregmakes.xyz"
