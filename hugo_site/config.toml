@@ -26,6 +26,9 @@ paginatePath = "page"
     noteDateFmt = "2006-01-02@3:04pm" 
     noteProfilePic = "/images/wpap-profile-pic.gif"
     deploymentUrl = "https://gregmakes.xyz/"
+    webmentionUrl = "http://syndication.gregmakes.xyz/webmention"
+    pingbackUrl = "http://syndication.gregmakes.xyz/pingback"
+
 
     # Uses Hugo internal templates if set
     opengraph = false
