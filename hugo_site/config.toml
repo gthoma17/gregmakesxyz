@@ -25,8 +25,8 @@ paginatePath = "page"
     showMetaLinks = true
     noteDateFmt = "2006-01-02@3:04pm" 
     deploymentUrl = "https://gregmakes.xyz/"
-    webmentionUrl = "http://syndication.gregmakes.xyz/webmention"
-    pingbackUrl = "http://syndication.gregmakes.xyz/pingback"
+    webmentionUrl = "http://gregmakes.xyz/linkback/webmention"
+    pingbackUrl = "http://syndication.gregmakes.xyz/linkback/pingback"
 
 
     # Uses Hugo internal templates if set
