@@ -8,10 +8,10 @@ from urllib.parse import urlparse
 CONTENT_PATH_ROOT = "hugo_site/content"
 
 def main():
-  try:
-    webmention_url = os.getenv("WEBMENTIONS_URL")
-    webmention_domain = urlparse(webmention_url).netloc
-  except:
+
+  webmention_url = os.getenv("WEBMENTIONS_URL")
+  webmention_domain = urlparse(webmention_url).netloc
+  if webmention_url == None:
     print("Webmentions url invalid, failing...")
     sys.exit(1) 
 

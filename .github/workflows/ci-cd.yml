@@ -9,6 +9,17 @@ jobs:
   Deploy-Site:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          extended: true
+          hugo-version: "0.84.3"
+
+      - name: Check out Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: "true"
+
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -16,17 +27,32 @@ jobs:
           name: id_ed25519
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
-      - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          extended: true
-          hugo-version: "0.84.3"
+      - name: Initial Deploy
+        run: make deploy
+        env:
+          WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
 
-      - name: Check out repository code
-        uses: actions/checkout@v3
+      - name: Send Webmentions
+        uses: satak/webrequest-action@master
         with:
-          submodules: "true"
+          url: ${{ secrets.WEBMENTIONS_URL }}
+          method: PUT
 
-      - run: make deploy
+      - name: Rebuild with Webmentions
+        run: make build
+        env:
+          WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
+
+      - name: Commit Webmentions
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "<>"
+
+          git add **/webmentions.json
+          git commit -m "Save new webmentions [actions skip]"
+          git push origin main
+
+      - name: Publish with Webmentions
+        run: make publish
         env:
           WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}

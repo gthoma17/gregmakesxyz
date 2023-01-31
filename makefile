@@ -21,6 +21,19 @@ publish:
 		public/ \
 		gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/public
 
+publish-rss: build
+	rsync \
+		--archive \
+		--verbose \
+		--compress \
+		--human-readable \
+		--progress \
+		--rsh=ssh \
+		--delete \
+		--recursive \
+		public/index.xml \
+		gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/public
+
 serve: 
 	hugo serve \
 		--source="hugo_site/" \

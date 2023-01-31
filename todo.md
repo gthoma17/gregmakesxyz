@@ -1,6 +1,6 @@
-- Figure how to automate sending webmentions in GH Action
 - Integrate webmentions into the templates in a way that looks nicer
 - Troubleshoot problem with u-photo for outbound webmentions
+- ~~Figure how to automate sending webmentions in GH Action~~
 - ~~Add more microformat info to reply notes: https://www.jayeless.net/2021/02/integrating-webmentions-into-hugo.html~~
 - ~~Merge go-jamming site with static site on NFSN~~
 - ~~Create `make get-webmentions` for retieving webmentions~~

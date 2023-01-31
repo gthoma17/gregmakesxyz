@@ -26,7 +26,7 @@ paginatePath = "page"
     noteDateFmt = "2006-01-02@3:04pm" 
     deploymentUrl = "https://gregmakes.xyz/"
     webmentionUrl = "http://gregmakes.xyz/linkback/webmention"
-    pingbackUrl = "http://syndication.gregmakes.xyz/linkback/pingback"
+    pingbackUrl = "http://gregmakes.xyz/linkback/pingback"
 
 
     # Uses Hugo internal templates if set
