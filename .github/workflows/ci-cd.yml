@@ -2,14 +2,13 @@ name: Build Static Site
 on:
   push:
     branches:
-      - 'main'
+      - "main"
     paths:
-      - 'hugo_site/**/*'
+      - "hugo_site/**/*"
 jobs:
   Deploy-Site:
     runs-on: ubuntu-latest
     steps:
-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -26,7 +25,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         with:
-          submodules: 'true'
+          submodules: "true"
 
       - run: make deploy
-  
+        env:
+          WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}

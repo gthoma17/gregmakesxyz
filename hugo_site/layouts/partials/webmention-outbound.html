@@ -1,0 +1,28 @@
+<small>  
+  {{ if eq .type "reply" }}
+    in reply to:
+    <a class="u-in-reply-to" href="{{ .Params.inReplyTo.url }}">
+  {{ else if .type "like" }}
+    like of:
+    <a class="u-like-of" href="{{ .Params.inReplyTo.url }}">
+    {{ $class := "like-of" }}
+  {{ else if .type "repost" }}
+    repost of:
+    <a class="u-repost-of" href="{{ .Params.inReplyTo.url }}">
+  {{ else if .type "bookmark" }}
+    bookmark of:
+    <a class="u-bookmark-of" href="{{ .Params.inReplyTo.url }}">
+  {{ else if .type "rsvp" }}
+    rsvp to:
+    <a class="u-rsvp" href="{{ .Params.inReplyTo.url }}">
+  {{ else }}
+    mentions:
+    <a class="u-mention-of" href="{{ .Params.inReplyTo.url }}">
+  {{ end }}
+    {{- if .author }}
+      {{ .author }}
+    {{ else }}
+      {{ .url }}
+    {{- end }}
+  </a>
+</small>

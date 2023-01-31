@@ -41,5 +41,14 @@
 				font-size: small;
 			}
 	    }
+
+	    aside {
+	    	padding-top: 1rem;
+	    	border-top: 1px solid grey;
+
+	    	a {
+	    		font-size: 0.75rem;
+	    	}
+	    }
 	}
 }

@@ -1,4 +1,0 @@
-* Create `make get-webmentions` for retieving webmentions
-* Integrate webmentions into the templates
-* Run `make get-webmentions` on some schedule
-* Merge go-jamming site with static site on NFSN

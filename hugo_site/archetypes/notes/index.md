@@ -3,7 +3,8 @@ type: notes
 date: {{ .Date }}
 draft: false
 tags: []
-inReplyTo: { 
+mention: { 
+	type: null,
 	url: null, 
 	author: null
 }

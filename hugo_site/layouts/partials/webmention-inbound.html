@@ -1,0 +1,11 @@
+<li class="p-content p-name">
+  {{ .content | safeHTML }} 
+  — 
+  <a href="{{ .source }}">
+    {{- if .author.name }}
+      {{ .author.name }}
+    {{ else }}
+      {{ .source }}
+    {{- end }}
+  </a>
+</li>
