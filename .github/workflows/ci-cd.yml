@@ -40,8 +40,9 @@ jobs:
 
       - name: Commit New Webmentions
         run: |
-          if ! git diff-index --quiet HEAD; then
+          if [[ `git status --porcelain` ]]; then
             echo "in if 🏄"
+            git status
             git config user.name "GitHub Actions"
             git config user.email "<>"
 
