@@ -40,6 +40,8 @@ jobs:
 
       - name: Commit New Webmentions
         run: |
+          sleep 1 # Give go-jamming a second to process the mentions
+          echo "before if 📸s"
           if [[ `git status --porcelain` ]]; then
             echo "in if 🏄"
             git status
