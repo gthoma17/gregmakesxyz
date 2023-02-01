@@ -44,6 +44,7 @@ jobs:
           WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
 
       - name: Commit Webmentions
+        id: commit-webmentions
         run: |
           git config user.name "GitHub Actions"
           git config user.email "<>"
@@ -53,6 +54,7 @@ jobs:
           git push origin main
 
       - name: Publish with Webmentions
+        if: steps.commit-webmentions.conclusion == 'success'
         run: make publish
         env:
           WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
