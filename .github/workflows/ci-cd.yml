@@ -43,18 +43,12 @@ jobs:
         env:
           WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
 
-      - name: Commit Webmentions
-        id: commit-webmentions
+      - name: Commit New Webmentions
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "<>"
-
           git add **/webmentions.json
-          git commit -m "Save new webmentions [actions skip]"
-          git push origin main
+          if ! git diff-index --quiet HEAD; then
+            git config user.name "GitHub Actions"
+            git config user.email "<>"
 
-      - name: Publish with Webmentions
-        if: steps.commit-webmentions.conclusion == 'success'
-        run: make publish
-        env:
-          WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
+            git commit -m "Save new webmentions"
+            git push origin main
