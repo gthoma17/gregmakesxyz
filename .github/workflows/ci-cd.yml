@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - "main"
-    paths:
-      - "hugo_site/**/*"
 jobs:
   Deploy-Site:
     runs-on: ubuntu-latest
