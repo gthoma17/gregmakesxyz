@@ -39,11 +39,13 @@ jobs:
           method: PUT
 
       - name: Commit New Webmentions
+        env:
+          WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
         run: |
-          sleep 1 # Give go-jamming a second to process the mentions
-          echo "before if 📸s"
+          sleep 1 # Give go-jamming a second to process new mentions
+          make get-webmentions
           if [[ `git status --porcelain` ]]; then
-            echo "in if 🏄"
+            git add **/webmentions.json
             git status
             git config user.name "GitHub Actions"
             git config user.email "<>"
