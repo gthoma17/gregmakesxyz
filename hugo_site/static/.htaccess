@@ -1,1 +1,4 @@
 ErrorDocument 404 /404/index.html
+
+RewriteEngine On
+RewriteRule ^analytics/$ /analytics/awstats.nfsn.html [L]
