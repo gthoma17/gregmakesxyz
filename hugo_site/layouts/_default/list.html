@@ -1,16 +1,4 @@
 {{- define "main" }}
-<ul class="h-feed list">
-    {{ $posts := (.Paginator.Pages) }}
-    {{ $num_posts := (len $posts) }}
-    {{ range $index, $element := $posts }}
-      <li>
-        {{ partial "post-summary.html" . }}
-        {{ if ne (add $index 1) $num_posts }}
-          <hr/>
-        {{ end }}
-      </li>
-    {{- end }}
-</ul>
-{{ partial "pagination.html" . }}
+{{ partial "list-default.html" . }}
 {{- end }}
 

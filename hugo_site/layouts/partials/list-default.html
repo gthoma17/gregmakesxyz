@@ -1,0 +1,10 @@
+{{ $posts := (.Paginator.Pages) }}
+<ul class="h-feed list">
+    {{ range $index, $element := $posts }}
+    <li>
+        {{ partial "post-summary.html" . }}
+        {{ if ne (add $index 1) (len $posts) }}<hr />{{ end }}
+    </li>
+    {{- end }}
+</ul>
+{{ partial "pagination.html" . }}

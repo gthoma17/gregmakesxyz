@@ -1,7 +1,7 @@
 {{- define "main" }}
 <article class="homepage h-entry">
-	{{ with .Site.GetPage "/about" }}
-	{{ .Content }}
-	{{- end }}
+    {{ with .Site.GetPage "/about" }}
+    {{ .Content }}
+    {{- end }}
 </article>
 {{- end }}

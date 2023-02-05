@@ -17,22 +17,10 @@ paginatePath = "page"
     css = "styles/site.css" # TODO create inside static or assets folder
     dateFmt = "Jan 2, 2006"
     errorPageText = "There's nothing to see here, please try a different page."
-    showRssLink = true
-    showFullContent = false
-    showEmptyPagination = false
-    showMeta = true
-    showMetaDates = true
-    showMetaLinks = true
     noteDateFmt = "2006-01-02@3:04pm" 
     deploymentUrl = "https://gregmakes.xyz/"
     webmentionUrl = "https://gregmakes.xyz/linkback/webmention"
     pingbackUrl = "https://gregmakes.xyz/linkback/pingback"
-
-
-    # Uses Hugo internal templates if set
-    opengraph = false
-    schema = false
-    twitter_cards = false
 
 [markup]
     [markup.goldmark]
@@ -100,8 +88,6 @@ paginatePath = "page"
         name = "Tags"
         weight = 3
 
-
-    # Add some footer links to your likings
     [[menu.footer]]
         name = "Github"
         url = "https://github.com/gthoma17"

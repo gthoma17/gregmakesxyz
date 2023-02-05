@@ -1,4 +1,7 @@
+- Alter author templates to only render fields in the config
+- Figure out whether I want to use any hugo internal templates https://gohugo.io/templates/internal/
 - Integrate webmentions into the templates in a way that looks nicer
+- Integrate webmentions into post templates
 - ~~Troubleshoot problem with u-photo for outbound webmentions~~
 - ~~Figure how to automate sending webmentions in GH Action~~
 - ~~Add more microformat info to reply notes: https://www.jayeless.net/2021/02/integrating-webmentions-into-hugo.html~~
