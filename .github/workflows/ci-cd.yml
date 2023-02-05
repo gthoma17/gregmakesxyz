@@ -31,10 +31,10 @@ jobs:
           WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
 
       - name: Send Webmentions
-         uses: satak/webrequest-action@master
-         with:
-           url: ${{ secrets.WEBMENTIONS_URL }}
-           method: PUT
+        uses: satak/webrequest-action@master
+        with:
+          url: ${{ secrets.WEBMENTIONS_URL }}
+          method: PUT
 
       - name: Commit New Webmentions
         env:
