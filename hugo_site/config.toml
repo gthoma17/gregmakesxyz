@@ -107,10 +107,26 @@ paginatePath = "page"
         url = "https://github.com/gthoma17"
         pre = "rel=me"
         weight = 100
+
     [[menu.footer]]
         name = "Linkedin"
         url = "https://linkedin.com/in/gatlp9"
         weight = 200
+
+    [[menu.footer]]
+        name = "RSS"
+        url = "/index.xml"
+        weight = 300
+
+    [[menu.footer]]
+        name = "Sitemap"
+        url = "/sitemap.xml"
+        weight = 400
+
+    [[menu.footer]]
+        name = "Privacy Policy"
+        url = "/privacy_policy/"
+        weight = 999
     
 [sitemap]
   filename = "sitemap.xml"
