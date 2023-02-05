@@ -18,13 +18,6 @@ jobs:
         with:
           submodules: "true"
 
-      - name: Cache npx dependancies
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-          cache: "npm"
-          cache-dependency-path: "**/.github/workflows/*.yml"
-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -37,13 +30,11 @@ jobs:
         env:
           WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
 
-      - name: Install webmention.app
-        run: |
-          npm install webmention
-
       - name: Send Webmentions
-        run: |
-          npx webmention https://gregmakes.xyz/index.xml --send --limit=0
+         uses: satak/webrequest-action@master
+         with:
+           url: ${{ secrets.WEBMENTIONS_URL }}
+           method: PUT
 
       - name: Commit New Webmentions
         env:
