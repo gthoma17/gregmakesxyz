@@ -25,7 +25,7 @@ paginatePath = "page"
     showMetaLinks = true
     noteDateFmt = "2006-01-02@3:04pm" 
     deploymentUrl = "https://gregmakes.xyz/"
-    webmentionUrl = "https://webmention.io/gregmakes.xyz/webmention"
+    webmentionUrl = "https://gregmakes.xyz/linkback/webmention"
     pingbackUrl = "https://gregmakes.xyz/linkback/pingback"
 
 

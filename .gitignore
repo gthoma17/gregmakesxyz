@@ -75,3 +75,5 @@ public/
 secrets.env
 *.with_secrets.*
 .hugo_build.lock
+package.json
+package-lock.json

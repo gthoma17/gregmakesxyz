@@ -25,16 +25,18 @@ jobs:
           name: id_ed25519
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
-      - name: Initial Deploy
+      - name: Deploy
         run: make deploy
         env:
           WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
 
+      - name: Install webmention.app
+        run: |
+          npm install webmention
+
       - name: Send Webmentions
-        uses: satak/webrequest-action@master
-        with:
-          url: ${{ secrets.WEBMENTIONS_URL }}
-          method: PUT
+        run: |
+          npx webmention https://gregmakes.xyz/index.xml --send --limit=0
 
       - name: Commit New Webmentions
         env:
