@@ -35,7 +35,7 @@
       <description>
         {{ .Content | html }}
         {{ with .Params.mention }}
-          {{ partial "webmention-outbound" . }}
+          {{ partial "webmention-outbound" . | html }}
         {{ end }}
       </description>
     </item>
