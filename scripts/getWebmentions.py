@@ -1,6 +1,7 @@
 import json
 import sys
 import os
+import os.path
 import itertools
 from urllib.request import urlopen
 from urllib.parse import urlparse
@@ -46,7 +47,8 @@ def process_webmention(webmention, webmention_domain):
 
 def write_webmentions_to_content_path(relative_url, webmention):
   content_path = CONTENT_PATH_ROOT + relative_url
-  write_webmentions_to_file(webmention, content_path)
+  if os.path.isfile(content_path+"index.md"):
+    write_webmentions_to_file(webmention, content_path)
 
 
 def write_webmentions_to_file(output, path):
