@@ -4,17 +4,16 @@ slug: about
 type: page
 draft: false
 showmeta: false
-categories: null
-tags: null
-series: null
 ---
+
 # Hi 👋 I’m Greg
 
 This is my website. I probably won’t update it especially often, but hopefully it gives you an idea of what I’m all about
 
 ### Site Features
-* [Blog](/posts/): Some of my inside thoughts, but on the outside!
 
-* [Notes](/notes/): Quick thoughts and half-bakes ideas -- like Twitter but with signifiicantly fewer people!
+- [Blog](/posts/): Some of my inside thoughts, but on the outside!
 
-* [Résumé](/documents/resume/): A few things about my career that I do want to talk about 😄
+- [Notes](/notes/): Quick thoughts and half-bakes ideas -- like Twitter but with signifiicantly fewer people!
+
+- [Résumé](/documents/resume/): A few things about my career that I do want to talk about 😄
