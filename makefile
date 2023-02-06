@@ -31,7 +31,7 @@ get-webmentions:
 	python scripts/getWebmentions.py 
 
 note:
-	hugo --source hugo_site new --kind=notes notes/`date +'%Y%m%d%H%M'`
+	hugo --source hugo_site new --kind=notes notes/`date +'%Y/%m/%d/%H:%M'`
 
 post:
 	hugo --source hugo_site new --kind=posts posts/new
