@@ -5,17 +5,6 @@
     src="{{ .profile_picture }}" 
   />
   <div style="display: none">
-    <p class="p-name">{{ .name }}</p>
-    <p class="p-nickname">{{ .nickname }}</p>
-    <p class="p-adr h-adr">
-      <span class="p-locality">{{ .locality }}</span>
-      <br />
-      <span class="p-region">{{ .region }}</span>
-      <span class="p-country-name">{{ .country_name }}</span>
-    </p>
-    <a class="u-url" href="{{ .url }}">homepage</a>
-    <a class="u-email" href="mailto:{{ .email }}">{{ .email }}</a>
-    <time class="dt-bday">{{ .bday }}</time>
-    <p class="p-gender-identity">{{ .gender_identity }}</p>
+        {{ partial "author-info.html" . }}
   </div>
 </div>
