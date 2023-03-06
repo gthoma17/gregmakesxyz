@@ -12,6 +12,7 @@ publish:
 		--delete \
 		--recursive \
 		--exclude analytics/ \
+		--exclude .nfsn-awicons/ \
 		public/ \
 		gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/public
 
