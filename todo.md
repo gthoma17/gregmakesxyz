@@ -1,8 +1,7 @@
-- Figure out whether I want to use any hugo internal templates https://gohugo.io/templates/internal/
-- Integrate webmentions into post templates
 - open source the theme
 - theme test suite
 - Integrate webmentions into the templates in a way that looks nicer
+- Integrate webmentions into post templates
 - make webmention templates optional
 - ~~Alter author templates to only render fields in the config~~
 - ~~Troubleshoot problem with u-photo for outbound webmentions~~

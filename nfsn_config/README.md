@@ -14,18 +14,16 @@ This documentation is accurate as of it's last check on: 2023-01-28
 * Next time you commit to the main branch the github actions will build and deploy your site to NFSN
 
 ## To setup analytics for this site:
-* Create a file 
 * Run `make bootstrap-analytics` to setup awstats on NFSN
-* Setup a [scheduled task](https://faq.nearlyfreespeech.net/q/cron) to run:
-	 * `/usr/local/www/awstats/tools/awstats_buildstaticpages.pl -config=nfsn -update -dir=/home/public/awstats` 
-* Your analytics will be availiable at https://\<your-website>/analytics/awstats.nfsn.html
+* Setup a [scheduled task](https://faq.nearlyfreespeech.net/q/cron) to run `/home/protected/updateAnalytics.sh` however often you like.
+* Your analytics will be availiable at https://\<your-website>/analytics/
 
 ## To setup go-jamming webmentions for this site:
 * Ensure you're on a server-type which allows for daemons
 * [ssh](https://faq.nearlyfreespeech.net/full/ssh#ssh) into the site and follow go-jamming's (simple!) [steps to build and configure](https://git.brainbaking.com/wgroeneveld/go-jamming/src/branch/master/INSTALL.md)
 	* [This faq](https://faq.nearlyfreespeech.net/q/directories) should help you understand which folder to build in 😉
 	* You can validate that it's working by running `./go-jamming &`[^1] 
-	then `curl localhost:<port>/webmention/<domain>/<token>`[^2][^3]. If you don't get a 404 it's working 
+	then `curl localhost:<port>/webmention/<domain>/<token>`[^2] [^3]. If you don't get a 404 it's working 
 * Setup a daemon to run go-jamming with these parameters:
 	* tag: \<whatever you want>
 	* Command Line: \<install directory>/go-jamming [^4]
