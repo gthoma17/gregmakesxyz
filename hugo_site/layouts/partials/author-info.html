@@ -7,7 +7,7 @@
     {{ with .Site.Author.country_name }}<span class="p-country-name">{{ . }}</span>{{ end }}
 </p>
 {{ end }}
-{{ with .Site.Author.url }}<a class="u-url" href="{{ . }}">homepage</a>{{ end }}
+{{ with .Site.Author.url }}<a class="u-url" rel="me" href="{{ . }}">homepage</a>{{ end }}
 {{ with .Site.Author.email }}<a class="u-email" href="mailto:{{ . }}">{{ . }}</a>{{ end }}
 {{ with .Site.Author.bday }}<time class="dt-bday">{{ . }}</time>{{ end }}
 {{ with .Site.Author.gender_identity }}<p class="p-gender-identity">{{ . }}</p>{{ end }}
