@@ -30,6 +30,11 @@ paginatePath = "page"
         guessSyntax = true              # Highlight code without language tag
         noClasses = false               # Use the theme's style sheet
 
+    [markup.tableOfContents]
+        endLevel = 4
+        ordered = false
+        startLevel = 1
+
 # Define all supported taxonomies (add series to the default)
 [taxonomies]
     tags = "tags"
