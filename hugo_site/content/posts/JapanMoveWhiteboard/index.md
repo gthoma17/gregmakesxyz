@@ -6,14 +6,25 @@ series:
   - "Japan Move"
 ---
 
+Using this post as a whiteboard to plan the things I need to do for the move to Tokyo
+
 Helpful overview articles:
 - https://jw-webmagazine.com/moving-to-japan-for-the-first-time/
 - https://japanswitch.com/guide-to-japanese-culture-shock/
 - https://gogonihon.com/en/blog/upon-arriving-in-japan/
 - https://gogonihon.com/en/blog/moving-to-japan/
 
+{{< toc >}}
 
 ___
+
+# Things needing research
+- [ ] If I need & how to get vaccination certificate **(?? for Attorney)**
+- [ ] Where will I live **(?? for Relo folks)**
+- [ ] Where will I work **(?? for Andrew)**
+- [x] How to maintain US phone number 
+- [x] Japanese cell service
+- [x] How I'll be paid
 
 # Tasks Before Greg Leaves America
  - [Get International Diving Permit](https://www.aaa.com/vacation/idpf.html)
@@ -131,11 +142,10 @@ ___
 ___
 
 # Tasks Before Reva Leaves America
- - Stock up on things that are hard to get in Japan
+- Stock up on things that are hard to get in Japan
 
 ### Things to Stock before leaving
 
-___
 
 # Tasks on arrival
  - Get Suica card
