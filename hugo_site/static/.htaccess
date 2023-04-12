@@ -2,3 +2,5 @@ ErrorDocument 404 /404/index.html
 
 RewriteEngine On
 RewriteRule ^analytics/$ /analytics/awstats.nfsn.html [L]
+RewriteBase /
+RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
