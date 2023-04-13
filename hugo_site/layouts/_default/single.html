@@ -5,13 +5,13 @@
       <h1 class="p-name">
         {{ .Title }}
       </h1>
-      {{ if (ne .Kind "page") }}
+      {{ if (default false .Params.showmeta) }}
         <small>
           <span>Published by </span>
           <a class="p-author h-card" href="{{ .Site.Author.h_card_url }}">
             {{ .Site.Author.nickname }}
           </a>
-          {{ with .Date }}
+          {{ if .Date }}
             <span> on </span>
             <time 
               datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
@@ -21,7 +21,8 @@
             </time>
           {{- end }}
         </small>
-      {{ end }}
+    {{ end }}
+
     </header>
     <main>
       <div class="e-content">
