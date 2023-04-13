@@ -14,23 +14,22 @@ Helpful overview articles:
 - https://gogonihon.com/en/blog/upon-arriving-in-japan/
 - https://gogonihon.com/en/blog/moving-to-japan/
 
-{{< toc >}}
+___
+
+# Things Needing Research
+- [ ] If I need & how to get vaccination certificate **(?? for Attorney)**
+- [ ] Where will I live **(?? for Relo folks)**
+- [ ] When will I fly & how much luggage can I bring **(?? for Relo folks)**
+- [ ] Where will I work **(?? for Andrew)**
+- [x] ~~How to maintain US phone number~~
+- [x] ~~Japanese cell service~~
+- [x] ~~How I'll be paid~~
 
 ___
 
-# Things needing research
-- [ ] If I need & how to get vaccination certificate **(?? for Attorney)**
-- [ ] Where will I live **(?? for Relo folks)**
-- [ ] Where will I work **(?? for Andrew)**
-- [x] How to maintain US phone number 
-- [x] Japanese cell service
-- [x] How I'll be paid
+{{< toc >}}
 
 # Tasks Before Greg Leaves America
-- Not Sure if needed
-  - [Register new  arrival information](https://www.digital.go.jp/en/services/visit_japan_web-en/)(?)
-  - Setup the [Fast Track app](https://www.hco.mhlw.go.jp/fasttrack/en/)(?)
-  - Get vaccination certificate (needs research)
 - **Constantly**
   - Practice Japanese
   - Get some alignment on where you want to live and what you want out of your housing
@@ -42,9 +41,11 @@ ___
   - Find housing for when I arrive
   - Figure out the work/commute situation
 - **Early May**
+  - Order [Mobal SIM card](https://www.mobal.com/japan-sim-card/)
   - Measure out any furniture you'll be taking with you
     - Circle Chair: 38x38x30 in, 97x97x76 cm
 - **Late May**
+  - [Register new  arrival information](https://www.digital.go.jp/en/services/visit_japan_web-en/)
   - [Prepare and print the forms for opening a Japan Post Bank Account](https://www.jp-bank.japanpost.jp/en_index.html)
   - [Port phone number to Google Voice](https://support.google.com/voice/answer/1065667?hl=en)
   - [Get International Diving Permit](https://www.aaa.com/vacation/idpf.html)
@@ -135,7 +136,7 @@ Notes:
   - Anecdotal reports that Sharehouse internet is unreliable
   - Some Sharehouses charge an additional office fee if you WFH
 
-#### Short term 1R/K rental
+#### Short Term 1R/K rental
 - A furnished rental, basically corporate housing
 - Central Tokyo
   - Example Property: 
