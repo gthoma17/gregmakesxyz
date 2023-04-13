@@ -36,4 +36,11 @@
       </aside>
     {{ end }}
   </div>
+  {{ with .Site.Author.url }}
+  <small style="display:none;">
+    Federated by <a class="u-bridgy-fed" href="https://fed.brid.gy/user/{{ . }}">
+      fed.brid.gy
+    </a>
+  </small>
+  {{ end }}
 </article>
