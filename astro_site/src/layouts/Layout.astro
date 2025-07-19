@@ -1,0 +1,108 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const siteTitle = "Greg Thomas";
+const siteSubtitle = "Technologist & Solution Finder";
+const siteDescription = "The personal website of Greg Thomas, Technologist & Solution Finder.";
+const author = "Greg Thomas";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content={description || siteDescription} />
+    <meta name="author" content={author} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
+    
+    <link rel="canonical" href={Astro.url} />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title={siteTitle} href="/rss.xml" />
+    <link rel="stylesheet" href="/styles/site.css" />
+    
+    <!-- Webmentions -->
+    <link rel="webmention" href="https://gregmakes.xyz/linkback/webmention" />
+    <link rel="pingback" href="https://gregmakes.xyz/linkback/pingback" />
+    
+    <!-- Open Graph / Twitter Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title || siteTitle} />
+    <meta property="og:description" content={description || siteDescription} />
+    <meta property="og:site_name" content={siteTitle} />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title || siteTitle} />
+    <meta name="twitter:description" content={description || siteDescription} />
+  </head>
+  <body>
+    <nav>
+      <a href="/">
+        <h1>{siteTitle}</h1>
+        <h2>{siteSubtitle}</h2>
+      </a>
+      
+      <menu>
+        <li title="Posts">
+          <a href="/posts/">Posts</a>
+        </li>
+        <li title="Notes">
+          <a href="/notes">Notes</a>
+        </li>
+        <li title="Résumé">
+          <a href="/documents/resume/">Résumé</a>
+        </li>
+      </menu>
+    </nav>
+    
+    <hr />
+    
+    <main>
+      <slot />
+    </main>
+    
+    <hr />
+    
+    <footer>
+      <div class="author-bio">
+        <img src="/images/profile-pic.jpg" alt="Greg Thomas" />
+        <p>
+          <strong>{author}</strong><br />
+          {siteSubtitle}
+        </p>
+      </div>
+      
+      <menu>
+        <li>
+          <a href="https://github.com/gthoma17" rel="me">Github</a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/gatlp9">Linkedin</a>
+        </li>
+        <li>
+          <a href="/rss.xml">RSS</a>
+        </li>
+        <li>
+          <a href="/sitemap-index.xml">Sitemap</a>
+        </li>
+        <li>
+          <a href="/privacy_policy/">Privacy Policy</a>
+        </li>
+      </menu>
+    </footer>
+    
+    <hr />
+    
+    <span>
+      {author} &copy; {new Date().getFullYear()}
+    </span>
+  </body>
+</html>

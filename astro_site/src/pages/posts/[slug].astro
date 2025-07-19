@@ -1,0 +1,69 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <article class="post h-entry">
+    <header>
+      <h1 class="p-name">{post.data.title}</h1>
+      <time class="dt-published" datetime={post.data.date.toISOString()}>
+        {post.data.date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </time>
+      
+      {(post.data.tags || post.data.categories || post.data.series) && (
+        <div class="post-meta">
+          {post.data.categories && (
+            <div class="categories">
+              <strong>Categories:</strong>
+              {post.data.categories.map((category) => (
+                <span class="p-category">{category}</span>
+              ))}
+            </div>
+          )}
+          
+          {post.data.series && (
+            <div class="series">
+              <strong>Series:</strong>
+              {post.data.series.map((serie) => (
+                <span class="p-category">{serie}</span>
+              ))}
+            </div>
+          )}
+          
+          {post.data.tags && (
+            <div class="tags">
+              <strong>Tags:</strong>
+              {post.data.tags.map((tag) => (
+                <span class="p-category">{tag}</span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+    </header>
+    
+    <div class="e-content">
+      <Content />
+    </div>
+  </article>
+</Layout>

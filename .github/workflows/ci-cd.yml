@@ -7,16 +7,20 @@ jobs:
   Deploy-Site:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          extended: true
-          hugo-version: "0.84.3"
-
       - name: Check out Repository
         uses: actions/checkout@v3
         with:
           submodules: "true"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'astro_site/package-lock.json'
+
+      - name: Install dependencies
+        run: cd astro_site && npm ci
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2

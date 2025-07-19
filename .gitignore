@@ -77,3 +77,7 @@ secrets.env
 .hugo_build.lock
 package.json
 package-lock.json
+
+# Astro stuff
+astro_site/dist/
+astro_site/.astro/

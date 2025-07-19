@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const notes = await getCollection('notes', ({ data }) => {
+  return !data.draft;
+});
+
+// Sort notes by date, newest first
+notes.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Notes">
+  <h1>Notes</h1>
+  
+  <div class="notes-list">
+    {notes.map((note) => (
+      <article class="note-summary">
+        {note.data.title && (
+          <h2>
+            <a href={`/notes/${note.slug}/`}>{note.data.title}</a>
+          </h2>
+        )}
+        <time datetime={note.data.date.toISOString()}>
+          {note.data.date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          })}
+        </time>
+        {note.data.tags && (
+          <div class="tags">
+            {note.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </article>
+    ))}
+  </div>
+</Layout>
