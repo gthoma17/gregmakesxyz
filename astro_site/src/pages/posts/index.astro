@@ -12,9 +12,12 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 // Create summaries from post content (first paragraph or ~150 words)
 const postsWithSummaries = await Promise.all(
   posts.map(async (post) => {
-    // Get the raw content and extract first paragraph or ~150 words as summary
+    // Render the post to get the HTML content
+    const { Content } = await post.render();
+    
+    // Get the raw content and extract first paragraph
     const content = post.body;
-    let summary = '';
+    let summaryMarkdown = '';
     
     // Split by double newlines to get paragraphs
     const paragraphs = content.split('\n\n');
@@ -25,15 +28,22 @@ const postsWithSummaries = await Promise.all(
     );
     
     if (firstContentParagraph) {
-      summary = firstContentParagraph.trim();
+      summaryMarkdown = firstContentParagraph.trim();
     } else {
       // Fallback: take first ~150 words
       const words = content.replace(/^---[\s\S]*?---/, '').trim().split(/\s+/);
-      summary = words.slice(0, 150).join(' ');
+      summaryMarkdown = words.slice(0, 150).join(' ');
       if (words.length > 150) {
-        summary += '...';
+        summaryMarkdown += '...';
       }
     }
+    
+    // Simple markdown to HTML conversion for basic cases
+    let summary = summaryMarkdown
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>') // [text](url)
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') // **bold**
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>') // *italic*
+      .replace(/`([^`]+)`/g, '<code>$1</code>'); // `code`
     
     return { post, summary };
   })
