@@ -1,0 +1,105 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('posts', ({ data }) => {
+  return !data.draft;
+});
+
+// Sort posts by date, newest first
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Create summaries from post content (first paragraph or ~150 words)
+const postsWithSummaries = await Promise.all(
+  posts.map(async (post) => {
+    // Render the post to get the HTML content
+    const { Content } = await post.render();
+    
+    // Get the raw content and extract first paragraph
+    const content = post.body;
+    let summaryMarkdown = '';
+    
+    // Split by double newlines to get paragraphs
+    const paragraphs = content.split('\n\n');
+    const firstContentParagraph = paragraphs.find(p => 
+      p.trim() && 
+      !p.startsWith('---') && 
+      !p.startsWith('import ')
+    );
+    
+    if (firstContentParagraph) {
+      summaryMarkdown = firstContentParagraph.trim();
+    } else {
+      // Fallback: take first ~150 words
+      const words = content.replace(/^---[\s\S]*?---/, '').trim().split(/\s+/);
+      summaryMarkdown = words.slice(0, 150).join(' ');
+      if (words.length > 150) {
+        summaryMarkdown += '...';
+      }
+    }
+    
+    // Simple markdown to HTML conversion for basic cases
+    let summary = summaryMarkdown
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>') // [text](url)
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') // **bold**
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>') // *italic*
+      .replace(/`([^`]+)`/g, '<code>$1</code>'); // `code`
+    
+    return { post, summary };
+  })
+);
+---
+
+<Layout title="Posts">
+  <h1>Posts</h1>
+  
+  <ul class="h-feed list">
+    {postsWithSummaries.map(({ post, summary }, index) => (
+      <li>
+        <article class="h-entry">
+          <header 
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: center;
+              align-self: flex-start;
+              font-size: small;
+            "
+          >
+            <a 
+              class="p-name"
+              href={`/posts/${post.slug}/`}
+              style="font-size: 1.5rem;"
+            >
+              {post.data.title}
+            </a>
+            <small>
+              <span>Published by </span>
+              <a class="p-author h-card" href="https://gregmakes.xyz">
+                Greg
+              </a>
+              <span> on </span>
+              <time 
+                datetime={post.data.date.toISOString()}
+                class="dt-published"
+              >
+                {post.data.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                })}
+              </time>
+            </small>
+          </header>
+          <main>
+            <div class="e-content">
+              <p set:html={summary} />
+            </div>
+          </main>
+        </article>
+        {index < postsWithSummaries.length - 1 && <hr />}
+      </li>
+    ))}
+  </ul>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Privacy Policy">
+  <h1>This website respects your privacy</h1>
+  
+  <p>This website is an experiment to see how feature-full a static website which performs no tracking and respects user's choice to not run Javascript can be.</p>
+  
+  <h3>Logs and Analytics</h3>
+  
+  <p>The only usage data this website collects is in the form of Apache <a href="https://httpd.apache.org/docs/2.4/logs.html#accesslog">Access Logs</a> and <a href="https://httpd.apache.org/docs/2.4/logs.html#errorlog">Error Logs</a>. These logs <strong>cannot</strong> be trivially tied directly back to individuals.</p>
+  
+  <p>As of this writing the logs are automatically rotated monthly.</p>
+  
+  <p>The logs are used for creating an AWStats analytics dashboard which is available to the public here: <a href="https://gregmakes.xyz/analytics/">https://gregmakes.xyz/analytics/</a></p>
+  
+  <h3>Mentions and Federation</h3>
+  
+  <p>This website supports webmentions and pingbacks (mentions).</p>
+  
+  <p>If you send a webmention or pingback to this site then the webmention server (<a href="https://git.brainbaking.com/wgroeneveld/go-jamming">go-jamming</a>) will download the source page, parse it for the mention and store it in the mentions database for inclusion in the next build.</p>
+  
+  <h1>This website is hosted by folks who respect your privacy</h1>
+  
+  <p>This website utilizes shared hosting from <a href="https://www.nearlyfreespeech.net">Nearly Free Speech</a> which may or may not collect further usage data.</p>
+  
+  <p>They are a privacy respecting web host. You can find info about how they approach privacy <a href="https://www.nearlyfreespeech.net/about/privacy">here</a></p>
+</Layout>

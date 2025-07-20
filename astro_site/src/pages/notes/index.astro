@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const notes = await getCollection('notes', ({ data }) => {
+  return !data.draft;
+});
+
+// Sort notes by date, newest first
+notes.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Render all note content
+const notesWithContent = await Promise.all(
+  notes.map(async (note) => {
+    const { Content } = await note.render();
+    return { note, Content };
+  })
+);
+---
+
+<Layout title="Notes">
+  <h1>Notes</h1>
+  
+  <ul class="h-feed note-list">
+    {notesWithContent.map(({ note, Content }, index) => (
+      <li>
+        <article class="h-entry">
+          <div class="h-card">
+            <img 
+              alt="a profile picture of Greg Thomas"
+              class="u-photo"
+              src="/images/wpap-profile-pic.gif" 
+            />
+            <div style="display: none">
+              <p class="p-name">Greg Thomas</p>
+              <p class="p-nickname">Greg</p>
+            </div>
+          </div>
+          <div> 
+            <header>
+              <a class="p-author h-card" href="https://gregmakes.xyz">
+                Greg
+              </a>
+              <time 
+                datetime={note.data.date.toISOString()}
+                class="dt-published"
+              >
+                {new Intl.DateTimeFormat('en-US', {
+                  year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit',
+                  hour: 'numeric',
+                  minute: '2-digit',
+                  hour12: true,
+                  timeZone: 'America/Denver'
+                }).format(note.data.date).replace(/(\d+)\/(\d+)\/(\d+), (.+)/, '$3-$1-$2@$4').toLowerCase()}
+              </time>
+            </header>
+            <main>
+              <div class="e-content">
+                <Content />
+              </div>
+            </main>
+          </div>
+          <small style="display:none;">
+            Federated by <a class="u-bridgy-fed" href="https://fed.brid.gy/user/gregmakes.xyz">
+              fed.brid.gy
+            </a>
+          </small>
+        </article>
+        <a style="margin-left: 1rem" href={`/notes/${note.slug}/`}><small>Permalink</small></a>
+        {index < notesWithContent.length - 1 && <hr />}
+      </li>
+    ))}
+  </ul>
+</Layout>

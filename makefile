@@ -13,18 +13,11 @@ publish:
 		--recursive \
 		--exclude analytics/ \
 		--exclude .nfsn-awicons/ \
-		public/ \
+		astro_site/dist/ \
 		gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/public
 
 build: get-webmentions
-	hugo \
-		--source="hugo_site/" \
-		--destination="../public/" \
-		--buildDrafts=false \
-		--cleanDestinationDir=true \
-		--debug=true \
-		--gc=true \
-		--verbose=true
+	cd astro_site && npm run build
 
 get-webmentions:
 	python scripts/getWebmentions.py 
@@ -56,12 +49,4 @@ bootstrap-analytics:
 	echo "👍"
 
 serve: 
-	hugo serve \
-		--source="hugo_site/" \
-		--buildDrafts=true
-
-note:
-	hugo --source hugo_site new --kind=notes notes/`date +'%Y/%m/%d/%H:%M'`
-
-post:
-	hugo --source hugo_site new --kind=posts posts/new
+	cd astro_site && npm run dev

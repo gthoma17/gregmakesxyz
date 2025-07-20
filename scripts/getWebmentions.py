@@ -6,7 +6,7 @@ import itertools
 from urllib.request import urlopen
 from urllib.parse import urlparse
 
-CONTENT_PATH_ROOT = "hugo_site/content"
+CONTENT_PATH_ROOT = "astro_site/src/content"
 
 def main():
 
@@ -47,8 +47,39 @@ def process_webmention(webmention, webmention_domain):
 
 def write_webmentions_to_content_path(relative_url, webmention):
   content_path = CONTENT_PATH_ROOT + relative_url
+  
+  # Handle Hugo-style index.md files in folders
   if os.path.isfile(content_path+"index.md"):
     write_webmentions_to_file(webmention, content_path)
+    return
+  
+  # Handle Astro-style flattened .md files
+  # Convert /posts/backinbusiness/ to /posts/BackInBusiness.md
+  if relative_url.startswith("/posts/") and relative_url.endswith("/"):
+    slug = relative_url[7:-1]  # Remove "/posts/" and trailing "/"
+    # Try to find matching post file (case insensitive)
+    posts_dir = CONTENT_PATH_ROOT + "/posts"
+    if os.path.isdir(posts_dir):
+      for filename in os.listdir(posts_dir):
+        if filename.lower().replace('.md', '') == slug.lower():
+          file_path = posts_dir + "/" + filename
+          webmentions_path = posts_dir + "/" + filename.replace('.md', '') + "-webmentions.json"
+          with open(webmentions_path, "w") as outfile:
+            json.dump(webmention, outfile)
+          return
+  
+  # Handle notes similarly
+  if relative_url.startswith("/notes/") and relative_url.endswith("/"):
+    slug = relative_url[7:-1]  # Remove "/notes/" and trailing "/"
+    notes_dir = CONTENT_PATH_ROOT + "/notes"
+    if os.path.isdir(notes_dir):
+      for filename in os.listdir(notes_dir):
+        if filename.lower().replace('.md', '') == slug.lower():
+          file_path = notes_dir + "/" + filename
+          webmentions_path = notes_dir + "/" + filename.replace('.md', '') + "-webmentions.json"
+          with open(webmentions_path, "w") as outfile:
+            json.dump(webmention, outfile)
+          return
 
 
 def write_webmentions_to_file(output, path):

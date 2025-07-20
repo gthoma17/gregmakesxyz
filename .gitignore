@@ -71,9 +71,12 @@ node_modules/
 # Hugo stuff
 hugo_site/resources/_gen/
 hugo_site/public/
-public/
 secrets.env
 *.with_secrets.*
 .hugo_build.lock
 package.json
 package-lock.json
+
+# Astro stuff
+astro_site/dist/
+astro_site/.astro/

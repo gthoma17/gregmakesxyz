@@ -1,0 +1,73 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes.map((note) => ({
+    params: { slug: note.slug },
+    props: { note },
+  }));
+}
+
+interface Props {
+  note: CollectionEntry<'notes'>;
+}
+
+const { note } = Astro.props;
+const { Content } = await note.render();
+---
+
+<Layout title={note.data.title || 'Note'}>
+  <div class="note-list">
+    <article class="h-entry">
+      <div class="h-card">
+        <img 
+          alt="a profile picture of Greg Thomas"
+          class="u-photo"
+          src="/images/wpap-profile-pic.gif" 
+        />
+        <div style="display: none">
+          <p class="p-name">Greg Thomas</p>
+          <p class="p-nickname">Greg</p>
+        </div>
+      </div>
+      <div> 
+        <header>
+          <a class="p-author h-card" href="https://gregmakes.xyz">
+            Greg
+          </a>
+          <time 
+            datetime={note.data.date.toISOString()}
+            class="dt-published"
+          >
+            {new Intl.DateTimeFormat('en-US', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+              hour: 'numeric',
+              minute: '2-digit',
+              hour12: true,
+              timeZone: 'America/Denver'
+            }).format(note.data.date).replace(/(\d+)\/(\d+)\/(\d+), (.+)/, '$3-$1-$2@$4').toLowerCase()}
+          </time>
+        </header>
+        <main>
+          {note.data.title && (
+            <span class="p-name">
+              {note.data.title}
+            </span>
+          )}
+          <div class="e-content">
+            <Content />
+          </div>
+        </main>
+      </div>
+      <small style="display:none;">
+        Federated by <a class="u-bridgy-fed" href="https://fed.brid.gy/user/gregmakes.xyz">
+          fed.brid.gy
+        </a>
+      </small>
+    </article>
+  </div>
+</Layout>
