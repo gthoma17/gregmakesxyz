@@ -12,10 +12,11 @@ CONTENT_PATH_ROOT = "astro_site/src/content"
 def main():
 
   webmention_url = os.getenv("WEBMENTIONS_URL")
-  webmention_domain = urlparse(webmention_url).netloc
   if webmention_url == None:
-    print("Webmentions url invalid, failing...")
-    sys.exit(1) 
+    print("WEBMENTIONS_URL environment variable not set, skipping webmentions...")
+    sys.exit(0) 
+  
+  webmention_domain = urlparse(webmention_url).netloc 
 
   raw_webmentions = get_raw_webmentions(webmention_url)
 
@@ -38,8 +39,8 @@ def get_raw_webmentions(webmentions_url):
     return json.loads(raw_response)["json"]
   except:
     traceback.print_exc()
-    print("\n\n encountered the above error while retrieving webmentions. Failing...")
-    sys.exit(1) 
+    print("\n\n encountered the above error while retrieving webmentions. Continuing without webmentions...")
+    return [] 
 
 def process_webmention(webmention, webmention_domain):
   webmention["relative_url"] = webmention["target"].split(webmention_domain,1)[1]
