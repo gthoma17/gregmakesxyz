@@ -9,11 +9,33 @@ const posts = await getCollection('posts', ({ data }) => {
 // Sort posts by date, newest first
 posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-// Render all post content for summaries
-const postsWithContent = await Promise.all(
+// Create summaries from post content (first paragraph or ~150 words)
+const postsWithSummaries = await Promise.all(
   posts.map(async (post) => {
-    const { Content } = await post.render();
-    return { post, Content };
+    // Get the raw content and extract first paragraph or ~150 words as summary
+    const content = post.body;
+    let summary = '';
+    
+    // Split by double newlines to get paragraphs
+    const paragraphs = content.split('\n\n');
+    const firstContentParagraph = paragraphs.find(p => 
+      p.trim() && 
+      !p.startsWith('---') && 
+      !p.startsWith('import ')
+    );
+    
+    if (firstContentParagraph) {
+      summary = firstContentParagraph.trim();
+    } else {
+      // Fallback: take first ~150 words
+      const words = content.replace(/^---[\s\S]*?---/, '').trim().split(/\s+/);
+      summary = words.slice(0, 150).join(' ');
+      if (words.length > 150) {
+        summary += '...';
+      }
+    }
+    
+    return { post, summary };
   })
 );
 ---
@@ -22,7 +44,7 @@ const postsWithContent = await Promise.all(
   <h1>Posts</h1>
   
   <ul class="h-feed list">
-    {postsWithContent.map(({ post, Content }, index) => (
+    {postsWithSummaries.map(({ post, summary }, index) => (
       <li>
         <article class="h-entry">
           <header 
@@ -62,11 +84,11 @@ const postsWithContent = await Promise.all(
           </header>
           <main>
             <div class="e-content">
-              <Content />
+              <p set:html={summary} />
             </div>
           </main>
         </article>
-        {index < postsWithContent.length - 1 && <hr />}
+        {index < postsWithSummaries.length - 1 && <hr />}
       </li>
     ))}
   </ul>
