@@ -50,25 +50,3 @@ bootstrap-analytics:
 
 serve: 
 	cd astro_site && npm run dev
-
-note:
-	cd astro_site && echo "Notes need to be created manually in src/content/notes/"
-
-post:
-	cd astro_site && echo "Posts need to be created manually in src/content/posts/"
-
-# Legacy Hugo commands (kept for reference)
-hugo-build:
-	hugo \
-		--source="hugo_site/" \
-		--destination="../public/" \
-		--buildDrafts=false \
-		--cleanDestinationDir=true \
-		--debug=true \
-		--gc=true \
-		--verbose=true
-
-hugo-serve: 
-	hugo serve \
-		--source="hugo_site/" \
-		--buildDrafts=true
