@@ -1,9 +1,9 @@
-@import 'navbar';
-@import 'footer';
-@import 'menu-common';
-@import 'notes';
-@import 'list';
-@import 'single';
+@use 'navbar';
+@use 'footer';
+@use 'menu-common';
+@use 'notes';
+@use 'list';
+@use 'single';
 
 @media (prefers-color-scheme: dark) {
   body {
