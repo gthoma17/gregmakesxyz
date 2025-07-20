@@ -13,31 +13,60 @@ notes.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 <Layout title="Notes">
   <h1>Notes</h1>
   
-  <div class="notes-list">
-    {notes.map((note) => (
-      <article class="note-summary">
-        {note.data.title && (
-          <h2>
-            <a href={`/notes/${note.slug}/`}>{note.data.title}</a>
-          </h2>
-        )}
-        <time datetime={note.data.date.toISOString()}>
-          {note.data.date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-          })}
-        </time>
-        {note.data.tags && (
-          <div class="tags">
-            {note.data.tags.map((tag) => (
-              <span class="tag">{tag}</span>
-            ))}
+  <ul class="h-feed note-list">
+    {notes.map((note, index) => (
+      <li>
+        <article class="h-entry">
+          <div class="h-card">
+            <img 
+              alt="a profile picture of Greg Thomas"
+              class="u-photo"
+              src="/images/wpap-profile-pic.gif" 
+            />
+            <div style="display: none">
+              <p class="p-name">Greg Thomas</p>
+              <p class="p-nickname">Greg</p>
+            </div>
           </div>
-        )}
-      </article>
+          <div> 
+            <header>
+              <a class="p-author h-card" href="gregmakes.xyz">
+                Greg
+              </a>
+              <span>&nbsp;·&nbsp;</span>
+              <time 
+                datetime={note.data.date.toISOString()}
+                class="dt-published"
+              >
+                {note.data.date.toLocaleDateString('en-US', {
+                  year: '2-digit',
+                  month: 'short',
+                  day: '2-digit',
+                  hour: '2-digit',
+                  minute: '2-digit'
+                })}
+              </time>
+            </header>
+            <main>
+              {note.data.title && (
+                <span class="p-name">
+                  {note.data.title}
+                </span>
+              )}
+              <div class="e-content">
+                <p><a href={`/notes/${note.slug}/`}>{note.data.title || note.slug}</a></p>
+              </div>
+            </main>
+          </div>
+          <small style="display:none;">
+            Federated by <a class="u-bridgy-fed" href="https://fed.brid.gy/user/gregmakes.xyz">
+              fed.brid.gy
+            </a>
+          </small>
+        </article>
+        <a style="margin-left: 1rem" href={`/notes/${note.slug}/`}><small>Permalink</small></a>
+        {index < notes.length - 1 && <hr />}
+      </li>
     ))}
-  </div>
+  </ul>
 </Layout>

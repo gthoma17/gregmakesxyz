@@ -19,31 +19,54 @@ const { Content } = await note.render();
 ---
 
 <Layout title={note.data.title || 'Note'}>
-  <article class="note h-entry">
-    <header>
-      {note.data.title && <h1 class="p-name">{note.data.title}</h1>}
-      <time class="dt-published" datetime={note.data.date.toISOString()}>
-        {note.data.date.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit'
-        })}
-      </time>
-      
-      {note.data.tags && (
-        <div class="tags">
-          <strong>Tags:</strong>
-          {note.data.tags.map((tag) => (
-            <span class="p-category">{tag}</span>
-          ))}
+  <div class="note-list">
+    <article class="h-entry">
+      <div class="h-card">
+        <img 
+          alt="a profile picture of Greg Thomas"
+          class="u-photo"
+          src="/images/wpap-profile-pic.gif" 
+        />
+        <div style="display: none">
+          <p class="p-name">Greg Thomas</p>
+          <p class="p-nickname">Greg</p>
         </div>
-      )}
-    </header>
-    
-    <div class="e-content">
-      <Content />
-    </div>
-  </article>
+      </div>
+      <div> 
+        <header>
+          <a class="p-author h-card" href="gregmakes.xyz">
+            Greg
+          </a>
+          <span>&nbsp;·&nbsp;</span>
+          <time 
+            datetime={note.data.date.toISOString()}
+            class="dt-published"
+          >
+            {note.data.date.toLocaleDateString('en-US', {
+              year: '2-digit',
+              month: 'short',
+              day: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit'
+            })}
+          </time>
+        </header>
+        <main>
+          {note.data.title && (
+            <span class="p-name">
+              {note.data.title}
+            </span>
+          )}
+          <div class="e-content">
+            <Content />
+          </div>
+        </main>
+      </div>
+      <small style="display:none;">
+        Federated by <a class="u-bridgy-fed" href="https://fed.brid.gy/user/gregmakes.xyz">
+          fed.brid.gy
+        </a>
+      </small>
+    </article>
+  </div>
 </Layout>

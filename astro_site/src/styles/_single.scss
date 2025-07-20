@@ -1,0 +1,41 @@
+@media (prefers-color-scheme: dark) {
+	.single a:visited{
+		color: #D0ADF0;
+  	}
+  	.single a {
+  		color: #9da0f8;
+  	}
+}
+
+.single {
+	margin: 1rem 1rem 0 1rem;
+	display: flex;
+	flex-direction: row;
+
+	:has(> .u-bridgy-fed){
+		background-color: rgba(255, 255, 255, 0.3);
+		padding: 0.5rem;
+		width: fit-content;
+		border-radius: 1rem;
+	}
+
+	div {
+		margin-left: 1rem;
+		display: flex;
+		flex-direction: column;
+
+		header {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			align-self: flex-start;
+			font-size: small;
+
+			.p-name {
+				margin: 0.25rem 0.25rem 0.25rem 0;
+				font-size: 2rem;
+			}
+		}
+	}
+}

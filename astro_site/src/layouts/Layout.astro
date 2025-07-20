@@ -1,4 +1,6 @@
 ---
+import '../styles/main.scss';
+
 export interface Props {
   title?: string;
   description?: string;
@@ -26,7 +28,6 @@ const author = "Greg Thomas";
     <link rel="canonical" href={Astro.url} />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="alternate" type="application/rss+xml" title={siteTitle} href="/rss.xml" />
-    <link rel="stylesheet" href="/styles/site.css" />
     
     <!-- Webmentions -->
     <link rel="webmention" href="https://gregmakes.xyz/linkback/webmention" />
@@ -72,12 +73,32 @@ const author = "Greg Thomas";
     <hr />
     
     <footer>
-      <div class="author-bio">
-        <img src="/images/profile-pic.jpg" alt="Greg Thomas" />
-        <p>
-          <strong>{author}</strong><br />
-          {siteSubtitle}
-        </p>
+      <div class="h-card">
+        <img 
+          class="u-photo"
+          style="
+            flex: none;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+          "
+          alt="a profile picture of Greg Thomas"
+          src="/images/profile-pic.jpg" 
+        />
+        <div>
+          <p class="p-name">{author}</p>
+          <p class="p-nickname">Greg</p>
+          <p class="p-adr h-adr">
+            <span class="p-locality">Denver</span><br />
+            <span class="p-region">Colorado</span>
+            <span class="p-country-name">USA</span>
+          </p>
+          <a class="u-url" rel="me" href="gregmakes.xyz">homepage</a>
+          <a class="u-email" href="mailto:Greg@GregMakes.xyz">Greg@GregMakes.xyz</a>
+          <time class="dt-bday">20 Mar 1993</time>
+          <p class="p-gender-identity">non-binary</p>
+        </div>
       </div>
       
       <menu>

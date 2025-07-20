@@ -1,0 +1,43 @@
+
+@media (prefers-color-scheme: dark) {
+	nav a:visited{
+		color: #D0ADF0;
+  	}
+  	nav a {
+  		color: #9da0f8;
+  	}
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+
+	menu {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+
+		li a {
+			padding: 0.75rem 0.75rem 0 0.75rem;
+			margin: 0
+		}
+	}
+
+	a {
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		margin-right: 2.5rem;
+
+		h1 {
+			font-size: 24px;
+			margin: 0.125rem 0;
+		}
+
+		h2 {
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+}
+	

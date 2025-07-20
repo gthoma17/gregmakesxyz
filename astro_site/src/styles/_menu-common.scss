@@ -1,0 +1,17 @@
+@media (prefers-color-scheme: dark) {
+	menu li a:hover {
+		background-color: #25242e;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	menu li a:hover {
+		background-color: #F2F0FF;
+	}
+}
+
+menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

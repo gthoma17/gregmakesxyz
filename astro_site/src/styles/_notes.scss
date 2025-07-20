@@ -1,0 +1,54 @@
+@media (prefers-color-scheme: dark) {
+	.note-list a:visited{
+		color: #D0ADF0;
+  	}
+  	.note-list a {
+  		color: #9da0f8;
+  	}
+}
+
+.note-list {
+	list-style: none;
+
+	hr {
+		border-top: 1px dashed;
+	}
+
+	.h-entry {
+		margin: 1rem 1rem 0 1rem;
+	    display: flex;
+	    flex-direction: row;
+
+	    img {
+			flex: none;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			object-fit: cover;
+	    }
+
+	    div {
+			margin-left: 1rem;
+			display: flex;
+			flex-direction: column;
+
+			header {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				align-self: flex-start;
+				font-size: small;
+			}
+	    }
+
+	    aside {
+	    	padding-top: 1rem;
+	    	border-top: 1px solid grey;
+
+	    	a {
+	    		font-size: 0.75rem;
+	    	}
+	    }
+	}
+}

@@ -19,51 +19,35 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  <article class="post h-entry">
-    <header>
-      <h1 class="p-name">{post.data.title}</h1>
-      <time class="dt-published" datetime={post.data.date.toISOString()}>
-        {post.data.date.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        })}
-      </time>
-      
-      {(post.data.tags || post.data.categories || post.data.series) && (
-        <div class="post-meta">
-          {post.data.categories && (
-            <div class="categories">
-              <strong>Categories:</strong>
-              {post.data.categories.map((category) => (
-                <span class="p-category">{category}</span>
-              ))}
-            </div>
-          )}
-          
-          {post.data.series && (
-            <div class="series">
-              <strong>Series:</strong>
-              {post.data.series.map((serie) => (
-                <span class="p-category">{serie}</span>
-              ))}
-            </div>
-          )}
-          
-          {post.data.tags && (
-            <div class="tags">
-              <strong>Tags:</strong>
-              {post.data.tags.map((tag) => (
-                <span class="p-category">{tag}</span>
-              ))}
-            </div>
-          )}
+  <article class="h-entry single">
+    <div> 
+      <header>
+        <h1 class="p-name">
+          {post.data.title}
+        </h1>
+        <small>
+          <span>Published by </span>
+          <a class="p-author h-card" href="gregmakes.xyz">
+            Greg
+          </a>
+          <span> on </span>
+          <time 
+            datetime={post.data.date.toISOString()}
+            class="dt-published"
+          >
+            {post.data.date.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short', 
+              day: 'numeric'
+            })}
+          </time>
+        </small>
+      </header>
+      <main>
+        <div class="e-content">
+          <Content />
         </div>
-      )}
-    </header>
-    
-    <div class="e-content">
-      <Content />
+      </main>
     </div>
   </article>
 </Layout>
