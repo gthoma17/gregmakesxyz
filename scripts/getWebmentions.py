@@ -3,6 +3,7 @@ import sys
 import os
 import os.path
 import itertools
+import traceback
 from urllib.request import urlopen
 from urllib.parse import urlparse
 

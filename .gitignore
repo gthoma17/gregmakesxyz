@@ -80,3 +80,8 @@ package-lock.json
 # Astro stuff
 astro_site/dist/
 astro_site/.astro/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
