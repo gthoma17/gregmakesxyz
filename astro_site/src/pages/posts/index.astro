@@ -8,13 +8,21 @@ const posts = await getCollection('posts', ({ data }) => {
 
 // Sort posts by date, newest first
 posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Render all post content for summaries
+const postsWithContent = await Promise.all(
+  posts.map(async (post) => {
+    const { Content } = await post.render();
+    return { post, Content };
+  })
+);
 ---
 
 <Layout title="Posts">
   <h1>Posts</h1>
   
   <ul class="h-feed list">
-    {posts.map((post, index) => (
+    {postsWithContent.map(({ post, Content }, index) => (
       <li>
         <article class="h-entry">
           <header 
@@ -36,7 +44,7 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
             </a>
             <small>
               <span>Published by </span>
-              <a class="p-author h-card" href="gregmakes.xyz">
+              <a class="p-author h-card" href="https://gregmakes.xyz">
                 Greg
               </a>
               <span> on </span>
@@ -54,11 +62,11 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
           </header>
           <main>
             <div class="e-content">
-              {post.data.description || ''}
+              <Content />
             </div>
           </main>
         </article>
-        {index < posts.length - 1 && <hr />}
+        {index < postsWithContent.length - 1 && <hr />}
       </li>
     ))}
   </ul>

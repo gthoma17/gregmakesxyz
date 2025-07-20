@@ -5,6 +5,8 @@ draft: false
 showmeta: true
 ---
 
+import Federate from '../../components/Federate.astro';
+
 For a while I've been curious about the Fediverse, but haven't made the time to explore it.
 
 I'm going to try and add some Fediverse interoperability to this site and see where it takes me 😁
@@ -23,7 +25,7 @@ One thing that I appreciate about about Bridgy is that things are only bridged i
 
 I've decided to include a link for this in all my [/notes](notes), but I'm only going to share posts if I choose to. To that end I've made a shortcode called `{{ federate }}`, here's how it looks:
 
-{{< federate >}}
+<Federate />
 
 The downside to this is that much of my site's content will have ostensibly superfluous links in them. I'm fine with this compromise until I have the time & motivation to reconsider 😄
 
