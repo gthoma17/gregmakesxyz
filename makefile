@@ -14,7 +14,7 @@ publish:
 		--exclude analytics/ \
 		--exclude .nfsn-awicons/ \
 		astro_site/dist/ \
-		gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/public
+		$${SSH_HOST:-gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net}:/home/public
 
 build: get-webmentions
 	cd astro_site && npm run build

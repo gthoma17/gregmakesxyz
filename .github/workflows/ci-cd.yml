@@ -58,6 +58,7 @@ jobs:
         run: make deploy
         env:
           WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
 
       - name: Send Webmentions
         uses: satak/webrequest-action@master
