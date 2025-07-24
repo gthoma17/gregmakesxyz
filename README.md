@@ -16,11 +16,11 @@ npm run dev
 
 Notes support optimized markdown content including images using Astro's automatic image processing. To add images to notes:
 
-1. Store images in `/src/assets/images/notes/`
+1. Store images in `/src/notes/images/`
 2. Reference them in your note markdown using relative paths:
 
 ```markdown
-![alt text](../../assets/images/notes/filename.ext)
+![alt text](../../notes/images/filename.ext)
 ```
 
 3. Supported formats: PNG, JPG, SVG, GIF, WebP, AVIF
@@ -35,7 +35,7 @@ Notes can also include a featured image that displays prominently at the top of 
 ---
 title: My Note Title
 date: 2025-01-19T12:00:00-07:00
-featuredImage: "../../assets/images/notes/my-featured-image.jpg"
+featuredImage: "../../notes/images/my-featured-image.jpg"
 ---
 ```
 
