@@ -13,7 +13,7 @@ publish:
 		--compress \
 		--human-readable \
 		--progress \
-		--rsh="ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=~/.ssh/known_hosts" \
+		--rsh=ssh \
 		--delete \
 		--recursive \
 		--exclude analytics/ \
