@@ -12,6 +12,14 @@ npm install
 npm run dev
 ```
 
+### Notes
+
+Notes support markdown content including images. To add images to notes:
+
+1. Store images in `/public/images/notes/`
+2. Reference them in your note markdown using: `![alt text](/images/notes/filename.ext)`
+3. Supported formats: PNG, JPG, SVG, GIF
+
 ## Deployment
 
 The site is deployed using the makefile commands:

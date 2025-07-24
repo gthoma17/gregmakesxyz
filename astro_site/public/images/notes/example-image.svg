@@ -1,0 +1,6 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#E8F4FD"/>
+  <rect x="50" y="50" width="200" height="100" fill="#4A90E2" rx="10"/>
+  <text x="150" y="95" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">📷 Example Image</text>
+  <text x="150" y="115" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">For Notes</text>
+</svg>
