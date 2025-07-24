@@ -35,11 +35,18 @@ body {
 	font-size: 16px;
 	max-width: 960px;
   	margin: auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 
 	> hr:first-of-type {
 		margin-top: 0;
 	}
 	> hr:last-of-type {
 		margin-bottom: 0;
+	}
+
+	main {
+		flex-grow: 1;
 	}
 }	
