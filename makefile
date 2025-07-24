@@ -21,7 +21,8 @@ publish:
 		astro_site/dist/ \
 		$(SSH_HOST):/home/public
 
-build: get-webmentions
+# build: get-webmentions # disabled until I have time to debug
+build: 
 	cd astro_site && npm run build
 
 get-webmentions:
