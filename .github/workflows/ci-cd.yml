@@ -64,26 +64,26 @@ jobs:
           WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
 
-      - name: Send Webmentions
-        uses: satak/webrequest-action@master
-        with:
-          url: ${{ secrets.WEBMENTIONS_URL }}
-          method: PUT
+#      - name: Send Webmentions
+#        uses: satak/webrequest-action@master
+#        with:
+#          url: ${{ secrets.WEBMENTIONS_URL }}
+#          method: PUT
 
-      - name: Commit New Webmentions
-        env:
-          WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
-        run: |
-          sleep 1 # Give go-jamming a second to process new mentions
-          make get-webmentions
-          if [[ `git status --porcelain` ]]; then
-            git add **/webmentions.json
-            git status
-            git config user.name "GitHub Actions"
-            git config user.email "<>"
+#      - name: Commit New Webmentions
+#        env:
+#          WEBMENTIONS_URL: ${{ secrets.WEBMENTIONS_URL }}
+#        run: |
+#          sleep 1 # Give go-jamming a second to process new mentions
+#          make get-webmentions
+#          if [[ `git status --porcelain` ]]; then
+#            git add **/webmentions.json
+#            git status
+#            git config user.name "GitHub Actions"
+#            git config user.email "<>"
 
-            git commit -m "Save new webmentions"
-            git push origin main
-          fi
-          exit 0
-        shell: bash
+#            git commit -m "Save new webmentions"
+#            git push origin main
+#          fi
+#          exit 0
+#        shell: bash
