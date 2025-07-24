@@ -1,6 +1,6 @@
 # Set SSH_HOST default if it's not set or is empty
 ifeq ($(SSH_HOST),)
-SSH_HOST = SSH_HOSTNAME_MUST_BE_SET_IN_THE_ENVIRONMENT
+SSH_HOST = SSH_HOST_MUST_BE_SET_IN_THE_ENVIRONMENT
 endif
 
 deploy: build publish
