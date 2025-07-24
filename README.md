@@ -26,6 +26,20 @@ Notes support optimized markdown content including images using Astro's automati
 3. Supported formats: PNG, JPG, SVG, GIF, WebP, AVIF
 4. Images are automatically optimized and made responsive
 
+#### Featured Images
+
+Notes can also include a featured image that displays prominently at the top of the note. Add a `featuredImage` field to your note's frontmatter:
+
+```yaml
+---
+title: My Note Title
+date: 2025-01-19T12:00:00-07:00
+featuredImage: "../../assets/images/notes/my-featured-image.jpg"
+---
+```
+
+The featured image will be displayed above the note content on both the individual note page and in the notes list.
+
 ## Deployment
 
 The site is deployed using the makefile commands:

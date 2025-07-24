@@ -1,5 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
@@ -53,6 +54,18 @@ const { Content } = await note.render();
           </time>
         </header>
         <main>
+          {note.data.featuredImage && (
+            <div class="featured-image">
+              <Image 
+                src={note.data.featuredImage}
+                alt="Featured image for this note"
+                width={600}
+                height={400}
+                loading="eager"
+                style="width: 100%; height: auto; max-width: 600px; border-radius: 8px; margin-bottom: 1rem;"
+              />
+            </div>
+          )}
           {note.data.title && (
             <span class="p-name">
               {note.data.title}
