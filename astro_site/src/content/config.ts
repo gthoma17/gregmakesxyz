@@ -19,7 +19,7 @@ const notes = defineCollection({
     date: z.date(),
     draft: z.boolean().default(false),
     tags: z.array(z.string()).optional(),
-    featuredImage: image().optional(),
+    featuredImage: z.union([image(), z.null()]).optional().default(null),
   }),
 });
 
