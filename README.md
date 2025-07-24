@@ -25,6 +25,7 @@ Notes support optimized markdown content including images using Astro's automati
 
 3. Supported formats: PNG, JPG, SVG, GIF, WebP, AVIF
 4. Images are automatically optimized and made responsive
+5. **HEIC Support**: HEIC files from iPhone can be processed thanks to the underlying Sharp library with libheif support. While not explicitly listed as a supported format, HEIC files should work through content detection and will be automatically converted to web-optimized formats (WebP/AVIF)
 
 #### Featured Images
 
