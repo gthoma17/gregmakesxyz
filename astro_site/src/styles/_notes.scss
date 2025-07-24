@@ -19,12 +19,16 @@
 	    display: flex;
 	    flex-direction: row;
 
-	    img {
+	    .h-card img {
 			flex: none;
 			width: 60px;
 			height: 60px;
 			border-radius: 50%;
 			object-fit: cover;
+	    }
+
+	    .e-content img {
+			border-radius: 0;
 	    }
 
 	    div {
