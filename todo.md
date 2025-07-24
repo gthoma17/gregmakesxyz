@@ -1,3 +1,4 @@
+- fix web mentions 
 - open source the theme
 - theme test suite
 - Integrate webmentions into the templates in a way that looks nicer
