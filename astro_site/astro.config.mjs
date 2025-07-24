@@ -31,6 +31,6 @@ export default defineConfig({
     // Default responsive image widths
     widths: [320, 640, 768, 1024, 1280, 1600],
     // Default formats (HEIC files are processed through HEIF codec)
-    formats: ['webp', 'avif', 'png', 'jpg']
+    formats: ['webp', 'avif', 'png', 'jpg', 'heic']
   }
 });

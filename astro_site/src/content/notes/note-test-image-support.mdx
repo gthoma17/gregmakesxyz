@@ -3,10 +3,10 @@ type: notes
 date: 2025-01-19T12:00:00-07:00
 draft: false
 tags: ["feature", "images"]
-featuredImage: ../../notes/images/example-image.svg
+featuredImage: ./example-photo-iphone.jpg
 ---
 
-🎉 Notes now support optimized images! You can include pictures using Astro's Image component for better performance.
+🎉 Notes now support optimized images! You can include pictures using Astro's Image component for better performance, including HEIC files from your iPhone.
 
 ![Example Image demonstrating image support in notes](../../notes/images/example-image.svg)
 
@@ -14,12 +14,14 @@ Use Astro's optimized image processing by storing images in `/src/notes/images/`
 
 ## Featured Images
 
-You can also set a `featuredImage` in the frontmatter to display an image prominently at the top of your note:
+You can also set a `featuredImage` in the frontmatter to display an image prominently at the top of your note. Images from iPhone (including HEIC format) are fully supported:
 
 ```yaml
 ---
-featuredImage: ../../notes/images/example-image.svg
+featuredImage: ./example-photo-iphone.jpg
 ---
 ```
 
-The featured image should be stored in `/src/notes/images/` and referenced with a relative path from the note location.
+The featured image should be stored in the same directory as your note content (e.g., `/src/content/notes/`) for content collection images, or use relative paths to images in `/src/notes/images/` for markdown content. 
+
+**HEIC Support**: HEIC files from iPhone are supported through the underlying Sharp image processing library. For featured images in content collections, you may need to convert HEIC files to JPG/PNG format, but HEIC files work seamlessly in markdown content.

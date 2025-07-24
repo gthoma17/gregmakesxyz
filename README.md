@@ -25,19 +25,21 @@ Notes support optimized markdown content including images using Astro's automati
 
 3. Supported formats: PNG, JPG, SVG, GIF, WebP, AVIF
 4. Images are automatically optimized and made responsive
-5. **HEIC Support**: HEIC files from iPhone can be processed thanks to the underlying Sharp library with libheif support. While not explicitly listed as a supported format, HEIC files should work through content detection and will be automatically converted to web-optimized formats (WebP/AVIF)
+5. **HEIC Support**: HEIC files from iPhone are supported through the underlying Sharp library with libheif support. HEIC files work seamlessly in markdown content and will be automatically converted to web-optimized formats (WebP/AVIF)
 
 #### Featured Images
 
-Notes can also include a featured image that displays prominently at the top of the note. Add a `featuredImage` field to your note's frontmatter:
+Notes can include a featured image that displays prominently at the top of the note. For content collection notes, place the image file in the same directory as your note content (`/src/content/notes/`) and reference it in the frontmatter:
 
 ```yaml
 ---
 title: My Note Title
 date: 2025-01-19T12:00:00-07:00
-featuredImage: "../../notes/images/my-featured-image.jpg"
+featuredImage: "./my-featured-image.jpg"
 ---
 ```
+
+**Note**: For featured images in content collections, JPG/PNG formats are recommended. HEIC files work perfectly in markdown content but may need conversion for featured images in some cases.
 
 The featured image will be displayed above the note content on both the individual note page and in the notes list.
 
