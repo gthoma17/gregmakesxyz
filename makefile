@@ -1,3 +1,5 @@
+SSH_HOST ?= SSH_HOSTNAME_MUST_BE_SET_IN_THE_ENVIRONMENT
+
 deploy: build publish
 	echo "👍"
 
@@ -14,7 +16,7 @@ publish:
 		--exclude analytics/ \
 		--exclude .nfsn-awicons/ \
 		astro_site/dist/ \
-		gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/public
+		$(SSH_HOST):/home/public
 
 build: get-webmentions
 	cd astro_site && npm run build
@@ -28,23 +30,23 @@ bootstrap-analytics:
 		--compress \
 		--rsh=ssh \
 		nfsn_config/awstats.conf \
-		gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/tmp && \
+		$(SSH_HOST):/home/tmp && \
 		\
 	rsync \
 		--archive \
 		--compress \
 		--rsh=ssh \
 		nfsn_config/updateAnalytics.sh \
-		gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net:/home/protected && \
+		$(SSH_HOST):/home/protected && \
 		\
-	ssh -t gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net \
+	ssh -t $(SSH_HOST) \
 		mkdir /home/public/analytics && \
 		\
-	ssh -t gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net \
+	ssh -t $(SSH_HOST) \
 		"/usr/local/bin/nfsn add-cron updateAnalytics "/home/protected/updateAnalytics.sh" me ssh '?' '*' '*'" && \
-	ssh -t gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net \
+	ssh -t $(SSH_HOST) \
 		bash /home/protected/updateAnalytics.sh && \
-	ssh -t gatlp9_gregmakesxyz@ssh.phx.nearlyfreespeech.net \
+	ssh -t $(SSH_HOST) \
 		cp -r /usr/local/www/awstats/icon /home/public/.nfsn-awicons && \
 	echo "👍"
 
