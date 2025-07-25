@@ -23,9 +23,9 @@ Notes support optimized markdown content including images using Astro's automati
 ![alt text](./images/filename.ext)
 ```
 
-3. Supported formats: PNG, JPG, SVG, GIF, WebP, AVIF
+3. Supported formats: PNG, JPG, SVG, GIF, WebP, AVIF, HEIC
 4. Images are automatically optimized and made responsive
-5. **HEIC Support**: HEIC files from iPhone are supported through the underlying Sharp library with libheif support. HEIC files work seamlessly in markdown content and will be automatically converted to web-optimized formats (WebP/AVIF)
+5. **HEIC Support**: HEIC files from iPhone are fully supported with automatic conversion to WebP format during build time. Simply place HEIC files in the images directory and reference them normally - they will be converted to optimized WebP images automatically before the site builds.
 
 #### Featured Images
 
@@ -39,7 +39,7 @@ featuredImage: "./images/my-featured-image.jpg"
 ---
 ```
 
-**Note**: For featured images in content collections, JPG/PNG formats are recommended. HEIC files work perfectly in markdown content but may need conversion for featured images in some cases.
+**Note**: HEIC files are automatically converted to WebP format during build time, making them fully compatible with featured images and all web browsers.
 
 The featured image will be displayed above the note content on both the individual note page and in the notes list.
 
