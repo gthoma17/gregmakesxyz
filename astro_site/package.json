@@ -7,7 +7,10 @@
     "start": "node scripts/convert-heic.js && astro dev",
     "build": "node scripts/convert-heic.js && astro build",
     "preview": "node scripts/convert-heic.js && astro preview",
-    "astro": "node scripts/convert-heic.js && astro"
+    "astro": "node scripts/convert-heic.js && astro",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:microformats": "vitest run tests/microformats.test.js"
   },
   "author": "Greg Thomas",
   "license": "ISC",
@@ -19,7 +22,10 @@
     "astro": "^5.12.0"
   },
   "devDependencies": {
+    "microformats-parser": "^2.0.4",
+    "playwright": "^1.54.1",
     "sass": "^1.89.2",
-    "sharp": "^0.34.3"
+    "sharp": "^0.34.3",
+    "vitest": "^3.2.4"
   }
 }
