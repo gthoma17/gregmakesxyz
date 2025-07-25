@@ -14,11 +14,12 @@ const posts = defineCollection({
 
 const notes = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string().optional(),
     date: z.date(),
     draft: z.boolean().default(false),
     tags: z.array(z.string()).optional(),
+    featuredImage: z.union([image(), z.null()]).optional().default(null),
   }),
 });
 
