@@ -5,44 +5,137 @@
   	.note-list a {
   		color: #9da0f8;
   	}
+	
+	.note-list .h-entry {
+		background-color: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+	
+	.note-list .h-entry:hover {
+		background-color: rgba(255, 255, 255, 0.08);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.note-list .h-entry {
+		background-color: #ffffff;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	}
+	
+	.note-list .h-entry:hover {
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	}
 }
 
 .note-list {
 	list-style: none;
+	padding: 0;
+	max-width: 600px;
 
 	hr {
-		border-top: 1px dashed;
+		display: none; // Remove dividers since we have card styling now
 	}
 
 	.h-entry {
-		margin: 1rem 1rem 0 1rem;
+		margin: 1rem 0;
+		padding: 1.5rem;
+		border-radius: 12px;
+		transition: all 0.2s ease;
 	    display: flex;
 	    flex-direction: row;
+		gap: 12px;
 
 	    .h-card img {
 			flex: none;
-			width: 60px;
-			height: 60px;
+			width: 48px;
+			height: 48px;
 			border-radius: 50%;
 			object-fit: cover;
 	    }
 
 	    .e-content img {
-			border-radius: 0;
+			border-radius: 8px;
+			max-width: 100%;
+			height: auto;
 	    }
 
-	    div {
-			margin-left: 1rem;
+	    > div {
+			flex: 1;
 			display: flex;
 			flex-direction: column;
+			min-width: 0; // Allow content to shrink
 
 			header {
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-				justify-content: center;
-				align-self: flex-start;
-				font-size: small;
+				gap: 8px;
+				margin-bottom: 8px;
+				font-size: 14px;
+				font-weight: 500;
+				
+				a {
+					color: inherit;
+					text-decoration: none;
+					font-weight: 600;
+				}
+				
+				time {
+					color: #657786;
+					font-weight: 400;
+				}
+			}
+			
+			main {
+				.featured-image {
+					margin: 12px -1.5rem 16px -1.5rem; // Extend to card edges
+					
+					img {
+						width: 100%;
+						height: auto;
+						border-radius: 0;
+						display: block;
+					}
+				}
+				
+				.e-content {
+					font-size: 15px;
+					line-height: 1.5;
+					
+					p {
+						margin: 0 0 12px 0;
+						
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+					
+					img {
+						margin: 8px 0;
+					}
+					
+					h2 {
+						font-size: 18px;
+						margin: 16px 0 8px 0;
+						font-weight: 600;
+					}
+					
+					code {
+						background-color: rgba(0, 0, 0, 0.05);
+						padding: 2px 4px;
+						border-radius: 4px;
+						font-size: 13px;
+					}
+					
+					pre {
+						background-color: rgba(0, 0, 0, 0.05);
+						padding: 12px;
+						border-radius: 8px;
+						overflow-x: auto;
+						margin: 12px 0;
+					}
+				}
 			}
 	    }
 
@@ -54,5 +147,30 @@
 	    		font-size: 0.75rem;
 	    	}
 	    }
+	}
+	
+	// Permalink styling
+	> li > a {
+		display: inline-block;
+		margin: 8px 0 0 60px; // Align with content
+		font-size: 13px;
+		color: #657786;
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.note-list .e-content {
+		code {
+			background-color: rgba(255, 255, 255, 0.1);
+		}
+		
+		pre {
+			background-color: rgba(255, 255, 255, 0.1);
+		}
 	}
 }
