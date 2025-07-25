@@ -43,6 +43,61 @@ featuredImage: "./images/my-featured-image.jpg"
 
 The featured image will be displayed above the note content on both the individual note page and in the notes list.
 
+#### iPhone Shortcuts with Working Copy
+
+You can create iPhone shortcuts to add notes directly to your repository using the Working Copy app. This allows you to quickly create notes with optional featured images from your iPhone.
+
+**Prerequisites:**
+- [Working Copy](https://workingcopyapp.com/) app installed on your iPhone
+- Repository cloned in Working Copy
+- Basic understanding of iOS Shortcuts app
+
+**Setup Instructions:**
+
+1. **Clone your repository in Working Copy** if you haven't already
+2. **Create a new shortcut** in the iOS Shortcuts app
+3. **For notes with optional featured images**, use this workflow:
+
+```
+1. Ask for Input (Text) → "Note Title"
+2. Ask for Input (Text, Allow Multiline) → "Note Content" 
+3. Ask for Photos → "Select Featured Image (Optional)"
+4. Text Action → Generate frontmatter and content:
+   ---
+   type: notes
+   date: [Current Date in ISO format]
+   draft: false
+   featuredImage: [If photo selected: ./images/note-[timestamp].[ext]]
+   ---
+   
+   [Note Content]
+
+5. If Photo Selected:
+   - Working Copy Action → "Write to Repository"
+   - Repository: [Your Repo]
+   - Path: src/content/notes/images/note-[timestamp].[ext]
+   - Content: [Selected Photo]
+
+6. Working Copy Action → "Write to Repository"
+   - Repository: [Your Repo] 
+   - Path: src/content/notes/note-[timestamp].md
+   - Content: [Generated text from step 4]
+
+7. Working Copy Action → "Commit Repository"
+   - Repository: [Your Repo]
+   - Message: "Add note: [Note Title]"
+
+8. Working Copy Action → "Push Repository" (optional)
+```
+
+**For text-only notes** (simpler version), follow the pattern from [this article](https://www.marcogomiero.com/posts/2021/running-blog-ipad/) but adapt the file paths to use `src/content/notes/` and include the proper frontmatter format.
+
+**Tips:**
+- Use timestamp-based filenames to avoid conflicts: `note-YYYY-MM-DD-HH-mm-ss.md`
+- HEIC photos from iPhone are supported and will be automatically optimized
+- You can omit the `featuredImage` field entirely for text-only notes
+- Consider using shortcuts that prompt for tags if you want to categorize your notes
+
 ## Deployment
 
 The site is deployed using the makefile commands:
