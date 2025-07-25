@@ -62,7 +62,6 @@
 	    }
 
 	    > div {
-			width: 100%;
 			max-width: calc(100% - 60px); // Account for profile image + gap
 			display: flex;
 			flex-direction: column;
@@ -94,6 +93,7 @@
 					margin: 12px -1.5rem 16px -1.5rem; // Extend to card edges
 					
 					img {
+						margin-top: 20px;
 						width: 100%;
 						height: auto;
 						border-radius: 0;
