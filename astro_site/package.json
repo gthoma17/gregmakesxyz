@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "prebuild": "node scripts/convert-heic.js",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "node scripts/convert-heic.js && astro dev",
+    "start": "node scripts/convert-heic.js && astro dev",
+    "build": "node scripts/convert-heic.js && astro build",
+    "preview": "node scripts/convert-heic.js && astro preview",
+    "astro": "node scripts/convert-heic.js && astro"
   },
   "author": "Greg Thomas",
   "license": "ISC",
