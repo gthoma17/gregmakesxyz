@@ -2,6 +2,7 @@
 import { fileURLToPath } from 'url';
 import { dirname, join, parse, extname } from 'path';
 import { readdir, stat } from 'fs/promises';
+import { spawn } from 'child_process';
 import sharp from 'sharp';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -27,6 +28,23 @@ async function findHeicFiles(dir) {
   return files;
 }
 
+async function convertWithImageMagick(heicFile, webpFile) {
+  return new Promise((resolve, reject) => {
+    const convert = spawn('convert', [heicFile, '-quality', '85', webpFile]);
+    
+    convert.on('close', (code) => {
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(new Error(`ImageMagick conversion failed with exit code ${code}`));
+      }
+    });
+    
+    convert.on('error', (error) => {
+      reject(error);
+    });
+  });
+}
 async function convertHeicToWebp() {
   console.log('🔍 Searching for HEIC files in', IMAGES_DIR);
   
@@ -40,6 +58,8 @@ async function convertHeicToWebp() {
     
     console.log(`📸 Found ${heicFiles.length} HEIC file(s) to convert`);
     
+    let hasFailures = false;
+    
     for (const heicFile of heicFiles) {
       const parsed = parse(heicFile);
       const webpFile = join(parsed.dir, `${parsed.name}.webp`);
@@ -51,10 +71,24 @@ async function convertHeicToWebp() {
           .webp({ quality: 85 })
           .toFile(webpFile);
           
-        console.log(`✅ Successfully converted ${parsed.base}`);
+        console.log(`✅ Successfully converted ${parsed.base} with Sharp`);
       } catch (error) {
-        console.error(`❌ Failed to convert ${parsed.base}:`, error.message);
+        console.warn(`⚠️  Sharp failed for ${parsed.base}: ${error.message}`);
+        console.log(`🔄 Trying fallback conversion with ImageMagick for ${parsed.base}`);
+        
+        try {
+          await convertWithImageMagick(heicFile, webpFile);
+          console.log(`✅ Successfully converted ${parsed.base} with ImageMagick fallback`);
+        } catch (fallbackError) {
+          console.error(`❌ Both Sharp and ImageMagick failed for ${parsed.base}:`, fallbackError.message);
+          hasFailures = true;
+        }
       }
+    }
+    
+    if (hasFailures) {
+      console.error('❌ HEIC to WebP conversion failed for one or more files');
+      process.exit(1);
     }
     
     console.log('🎉 HEIC to WebP conversion completed');
