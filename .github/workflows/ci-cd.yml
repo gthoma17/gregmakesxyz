@@ -26,6 +26,9 @@ jobs:
       - name: Run microformats tests
         run: cd astro_site && npm run test:microformats
 
+      - name: Install ImageMagick for HEIC conversion
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
       - name: Build
         run: make build
         env:
@@ -52,6 +55,9 @@ jobs:
 
       - name: Run microformats tests
         run: cd astro_site && npm run test:microformats
+
+      - name: Install ImageMagick for HEIC conversion
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
 
       - name: Set up SSH key
         run: |
