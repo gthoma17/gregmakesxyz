@@ -40,6 +40,8 @@ async function convertHeicToWebp() {
     
     console.log(`📸 Found ${heicFiles.length} HEIC file(s) to convert`);
     
+    let hasFailures = false;
+    
     for (const heicFile of heicFiles) {
       const parsed = parse(heicFile);
       const webpFile = join(parsed.dir, `${parsed.name}.webp`);
@@ -54,7 +56,13 @@ async function convertHeicToWebp() {
         console.log(`✅ Successfully converted ${parsed.base}`);
       } catch (error) {
         console.error(`❌ Failed to convert ${parsed.base}:`, error.message);
+        hasFailures = true;
       }
+    }
+    
+    if (hasFailures) {
+      console.error('❌ HEIC to WebP conversion failed for one or more files');
+      process.exit(1);
     }
     
     console.log('🎉 HEIC to WebP conversion completed');
