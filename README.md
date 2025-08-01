@@ -12,6 +12,22 @@ npm install
 npm run dev
 ```
 
+### System Dependencies
+
+The build process requires ImageMagick for HEIC image conversion fallback:
+
+```bash
+# Ubuntu/Debian
+sudo apt-get install imagemagick
+
+# macOS with Homebrew
+brew install imagemagick
+
+# Other systems: install ImageMagick with HEIC support
+```
+
+**Note**: The HEIC conversion script uses Sharp as the primary converter with ImageMagick as a fallback. ImageMagick is required when Sharp cannot handle certain HEIC file formats.
+
 ### Notes
 
 Notes support optimized markdown content including images using Astro's automatic image processing. To add images to notes:
