@@ -23,7 +23,29 @@ const notes = defineCollection({
   }),
 });
 
+const recipes = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    date: z.date(),
+    tags: z.array(z.string()).optional(),
+    featuredImage: z.union([image(), z.null()]).optional().default(null),
+    attribution: z.string().optional(),
+    equipment: z.array(z.string()),
+    ingredients: z.array(z.object({
+      name: z.string(),
+      amount: z.number(),
+      unit: z.string().nullable().optional(),
+      dish: z.string(),
+      dish_ml: z.number().optional(),
+      prep: z.string().optional(),
+    })),
+    steps: z.array(z.string()).default([]),
+  }),
+});
+
 export const collections = {
   posts,
   notes,
+  recipes,
 };
