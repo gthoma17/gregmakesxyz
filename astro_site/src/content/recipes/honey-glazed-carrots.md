@@ -1,0 +1,35 @@
+---
+title: "Honey Glazed Carrots"
+date: 2025-11-14
+tags:
+  - side
+  - vegetable
+equipment:
+  - Enameled Dutch oven with lid
+  - Wooden spoon
+ingredients:
+  - name: carrots
+    amount: 4
+    unit: null
+    dish: A
+    dish_ml: 480
+    prep: peeled, cut into 1cm coins or batons
+  - name: butter
+    amount: 30
+    unit: g
+    dish: B
+  - name: salt
+    amount: 1
+    unit: g
+    dish: C
+  - name: honey
+    amount: 45
+    unit: g
+    dish: D
+steps:
+  - "Melt the butter in the Dutch oven over medium heat."
+  - "Add the carrots and salt; stir to coat in butter."
+  - "Cover with the lid and cook 15–20 minutes, stirring occasionally and adding a splash of water if the pot looks dry, until the carrots are fork-tender."
+  - "Remove the lid, drizzle the honey over the carrots, and toss to coat."
+  - "Cook 2–3 minutes uncovered until the honey reduces to a sticky glaze. Remove from heat — the Dutch oven is done."
+---

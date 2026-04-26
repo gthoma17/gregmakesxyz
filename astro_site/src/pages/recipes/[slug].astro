@@ -1,0 +1,131 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes');
+  return recipes.map((recipe) => ({
+    params: { slug: recipe.slug },
+    props: { recipe },
+  }));
+}
+
+interface Props {
+  recipe: CollectionEntry<'recipes'>;
+}
+
+const { recipe } = Astro.props;
+const { Content } = await recipe.render();
+
+type Ingredient = CollectionEntry<'recipes'>['data']['ingredients'][number];
+
+const dishMap = new Map<string, Ingredient[]>();
+for (const ingredient of recipe.data.ingredients) {
+  if (!dishMap.has(ingredient.dish)) {
+    dishMap.set(ingredient.dish, []);
+  }
+  dishMap.get(ingredient.dish)!.push(ingredient);
+}
+
+const dishes = Array.from(dishMap.entries()).sort(([a], [b]) => a.localeCompare(b));
+
+function dishVolumeMl(ingredients: Ingredient[]): number {
+  let total = 0;
+  for (const ing of ingredients) {
+    if (ing.unit === 'ml' || ing.unit === 'g') {
+      total += ing.amount;
+    } else if (ing.dish_ml != null) {
+      total += ing.dish_ml;
+    }
+  }
+  return total;
+}
+---
+
+<Layout title={recipe.data.title}>
+  <article class="recipe">
+    <h1>{recipe.data.title}</h1>
+
+    {recipe.data.featuredImage && (
+      <div class="featured-image">
+        <Image
+          src={recipe.data.featuredImage}
+          alt={`Featured image for ${recipe.data.title}`}
+          width={800}
+          height={500}
+          loading="eager"
+        />
+      </div>
+    )}
+
+    {recipe.data.attribution && (
+      <p class="attribution"><em>{recipe.data.attribution}</em></p>
+    )}
+
+    {recipe.data.tags && recipe.data.tags.length > 0 && (
+      <ul class="tags" style="list-style: none; padding: 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        {recipe.data.tags.map(tag => <li><small>{tag}</small></li>)}
+      </ul>
+    )}
+
+    <section class="equipment">
+      <h2>Equipment</h2>
+      <ul>
+        {recipe.data.equipment.map(item => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="ingredients">
+      <h2>Ingredients</h2>
+      {dishes.map(([dish, ingredients]) => {
+        const flagged = dish.length === 1 && dishVolumeMl(ingredients) >= 90;
+        const label = dish.length === 1 ? `Dish ${dish}` : dish;
+        return (
+          <div class="dish-group">
+            <h3>{label}{flagged && ' *'}</h3>
+            <ul>
+              {ingredients.map((ing, i) => {
+                const id = `dish-${dish}-${i}`;
+                return (
+                  <li>
+                    <input type="checkbox" id={id} />
+                    <label for={id}>
+                      {ing.amount}{ing.unit ? ` ${ing.unit}` : ''} {ing.name}{ing.prep ? `, ${ing.prep}` : ''}
+                    </label>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        );
+      })}
+      {dishes.some(([, ingredients]) => dishVolumeMl(ingredients) >= 90) && (
+        <p><small>* larger than my standard 90ml prep dish</small></p>
+      )}
+    </section>
+
+    <section class="steps">
+      <h2>Steps</h2>
+      {recipe.data.steps.length > 0 ? (
+        <ol>
+          {recipe.data.steps.map((step, i) => (
+            <li>
+              <input type="checkbox" id={`step-${i}`} />
+              <label for={`step-${i}`}>{step}</label>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <Content />
+      )}
+    </section>
+  </article>
+</Layout>
+
+<style>
+  input[type="checkbox"]:checked + label {
+    color: grey;
+    text-decoration: line-through;
+  }
+</style>

@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+
+const recipes = await getCollection('recipes');
+recipes.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Recipes">
+  <h1>Recipes</h1>
+
+  <ul class="h-feed list">
+    {recipes.map((recipe, index) => (
+      <li>
+        <article class="h-entry">
+          <header
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: center;
+              align-self: flex-start;
+              font-size: small;
+            "
+          >
+            <a
+              class="p-name"
+              href={`/recipes/${recipe.slug}/`}
+              style="font-size: 1.5rem;"
+            >
+              {recipe.data.title}
+            </a>
+            <small>
+              <time
+                datetime={recipe.data.date.toISOString()}
+                class="dt-published"
+              >
+                {recipe.data.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                })}
+              </time>
+            </small>
+            {recipe.data.tags && recipe.data.tags.length > 0 && (
+              <small>{recipe.data.tags.join(', ')}</small>
+            )}
+          </header>
+          {recipe.data.featuredImage && (
+            <div class="featured-image">
+              <Image
+                src={recipe.data.featuredImage}
+                alt={`Featured image for ${recipe.data.title}`}
+                width={600}
+                height={400}
+                loading="lazy"
+              />
+            </div>
+          )}
+        </article>
+        {index < recipes.length - 1 && <hr />}
+      </li>
+    ))}
+  </ul>
+</Layout>
