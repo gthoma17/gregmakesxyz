@@ -124,6 +124,26 @@
 		}
 	}
 
+	// ── Scale control ───────────────────────────────────
+	#scale-control {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		margin-bottom: 0.75rem;
+		font-size: 0.85rem;
+		opacity: 0.65;
+
+		input {
+			width: 4rem;
+			padding: 0.15rem 0.4rem;
+			font-size: 0.85rem;
+			border: 1px solid currentColor;
+			border-radius: 4px;
+			background: transparent;
+			color: inherit;
+		}
+	}
+
 	// ── Dish groups ─────────────────────────────────────
 	.dish-group {
 		margin-bottom: 1.25rem;
