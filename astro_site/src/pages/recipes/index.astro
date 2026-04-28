@@ -5,9 +5,22 @@ import Layout from '../../layouts/Layout.astro';
 
 const recipes = await getCollection('recipes');
 recipes.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const siteOrigin = Astro.site?.origin ?? Astro.url.origin;
+
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  'itemListElement': recipes.map((recipe, i) => ({
+    '@type': 'ListItem',
+    'position': i + 1,
+    'url': `${siteOrigin}/recipes/${recipe.slug}/`,
+  })),
+};
 ---
 
 <Layout title="Recipes">
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(itemListJsonLd)} />
   <h1>Recipes</h1>
 
   <ul class="h-feed list">
