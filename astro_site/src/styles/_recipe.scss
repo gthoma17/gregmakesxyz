@@ -1,0 +1,209 @@
+@media (prefers-color-scheme: dark) {
+	.recipe a:visited { color: #D0ADF0; }
+	.recipe a { color: #9da0f8; }
+
+	.recipe section h2 {
+		border-bottom-color: rgba(255, 255, 255, 0.2);
+	}
+	.recipe .dish-group h3 {
+		color: rgba(255, 255, 255, 0.45);
+	}
+	.recipe .dish-group li,
+	.recipe .steps li {
+		border-bottom-color: rgba(255, 255, 255, 0.07);
+	}
+	.recipe input[type="checkbox"]:checked + label {
+		color: rgba(255, 255, 255, 0.3);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.recipe section h2 {
+		border-bottom-color: rgba(0, 0, 0, 0.15);
+	}
+	.recipe .dish-group h3 {
+		color: rgba(0, 0, 0, 0.4);
+	}
+	.recipe .dish-group li,
+	.recipe .steps li {
+		border-bottom-color: rgba(0, 0, 0, 0.07);
+	}
+	.recipe input[type="checkbox"]:checked + label {
+		color: rgba(0, 0, 0, 0.3);
+	}
+}
+
+.recipe {
+	margin: 1rem;
+	line-height: 1.6;
+
+	h1 {
+		margin-top: 0.25rem;
+		margin-bottom: 0.5rem;
+		font-size: 1.6rem;
+	}
+
+	.attribution {
+		margin: 0 0 0.5rem 0;
+		font-size: 0.9rem;
+	}
+
+	.tags {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin: 0 0 1.25rem 0;
+
+		li {
+			font-size: 0.75rem;
+			padding: 0.2rem 0.6rem;
+			border-radius: 999px;
+			border: 1px solid currentColor;
+			opacity: 0.6;
+		}
+	}
+
+	// ── Section headings ────────────────────────────────
+	section h2 {
+		font-size: 0.7rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		border-bottom: 1px solid;
+		padding-bottom: 0.3rem;
+		margin: 1.5rem 0 0.75rem 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	// ── Equipment ───────────────────────────────────────
+	.equipment {
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.3rem 1.25rem;
+			font-size: 0.95rem;
+		}
+	}
+
+	// ── Two-column body (ingredients + steps) ───────────
+	.recipe-body {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0;
+
+		@media (min-width: 600px) {
+			grid-template-columns: 5fr 7fr;
+			gap: 2.5rem;
+			align-items: start;
+
+			section h2 {
+				margin-top: 0;
+			}
+		}
+	}
+
+	// ── Dish groups ─────────────────────────────────────
+	.dish-group {
+		margin-bottom: 1.25rem;
+
+		&:last-of-type { margin-bottom: 0; }
+
+		h3 {
+			font-size: 0.68rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			margin: 0 0 0 0;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		// Each ingredient row — sized for finger tapping
+		li {
+			display: grid;
+			grid-template-columns: 1.5rem 1fr;
+			align-items: start;
+			gap: 0.5rem;
+			padding: 0.65rem 0;
+			border-bottom: 1px solid;
+			font-size: 1rem;
+
+			&:last-child { border-bottom: none; }
+		}
+	}
+
+	.ingredients > p small {
+		font-size: 0.75rem;
+		opacity: 0.5;
+	}
+
+	// ── Steps ────────────────────────────────────────────
+	.steps {
+		ol {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			counter-reset: steps;
+
+			li {
+				counter-increment: steps;
+				display: grid;
+				grid-template-columns: 1.4rem 1.5rem 1fr;
+				align-items: start;
+				gap: 0.5rem;
+				padding: 0.65rem 0;
+				border-bottom: 1px solid;
+				font-size: 1rem;
+
+				&::before {
+					content: counter(steps);
+					font-size: 0.75rem;
+					font-weight: 700;
+					opacity: 0.35;
+					text-align: right;
+					padding-top: 0.25rem;
+				}
+
+				&:last-child { border-bottom: none; }
+			}
+		}
+
+		// Markdown fallback (unmigrated recipes)
+		> *:not(h2) {
+			font-size: 1rem;
+		}
+	}
+
+	// ── Checkboxes ───────────────────────────────────────
+	input[type="checkbox"] {
+		// Explicit size for reliable touch targets on iOS
+		width: 1.1rem;
+		height: 1.1rem;
+		margin-top: 0.2rem;
+		cursor: pointer;
+		flex-shrink: 0;
+	}
+
+	input[type="checkbox"]:checked + label {
+		text-decoration: line-through;
+	}
+
+	label {
+		cursor: pointer;
+		line-height: 1.5;
+		// Extend tap area to fill the row
+		// (label is already full-width in the grid cell)
+	}
+}

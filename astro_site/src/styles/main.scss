@@ -4,6 +4,7 @@
 @use 'notes';
 @use 'list';
 @use 'single';
+@use 'recipe';
 
 @media (prefers-color-scheme: dark) {
   body {

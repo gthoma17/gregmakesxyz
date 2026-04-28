@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
@@ -41,15 +41,72 @@ function dishVolumeMl(ingredients: Ingredient[]): number {
   }
   return total;
 }
+
+function formatIngredient(ing: Ingredient): string {
+  let s = `${ing.amount}`;
+  if (ing.unit) s += ` ${ing.unit}`;
+  s += ` ${ing.name}`;
+  if (ing.prep) s += `, ${ing.prep}`;
+  return s;
+}
+
+// Optimized image URL for JSON-LD
+const siteOrigin = Astro.site?.origin ?? Astro.url.origin;
+let imageUrl: string | undefined;
+if (recipe.data.featuredImage) {
+  const optimized = await getImage({ src: recipe.data.featuredImage });
+  imageUrl = new URL(optimized.src, siteOrigin).href;
+}
+
+// Schema.org JSON-LD
+const jsonLd: Record<string, unknown> = {
+  '@context': 'https://schema.org/',
+  '@type': 'Recipe',
+  'name': recipe.data.title,
+  'url': Astro.url.href,
+  'author': {
+    '@type': 'Person',
+    'name': 'Greg Thomas',
+    'url': 'https://gregmakes.xyz',
+  },
+  'datePublished': recipe.data.date.toISOString().split('T')[0],
+  'recipeIngredient': recipe.data.ingredients.map(formatIngredient),
+};
+if (imageUrl) jsonLd['image'] = imageUrl;
+if (recipe.data.tags?.length) jsonLd['keywords'] = recipe.data.tags.join(', ');
+if (recipe.data.steps.length > 0) {
+  jsonLd['recipeInstructions'] = recipe.data.steps.map((step, i) => ({
+    '@type': 'HowToStep',
+    'position': i + 1,
+    'text': step,
+    'url': `${Astro.url.href}#step-${i}`,
+  }));
+}
+if (recipe.data.equipment.length > 0) {
+  jsonLd['tool'] = recipe.data.equipment.map(t => ({ '@type': 'HowToTool', 'name': t }));
+}
 ---
 
 <Layout title={recipe.data.title}>
-  <article class="recipe">
-    <h1>{recipe.data.title}</h1>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <article class="recipe h-recipe">
+    <h1 class="p-name">{recipe.data.title}</h1>
+
+    <p class="recipe-byline">
+      By <span class="p-author h-card">
+        <a class="p-name u-url" href="https://gregmakes.xyz">Greg</a>
+      </span>
+      {' · '}
+      <time class="dt-published" datetime={recipe.data.date.toISOString()}>
+        {recipe.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+    </p>
 
     {recipe.data.featuredImage && (
       <div class="featured-image">
         <Image
+          class="u-photo"
           src={recipe.data.featuredImage}
           alt={`Featured image for ${recipe.data.title}`}
           width={800}
@@ -65,7 +122,7 @@ function dishVolumeMl(ingredients: Ingredient[]): number {
 
     {recipe.data.tags && recipe.data.tags.length > 0 && (
       <ul class="tags" style="list-style: none; padding: 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        {recipe.data.tags.map(tag => <li><small>{tag}</small></li>)}
+        {recipe.data.tags.map(tag => <li class="p-category"><small>{tag}</small></li>)}
       </ul>
     )}
 
@@ -76,50 +133,54 @@ function dishVolumeMl(ingredients: Ingredient[]): number {
       </ul>
     </section>
 
-    <section class="ingredients">
-      <h2>Ingredients</h2>
-      {dishes.map(([dish, ingredients]) => {
-        const flagged = dish.length === 1 && dishVolumeMl(ingredients) >= 90;
-        const label = dish.length === 1 ? `Dish ${dish}` : dish;
-        return (
-          <div class="dish-group">
-            <h3>{label}{flagged && ' *'}</h3>
-            <ul>
-              {ingredients.map((ing, i) => {
-                const id = `dish-${dish}-${i}`;
-                return (
-                  <li>
-                    <input type="checkbox" id={id} />
-                    <label for={id}>
-                      {ing.amount}{ing.unit ? ` ${ing.unit}` : ''} {ing.name}{ing.prep ? `, ${ing.prep}` : ''}
-                    </label>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        );
-      })}
-      {dishes.some(([, ingredients]) => dishVolumeMl(ingredients) >= 90) && (
-        <p><small>* larger than my standard 90ml prep dish</small></p>
-      )}
-    </section>
+    <div class="recipe-body">
+      <section class="ingredients">
+        <h2>Ingredients</h2>
+        {dishes.map(([dish, ingredients]) => {
+          const flagged = dish.length === 1 && dishVolumeMl(ingredients) >= 90;
+          const label = dish.length === 1 ? `Dish ${dish}` : dish;
+          return (
+            <div class="dish-group">
+              <h3>{label}{flagged && ' *'}</h3>
+              <ul>
+                {ingredients.map((ing, i) => {
+                  const id = `dish-${dish}-${i}`;
+                  return (
+                    <li class="p-ingredient">
+                      <input type="checkbox" id={id} />
+                      <label for={id}>
+                        {ing.amount}{ing.unit ? ` ${ing.unit}` : ''} {ing.name}{ing.prep ? `, ${ing.prep}` : ''}
+                      </label>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })}
+        {dishes.some(([dish, ingredients]) => dish.length === 1 && dishVolumeMl(ingredients) >= 90) && (
+          <p><small>* larger than my standard 90ml prep dish</small></p>
+        )}
+      </section>
 
-    <section class="steps">
-      <h2>Steps</h2>
-      {recipe.data.steps.length > 0 ? (
-        <ol>
-          {recipe.data.steps.map((step, i) => (
-            <li>
-              <input type="checkbox" id={`step-${i}`} />
-              <label for={`step-${i}`}>{step}</label>
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <Content />
-      )}
-    </section>
+      <section class="steps">
+        <h2>Steps</h2>
+        <div class="e-instructions">
+          {recipe.data.steps.length > 0 ? (
+            <ol>
+              {recipe.data.steps.map((step, i) => (
+                <li id={`step-${i}`}>
+                  <input type="checkbox" id={`step-cb-${i}`} />
+                  <label for={`step-cb-${i}`}>{step}</label>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <Content />
+          )}
+        </div>
+      </section>
+    </div>
   </article>
 </Layout>
 
