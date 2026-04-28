@@ -40,9 +40,24 @@ ingredients:
     unit: g
     dish: E
 steps:
-  - "Set the wok over medium heat — your stove runs hot, stay here. Add butter and let it foam, about 30 seconds."
-  - "Add the drained corn in a single layer. Leave it alone for 2.5 minutes so one side develops golden char — do not stir."
-  - "Toss the corn, then keep cooking until kernels are dry with golden-brown spots throughout, about another 2 minutes. Remove from heat — the wok is done."
-  - "Transfer the hot corn to serving cups. Pour in the kewpie-lime mixture and stir until every kernel is coated."
-  - "Scatter parmesan over the top — residual heat softens it. Dust the chili powder evenly over that. Apply the cheese and chili separately rather than pre-mixing: different particle sizes settle unevenly and you get chili hot spots. Serve warm."
+  - text: "Set the wok over medium heat — your stove runs hot, stay here. Add butter and let it foam, about 30 seconds."
+    timers:
+      - label: Melt butter
+        minutes: 0.5
+
+  - text: "Add the drained corn in a single layer. Leave it alone for 2.5 minutes so one side develops golden char — do not stir."
+    timers:
+      - label: Char corn
+        minutes: 2.5
+
+  - text: "Toss the corn, then keep cooking until kernels are dry with golden-brown spots throughout, about another 2 minutes."
+    timers:
+      - label: Finish charring
+        minutes: 2
+    lastUse:
+      - Wok
+
+  - text: "Transfer the hot corn to serving cups. Pour in the kewpie-lime mixture and stir until every kernel is coated."
+
+  - text: "Scatter parmesan over the top — residual heat softens it. Dust the chili powder evenly over that. Apply the cheese and chili separately rather than pre-mixing: different particle sizes settle unevenly and you get chili hot spots. Serve warm."
 ---

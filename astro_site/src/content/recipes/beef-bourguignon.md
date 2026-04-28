@@ -92,13 +92,47 @@ ingredients:
     unit: g
     dish: M
 steps:
-  - "Heat the Dutch oven over medium-high. Add the lardons and render until crisp and the fat has pooled, about 6 minutes. Lift the lardons out with a slotted spoon to a plate, leaving the fat behind."
-  - "Working in batches that don't crowd the pot, brown the beef cubes hard on all sides in the bacon fat — 3 minutes per side, deeply caramelized. Move browned beef to the lardon plate."
-  - "Drop the heat to medium. Add the onion and carrots and cook 6–8 minutes until the onion is translucent and starting to color. Stir in the garlic and tomato paste; cook 1 minute until the paste darkens."
-  - "Sprinkle the flour over the vegetables and stir 2 minutes — this thickens the braise and removes the raw flour taste."
-  - "Pour in the red wine, scraping the fond off the bottom of the pot. Let it simmer hard for 3 minutes to cook off the alcohol's harshness."
-  - "Return the beef and lardons to the pot, add the broth, bay leaves, and thyme, and salt lightly. Bring to a bare simmer, lid on, and braise on low for 2 hours — keep it just barely bubbling. The pot should not be boiling."
-  - "Meanwhile, in a separate pan, sauté the mushrooms in butter until deeply browned. Set aside until the last 30 minutes."
-  - "After 2 hours, add the pearl onions, potatoes, and sautéed mushrooms. Continue at a bare simmer 30–40 minutes more, until the potatoes are tender and the meat falls apart at a fork press."
-  - "Pull out the bay leaves. Taste and adjust with salt and pepper. Rest off heat 10 minutes before serving — the sauce thickens further as it sits."
+  - text: "Heat the Dutch oven over medium-high. Add the lardons and render until crisp and the fat has pooled, about 6 minutes. Lift the lardons out with a slotted spoon to a plate, leaving the fat behind."
+    timers:
+      - label: Render lardons
+        minutes: 6
+
+  - text: "Working in batches that don't crowd the pot, brown the beef cubes hard on all sides in the bacon fat — 3 minutes per side, deeply caramelized. Move browned beef to the lardon plate."
+    timers:
+      - label: Brown beef (per side)
+        minutes: 3
+
+  - text: "Drop the heat to medium. Add the onion and carrots and cook 6–8 minutes until the onion is translucent and starting to color. Stir in the garlic and tomato paste; cook 1 minute until the paste darkens."
+    timers:
+      - label: Soften onion and carrots
+        minutes: 8
+      - label: Cook tomato paste
+        minutes: 1
+
+  - text: "Sprinkle the flour over the vegetables and stir 2 minutes — this thickens the braise and removes the raw flour taste."
+    timers:
+      - label: Cook flour
+        minutes: 2
+
+  - text: "Pour in the red wine, scraping the fond off the bottom of the pot. Let it simmer hard for 3 minutes to cook off the alcohol's harshness."
+    timers:
+      - label: Reduce wine
+        minutes: 3
+
+  - text: "Return the beef and lardons to the pot, add the broth, bay leaves, and thyme, and salt lightly. Bring to a bare simmer, lid on, and braise on low for 2 hours — keep it just barely bubbling. The pot should not be boiling."
+    timers:
+      - label: Braise
+        minutes: 120
+
+  - text: "Meanwhile, in a separate pan, sauté the mushrooms in butter until deeply browned. Set aside until the last 30 minutes."
+
+  - text: "After 2 hours, add the pearl onions, potatoes, and sautéed mushrooms. Continue at a bare simmer 30–40 minutes more, until the potatoes are tender and the meat falls apart at a fork press."
+    timers:
+      - label: Finish braise with vegetables
+        minutes: 40
+
+  - text: "Pull out the bay leaves. Taste and adjust with salt and pepper. Rest off heat 10 minutes before serving — the sauce thickens further as it sits."
+    timers:
+      - label: Rest
+        minutes: 10
 ---

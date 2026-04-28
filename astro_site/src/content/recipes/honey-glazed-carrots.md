@@ -27,9 +27,21 @@ ingredients:
     unit: g
     dish: D
 steps:
-  - "Melt the butter in the Dutch oven over medium heat."
-  - "Add the carrots and salt; stir to coat in butter."
-  - "Cover with the lid and cook 15–20 minutes, stirring occasionally and adding a splash of water if the pot looks dry, until the carrots are fork-tender."
-  - "Remove the lid, drizzle the honey over the carrots, and toss to coat."
-  - "Cook 2–3 minutes uncovered until the honey reduces to a sticky glaze. Remove from heat — the Dutch oven is done."
+  - text: "Melt the butter in the Dutch oven over medium heat."
+
+  - text: "Add the carrots and salt; stir to coat in butter."
+
+  - text: "Cover with the lid and cook 15–20 minutes, stirring occasionally and adding a splash of water if the pot looks dry, until the carrots are fork-tender."
+    timers:
+      - label: Braise carrots
+        minutes: 20
+
+  - text: "Remove the lid, drizzle the honey over the carrots, and toss to coat."
+
+  - text: "Cook 2–3 minutes uncovered until the honey reduces to a sticky glaze."
+    timers:
+      - label: Glaze carrots
+        minutes: 3
+    lastUse:
+      - Enameled Dutch oven with lid
 ---

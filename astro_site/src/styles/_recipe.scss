@@ -12,6 +12,7 @@
 	.recipe .steps li {
 		border-bottom-color: rgba(255, 255, 255, 0.07);
 	}
+	.recipe input[type="checkbox"]:checked + .step-content label,
 	.recipe input[type="checkbox"]:checked + label {
 		color: rgba(255, 255, 255, 0.3);
 	}
@@ -28,6 +29,7 @@
 	.recipe .steps li {
 		border-bottom-color: rgba(0, 0, 0, 0.07);
 	}
+	.recipe input[type="checkbox"]:checked + .step-content label,
 	.recipe input[type="checkbox"]:checked + label {
 		color: rgba(0, 0, 0, 0.3);
 	}
@@ -184,6 +186,26 @@
 		> *:not(h2) {
 			font-size: 1rem;
 		}
+
+		.step-content {
+			// Fills the third grid column, keeping meta aligned with the label
+		}
+
+		.step-meta {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.3rem;
+			margin-top: 0.45rem;
+		}
+
+		.timer, .last-use {
+			font-size: 0.72rem;
+			padding: 0.15rem 0.55rem;
+			border-radius: 999px;
+			border: 1px solid currentColor;
+			opacity: 0.5;
+			white-space: nowrap;
+		}
 	}
 
 	// ── Checkboxes ───────────────────────────────────────
@@ -196,6 +218,7 @@
 		flex-shrink: 0;
 	}
 
+	input[type="checkbox"]:checked + .step-content label,
 	input[type="checkbox"]:checked + label {
 		text-decoration: line-through;
 	}

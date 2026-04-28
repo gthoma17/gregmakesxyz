@@ -93,14 +93,34 @@ ingredients:
     unit: ml
     dish: J
 steps:
-  - "Preheat the oven to 200°C."
-  - "Pat the chicken dry, brush with the neutral oil, then rub the seasoning blend over both sides of every thigh."
-  - "Spread the thighs on the baking sheet in a single layer. Bake 25–30 minutes until juices run clear or internal temp hits 74°C."
-  - "Meanwhile, whisk the yogurt with the ranch spice mix and the lemon juice plus thinning milk until smooth. Taste, adjust salt, and refrigerate. Done with the ranch — fresh ranch is good, day-old ranch is great."
-  - "Pull the baking sheet from the oven and let the chicken rest uncovered for 8 minutes. The oven/microwave is now free."
-  - "Microwave the danshaku potato pack 2 minutes until hot through. Done with the oven/microwave."
-  - "While the potatoes heat, pull the chicken apart with two forks into rough shreds — uneven texture is good here."
-  - "Tip the hot potatoes into a bowl, add butter and milk, and mash until smooth. Season with salt and stop the moment it comes together."
-  - "Weigh out 250–300g of shredded chicken into a bowl, pour over buffalo sauce, and toss to coat. Refrigerate the remaining ~700g for leftovers — wraps, salads, or rice bowls all week."
-  - "Plate buffalo chicken alongside mash, with ranch for dipping. Crudités on the side if you want them."
+  - text: "Preheat the oven to 200°C."
+
+  - text: "Pat the chicken dry, brush with the neutral oil, then rub the seasoning blend over both sides of every thigh."
+
+  - text: "Spread the thighs on the baking sheet in a single layer. Bake 25–30 minutes until juices run clear or internal temp hits 74°C."
+    timers:
+      - label: Bake chicken
+        minutes: 30
+
+  - text: "Meanwhile, whisk the yogurt with the ranch spice mix and the lemon juice plus thinning milk until smooth. Taste, adjust salt, and refrigerate. Done with the ranch — fresh ranch is good, day-old ranch is great."
+
+  - text: "Pull the baking sheet from the oven and let the chicken rest uncovered for 8 minutes. The oven/microwave is now free."
+    timers:
+      - label: Rest chicken
+        minutes: 8
+
+  - text: "Microwave the danshaku potato pack 2 minutes until hot through."
+    timers:
+      - label: Microwave potatoes
+        minutes: 2
+    lastUse:
+      - Combo microwave/oven
+
+  - text: "While the potatoes heat, pull the chicken apart with two forks into rough shreds — uneven texture is good here."
+
+  - text: "Tip the hot potatoes into a bowl, add butter and milk, and mash until smooth. Season with salt and stop the moment it comes together."
+
+  - text: "Weigh out 250–300g of shredded chicken into a bowl, pour over buffalo sauce, and toss to coat. Refrigerate the remaining ~700g for leftovers — wraps, salads, or rice bowls all week."
+
+  - text: "Plate buffalo chicken alongside mash, with ranch for dipping. Crudités on the side if you want them."
 ---

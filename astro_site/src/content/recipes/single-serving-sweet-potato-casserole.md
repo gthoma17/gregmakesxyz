@@ -44,10 +44,28 @@ ingredients:
     unit: g
     dish: D
 steps:
-  - "Poke holes all over the sweet potato with a fork. Microwave at 600W for 6–7 minutes until a fork slides in with zero resistance. Let it cool 2 minutes so it's safe to handle."
-  - "Preheat the oven to 175°C."
-  - "Slice the sweet potato open and scoop the flesh into a mixing bowl. Mash with the melted butter, milk, and maple syrup until smooth. Stir in the salt and cinnamon — taste and adjust sweetness."
-  - "Spread the mash into the ramekin. The consistency should be thick like a pumpkin pie filling — spreadable but not runny."
-  - "Bake 25 minutes until the edges are bubbling and the top has firmed up."
-  - "Pull the ramekin, scatter the mini marshmallows across the top, and return to the oven for 8–12 minutes until golden and toasted. Done with the oven. Serve hot."
+  - text: "Poke holes all over the sweet potato with a fork. Microwave at 600W for 6–7 minutes until a fork slides in with zero resistance. Let it cool 2 minutes so it's safe to handle."
+    timers:
+      - label: Microwave sweet potato
+        minutes: 7
+      - label: Cool potato
+        minutes: 2
+
+  - text: "Preheat the oven to 175°C."
+
+  - text: "Slice the sweet potato open and scoop the flesh into a mixing bowl. Mash with the melted butter, milk, and maple syrup until smooth. Stir in the salt and cinnamon — taste and adjust sweetness."
+
+  - text: "Spread the mash into the ramekin. The consistency should be thick like a pumpkin pie filling — spreadable but not runny."
+
+  - text: "Bake 25 minutes until the edges are bubbling and the top has firmed up."
+    timers:
+      - label: Bake casserole
+        minutes: 25
+
+  - text: "Pull the ramekin, scatter the mini marshmallows across the top, and return to the oven for 8–12 minutes until golden and toasted. Serve hot."
+    timers:
+      - label: Toast marshmallows
+        minutes: 12
+    lastUse:
+      - Combo microwave/oven
 ---

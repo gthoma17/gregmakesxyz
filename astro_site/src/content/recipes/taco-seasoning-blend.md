@@ -51,6 +51,10 @@ ingredients:
     unit: g
     dish: A
 steps:
-  - "Whisk all ingredients together in a small bowl until uniformly blended — about 30 seconds of stirring."
-  - "Transfer to an airtight container. The blend keeps 6 months in the pantry."
+  - text: "Whisk all ingredients together in a small bowl until uniformly blended — about 30 seconds of stirring."
+    timers:
+      - label: Whisk blend
+        minutes: 0.5
+
+  - text: "Transfer to an airtight container. The blend keeps 6 months in the pantry."
 ---

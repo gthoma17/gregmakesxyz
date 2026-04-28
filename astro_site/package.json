@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/convert-heic.js && astro dev",
+    "dev": "astro dev",
     "start": "node scripts/convert-heic.js && astro dev",
     "build": "node scripts/convert-heic.js && astro build",
     "preview": "node scripts/convert-heic.js && astro preview",

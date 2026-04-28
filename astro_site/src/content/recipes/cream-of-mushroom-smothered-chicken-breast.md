@@ -68,10 +68,28 @@ ingredients:
     unit: g
     dish: J
 steps:
-  - "Preheat the oven to 200°C."
-  - "Season the chicken tenderloins with the spice blend. Toss the frozen green beans with the olive oil and salt. Spread both on the sheet pan in a single layer, keeping them on opposite sides — chicken on one side, beans on the other."
-  - "Spoon the cream of mushroom soup over the chicken to smother. Roast 18–22 minutes until the chicken hits 70°C internal and the green beans have crisp edges."
-  - "Meanwhile, melt the butter in the small Dutch oven over medium heat. Add the carrots and salt; stir to coat. Lid on, cook 15–20 minutes, stirring occasionally and adding a splash of water if they look dry, until fork-tender."
-  - "When the carrots are tender, remove the lid, drizzle the honey over them, and toss to coat. Cook 2–3 minutes uncovered until the honey gets sticky and glazes the carrots. Remove from heat — the small Dutch oven is done."
-  - "Pull the sheet pan from the oven. Plate the smothered chicken with green beans and honey-glazed carrots alongside."
+  - text: "Preheat the oven to 200°C."
+
+  - text: "Season the chicken tenderloins with the spice blend. Toss the frozen green beans with the olive oil and salt. Spread both on the sheet pan in a single layer, keeping them on opposite sides — chicken on one side, beans on the other."
+
+  - text: "Spoon the cream of mushroom soup over the chicken to smother. Roast 18–22 minutes until the chicken hits 70°C internal and the green beans have crisp edges."
+    timers:
+      - label: Roast chicken and beans
+        minutes: 22
+
+  - text: "Meanwhile, melt the butter in the small Dutch oven over medium heat. Add the carrots and salt; stir to coat. Lid on, cook 15–20 minutes, stirring occasionally and adding a splash of water if they look dry, until fork-tender."
+    timers:
+      - label: Braise carrots
+        minutes: 20
+
+  - text: "When the carrots are tender, remove the lid, drizzle the honey over them, and toss to coat. Cook 2–3 minutes uncovered until the honey gets sticky and glazes the carrots."
+    timers:
+      - label: Glaze carrots
+        minutes: 3
+    lastUse:
+      - Enameled Dutch oven (small) for carrots
+
+  - text: "Pull the sheet pan from the oven. Plate the smothered chicken with green beans and honey-glazed carrots alongside."
+    lastUse:
+      - Sheet pan
 ---

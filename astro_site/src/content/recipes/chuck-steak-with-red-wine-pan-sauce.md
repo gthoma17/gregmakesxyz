@@ -67,13 +67,41 @@ ingredients:
     unit: g
     dish: J
 steps:
-  - "Pat the steak completely dry — this is the difference between sear and steam. Crack pepper over both sides."
-  - "Heat the Dutch oven over high until it just barely smokes. Add the neutral oil, swirl, then lay the steak in. Don't touch it for 4 minutes — let the crust form."
-  - "Flip the steak. Add the searing butter, smashed garlic, and rosemary or thyme. Tilt the pot toward you and baste the steak with the foaming butter for 3–4 minutes, until the second side is deeply browned and the internal temp reads 52°C for medium-rare."
-  - "Move the steak to a plate, tent loosely with foil, and rest 8 minutes. Discard the spent garlic and herbs from the pot."
-  - "Drop the heat to medium. Add the minced shallot to the fond and cook 60 seconds until softened."
-  - "Pour in the red wine, scraping every bit of fond off the bottom. Reduce hard for 2 minutes until it's thickened to syrup."
-  - "Add the beef broth and reduce another 2–3 minutes until it coats the back of a spoon. Pull off the heat."
-  - "Whisk in the cold butter cubes one at a time, swirling the pot rather than stirring — this emulsifies the sauce. Finish with the lemon juice. Done with the Dutch oven."
-  - "Slice the steak against the grain on the bias. Pour any plate juices into the sauce, plate the slices over leftover mashed potatoes, spoon the sauce generously over the meat, and finish with flaky salt."
+  - text: "Pat the steak completely dry — this is the difference between sear and steam. Crack pepper over both sides."
+
+  - text: "Heat the Dutch oven over high until it just barely smokes. Add the neutral oil, swirl, then lay the steak in. Don't touch it for 4 minutes — let the crust form."
+    timers:
+      - label: Sear steak first side
+        minutes: 4
+
+  - text: "Flip the steak. Add the searing butter, smashed garlic, and rosemary or thyme. Tilt the pot toward you and baste the steak with the foaming butter for 3–4 minutes, until the second side is deeply browned and the internal temp reads 52°C for medium-rare."
+    timers:
+      - label: Baste steak second side
+        minutes: 4
+
+  - text: "Move the steak to a plate, tent loosely with foil, and rest 8 minutes. Discard the spent garlic and herbs from the pot."
+    timers:
+      - label: Rest steak
+        minutes: 8
+
+  - text: "Drop the heat to medium. Add the minced shallot to the fond and cook 60 seconds until softened."
+    timers:
+      - label: Cook shallot
+        minutes: 1
+
+  - text: "Pour in the red wine, scraping every bit of fond off the bottom. Reduce hard for 2 minutes until it's thickened to syrup."
+    timers:
+      - label: Reduce wine
+        minutes: 2
+
+  - text: "Add the beef broth and reduce another 2–3 minutes until it coats the back of a spoon. Pull off the heat."
+    timers:
+      - label: Reduce broth
+        minutes: 3
+
+  - text: "Whisk in the cold butter cubes one at a time, swirling the pot rather than stirring — this emulsifies the sauce. Finish with the lemon juice."
+    lastUse:
+      - Oval enameled Dutch oven
+
+  - text: "Slice the steak against the grain on the bias. Pour any plate juices into the sauce, plate the slices over leftover mashed potatoes, spoon the sauce generously over the meat, and finish with flaky salt."
 ---

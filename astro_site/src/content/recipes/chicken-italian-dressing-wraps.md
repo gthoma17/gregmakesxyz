@@ -77,9 +77,21 @@ ingredients:
     unit: g
     dish: I
 steps:
-  - "Combine the shredded chicken with the Italian dressing, grated garlic, and lemon juice. Toss well and let it sit 10–15 minutes — this is your hands-off window for prepping the rest."
-  - "Halve the cherry tomatoes and combine with the drained pickled red onion in a bowl."
-  - "Build each wrap on a tortilla: a layer of romaine, a quarter of the marinated chicken, a quarter of the tomato-onion mix, a sprinkle of parmesan, a sprinkle of mixed cheese, a light drizzle of Italian dressing, and a pinch of oregano and black pepper. Roll tightly seam-side down."
-  - "Melt the butter in the grill pan over medium heat. Lay the wraps seam-side down, weight with a heavy pan or lid, and press 2–3 minutes until golden. Flip, press the other side 2 minutes more."
-  - "Slice each wrap on the bias and serve immediately with macaroni salad on the side."
+  - text: "Combine the shredded chicken with the Italian dressing, grated garlic, and lemon juice. Toss well and let it sit 10–15 minutes — this is your hands-off window for prepping the rest."
+    timers:
+      - label: Marinate chicken
+        minutes: 15
+
+  - text: "Halve the cherry tomatoes and combine with the drained pickled red onion in a bowl."
+
+  - text: "Build each wrap on a tortilla: a layer of romaine, a quarter of the marinated chicken, a quarter of the tomato-onion mix, a sprinkle of parmesan, a sprinkle of mixed cheese, a light drizzle of Italian dressing, and a pinch of oregano and black pepper. Roll tightly seam-side down."
+
+  - text: "Melt the butter in the grill pan over medium heat. Lay the wraps seam-side down, weight with a heavy pan or lid, and press 2–3 minutes until golden. Flip, press the other side 2 minutes more."
+    timers:
+      - label: Press wrap first side
+        minutes: 3
+      - label: Press wrap second side
+        minutes: 2
+
+  - text: "Slice each wrap on the bias and serve immediately with macaroni salad on the side."
 ---

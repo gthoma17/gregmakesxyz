@@ -46,9 +46,26 @@ ingredients:
     unit: ml
     dish: F
 steps:
-  - "Heat the cast iron grill plate over medium-high until smoking lightly."
-  - "Lay the pineapple planks flat on the grill plate and char ~2 minutes per side until dark grill marks appear and edges caramelize. Transfer to a plate, dice into ~1cm pieces, and tip into a small serving bowl."
-  - "Working in batches that fit in a single layer with space between pieces, lay the drained pork on the grill plate. Cook undisturbed ~2 minutes until deeply caramelized on the underside, flip, and cook another 1–2 minutes. Transfer each batch to the resting plate and repeat until all pork is cooked."
-  - "Warm the corn tortillas directly on the grill plate, ~15 seconds per side, stacking them in a tortilla warmer or wrapped towel as you go. Remove from heat — the grill plate is done."
-  - "Build each taco: a tortilla, a generous pile of pork, a spoonful of charred pineapple, a pinch of diced onion, and a drizzle of chipotle salsa. Squeeze a lemon wedge over and eat immediately."
+  - text: "Heat the cast iron grill plate over medium-high until smoking lightly."
+
+  - text: "Lay the pineapple planks flat on the grill plate and char ~2 minutes per side until dark grill marks appear and edges caramelize. Transfer to a plate, dice into ~1cm pieces, and tip into a small serving bowl."
+    timers:
+      - label: Char pineapple (per side)
+        minutes: 2
+
+  - text: "Working in batches that fit in a single layer with space between pieces, lay the drained pork on the grill plate. Cook undisturbed ~2 minutes until deeply caramelized on the underside, flip, and cook another 1–2 minutes. Transfer each batch to the resting plate and repeat until all pork is cooked."
+    timers:
+      - label: Cook pork first side
+        minutes: 2
+      - label: Cook pork second side
+        minutes: 2
+
+  - text: "Warm the corn tortillas directly on the grill plate, ~15 seconds per side, stacking them in a tortilla warmer or wrapped towel as you go."
+    timers:
+      - label: Warm tortilla (per side)
+        minutes: 0.25
+    lastUse:
+      - Cast iron grill plate
+
+  - text: "Build each taco: a tortilla, a generous pile of pork, a spoonful of charred pineapple, a pinch of diced onion, and a drizzle of chipotle salsa. Squeeze a lemon wedge over and eat immediately."
 ---

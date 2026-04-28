@@ -117,10 +117,24 @@ ingredients:
     unit: null
     dish: I
 steps:
-  - "Heat the cast iron grill plate over medium. Toast the ancho and guajillo chiles 30 seconds per side until fragrant and pliable — do not let them blacken. Remove from heat."
-  - "Bring the kettle to a boil. Pour boiling water over the toasted chiles in a heat-safe bowl, weight them down with a small plate to keep them submerged, and soak 20 minutes. Reserve 150ml of the soaking liquid before draining."
-  - "Tip the soaked chiles, chipotles plus adobo sauce, pineapple-garlic-onion-Thai-chile mix, orange juice and vinegar, the spice mix, tomato paste and brown sugar, and 120ml of the reserved soaking liquid into the blender. Blend on high until completely smooth, 60–90 seconds."
-  - "With the blender running, drizzle in the neutral oil to emulsify. Pour the marinade through a fine mesh sieve into the storage container, pressing solids with a rubber spatula to extract every drop."
-  - "Drop the tejpat leaf into the marinade and seal the container. Refrigerate at least 12 hours before adding pork (the flavors need time to marry)."
-  - "Add shaved pork shoulder no more than 2 hours before cooking. Set a timer the moment the pork hits the marinade — fresh pineapple's bromelain will turn shaved shoulder mushy past 2 hours."
+  - text: "Heat the cast iron grill plate over medium. Toast the ancho and guajillo chiles 30 seconds per side until fragrant and pliable — do not let them blacken. Remove from heat."
+    timers:
+      - label: Toast chiles (per side)
+        minutes: 0.5
+
+  - text: "Bring the kettle to a boil. Pour boiling water over the toasted chiles in a heat-safe bowl, weight them down with a small plate to keep them submerged, and soak 20 minutes. Reserve 150ml of the soaking liquid before draining."
+    timers:
+      - label: Soak chiles
+        minutes: 20
+
+  - text: "Tip the soaked chiles, chipotles plus adobo sauce, pineapple-garlic-onion-Thai-chile mix, orange juice and vinegar, the spice mix, tomato paste and brown sugar, and 120ml of the reserved soaking liquid into the blender. Blend on high until completely smooth, 60–90 seconds."
+    timers:
+      - label: Blend marinade
+        minutes: 1.5
+
+  - text: "With the blender running, drizzle in the neutral oil to emulsify. Pour the marinade through a fine mesh sieve into the storage container, pressing solids with a rubber spatula to extract every drop."
+
+  - text: "Drop the tejpat leaf into the marinade and seal the container. Refrigerate at least 12 hours before adding pork (the flavors need time to marry)."
+
+  - text: "Add shaved pork shoulder no more than 2 hours before cooking. Set a timer the moment the pork hits the marinade — fresh pineapple's bromelain will turn shaved shoulder mushy past 2 hours."
 ---

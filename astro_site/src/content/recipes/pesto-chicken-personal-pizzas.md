@@ -71,10 +71,23 @@ ingredients:
     unit: g
     dish: I
 steps:
-  - "Preheat the oven to 230°C."
-  - "Combine the shredded chicken with the pesto and the chicken seasoning blend. Stir to coat every shred."
-  - "Place the par-baked doughs on the sheet pan. Spread the base pesto thinly across each one, then dust with the oregano-garlic powder blend."
-  - "Divide the seasoned chicken between the two pizzas. Top with mozzarella, then scatter the halved cherry tomatoes across."
-  - "Bake 12–15 minutes until the crust edges are golden and the cheese is bubbly and lightly browned in spots. Done with the oven."
-  - "Let the pizzas cool 2–3 minutes, then dust with the parmesan and drizzle the finishing pesto over the top. Slice and serve."
+  - text: "Preheat the oven to 230°C."
+
+  - text: "Combine the shredded chicken with the pesto and the chicken seasoning blend. Stir to coat every shred."
+
+  - text: "Place the par-baked doughs on the sheet pan. Spread the base pesto thinly across each one, then dust with the oregano-garlic powder blend."
+
+  - text: "Divide the seasoned chicken between the two pizzas. Top with mozzarella, then scatter the halved cherry tomatoes across."
+
+  - text: "Bake 12–15 minutes until the crust edges are golden and the cheese is bubbly and lightly browned in spots."
+    timers:
+      - label: Bake pizzas
+        minutes: 15
+    lastUse:
+      - Combo microwave/oven
+
+  - text: "Let the pizzas cool 2–3 minutes, then dust with the parmesan and drizzle the finishing pesto over the top. Slice and serve."
+    timers:
+      - label: Cool pizzas
+        minutes: 3
 ---

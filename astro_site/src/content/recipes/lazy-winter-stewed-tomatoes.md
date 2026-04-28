@@ -45,7 +45,12 @@ ingredients:
     unit: g
     dish: B
 steps:
-  - Combine everything in a dutch oven and bring to a simmer over medium heat.
-  - Drop to low (use the diffuser) and cook uncovered for 60–90 minutes, stirring occasionally, until the vegetables are tender and the liquid has thickened slightly. Remove from heat — the dutch oven is done.
-  - Cool to room temperature, then portion into freezer containers.
+  - text: Combine everything in a dutch oven and bring to a simmer over medium heat.
+  - text: Drop to low (use the diffuser) and cook uncovered for 60–90 minutes, stirring occasionally, until the vegetables are tender and the liquid has thickened slightly.
+    timers:
+      - label: Simmer tomatoes
+        minutes: 90
+    lastUse:
+      - Enameled dutch oven
+  - text: Cool to room temperature, then portion into freezer containers.
 ---

@@ -87,11 +87,41 @@ ingredients:
     unit: g
     dish: J
 steps:
-  - "Start the rice in the saucepan: rinse, combine with water (~1.5x rice volume), bring to a boil, drop to lowest heat, lid on tight, cook 18 minutes, rest 10 minutes off heat. Season the shrimp with salt and pepper while the rice cooks."
-  - "Heat the wok over medium-high until just smoking. Add the shrimp oil, then the shrimp in a single layer. Cook 2 minutes per side until pink and just cooked through. Transfer to a bowl."
-  - "Add the vegetable oil to the wok. Add the bell pepper and zucchini and stir-fry 3–4 minutes until slightly tender but still crisp."
-  - "Add the snap peas, cherry tomatoes, garlic, and red pepper flakes. Stir-fry 2 minutes until the garlic is fragrant and the snap peas are bright green."
-  - "Whisk the pesto with the broth in a bowl to thin it. Pour over the vegetables and toss for 30 seconds to coat."
-  - "Return the shrimp to the wok and toss to combine. Heat through 60 seconds. Done with the wok."
-  - "Plate over rice, scatter torn basil over the top, and serve with lemon wedges."
+  - text: "Start the rice in the saucepan: rinse, combine with water (~1.5x rice volume), bring to a boil, drop to lowest heat, lid on tight, cook 18 minutes, rest 10 minutes off heat. Season the shrimp with salt and pepper while the rice cooks."
+    timers:
+      - label: Cook rice
+        minutes: 18
+      - label: Rest rice
+        minutes: 10
+
+  - text: "Heat the wok over medium-high until just smoking. Add the shrimp oil, then the shrimp in a single layer. Cook 2 minutes per side until pink and just cooked through. Transfer to a bowl."
+    timers:
+      - label: Sear shrimp first side
+        minutes: 2
+      - label: Sear shrimp second side
+        minutes: 2
+
+  - text: "Add the vegetable oil to the wok. Add the bell pepper and zucchini and stir-fry 3–4 minutes until slightly tender but still crisp."
+    timers:
+      - label: Stir-fry vegetables
+        minutes: 4
+
+  - text: "Add the snap peas, cherry tomatoes, garlic, and red pepper flakes. Stir-fry 2 minutes until the garlic is fragrant and the snap peas are bright green."
+    timers:
+      - label: Stir-fry peas and tomatoes
+        minutes: 2
+
+  - text: "Whisk the pesto with the broth in a bowl to thin it. Pour over the vegetables and toss for 30 seconds to coat."
+    timers:
+      - label: Toss with pesto
+        minutes: 0.5
+
+  - text: "Return the shrimp to the wok and toss to combine. Heat through 60 seconds."
+    timers:
+      - label: Heat shrimp through
+        minutes: 1
+    lastUse:
+      - Wok
+
+  - text: "Plate over rice, scatter torn basil over the top, and serve with lemon wedges."
 ---

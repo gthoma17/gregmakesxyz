@@ -98,12 +98,32 @@ ingredients:
     dish: J
     prep: chopped fine
 steps:
-  - "Preheat the fish grill (or oven to 220°C). Bring sake to room temp if it's cold."
-  - "Whisk olive oil, garlic powder, and dried oregano together until uniform; brush over the cut faces of the garlic bread."
-  - "Toss the romaine, Italian dressing, and mikkusu cheese together in a bowl and set aside in the fridge — done with the salad."
-  - "Heat the Dutch oven over medium-high. Add butter, minced garlic, and red pepper flakes; cook 60 seconds until fragrant but not browned."
-  - "Pour in sake and soy sauce, bring to a simmer for 30 seconds, then add the asari clams and clamp the lid on. Steam 3–5 minutes, shaking the pot once or twice, until clams open. Discard any that don't open after 7 minutes."
-  - "Meanwhile, slide the garlic bread onto the fish grill and toast 6–8 minutes until golden and crisp at the edges. Pull it out, rub the cut faces with the halved raw garlic clove, then scatter parmesan and parsley over the top."
-  - "Pull the lid off the clams. Stir lemon zest and lemon juice through the broth; taste and adjust with a flake of salt if needed. Remove from heat — the Dutch oven is done."
-  - "Ladle the clams and broth into a deep bowl, scatter scallions over the top, and tuck the lemon wedges alongside. Plate the bread for dunking and the salad on its own plate. Eat immediately."
+  - text: "Preheat the fish grill (or oven to 220°C). Bring sake to room temp if it's cold."
+
+  - text: "Whisk olive oil, garlic powder, and dried oregano together until uniform; brush over the cut faces of the garlic bread."
+
+  - text: "Toss the romaine, Italian dressing, and mikkusu cheese together in a bowl and set aside in the fridge — done with the salad."
+
+  - text: "Heat the Dutch oven over medium-high. Add butter, minced garlic, and red pepper flakes; cook 60 seconds until fragrant but not browned."
+    timers:
+      - label: Cook garlic
+        minutes: 1
+
+  - text: "Pour in sake and soy sauce, bring to a simmer for 30 seconds, then add the asari clams and clamp the lid on. Steam 3–5 minutes, shaking the pot once or twice, until clams open. Discard any that don't open after 7 minutes."
+    timers:
+      - label: Simmer sake
+        minutes: 0.5
+      - label: Steam clams
+        minutes: 5
+
+  - text: "Meanwhile, slide the garlic bread onto the fish grill and toast 6–8 minutes until golden and crisp at the edges. Pull it out, rub the cut faces with the halved raw garlic clove, then scatter parmesan and parsley over the top."
+    timers:
+      - label: Toast garlic bread
+        minutes: 8
+
+  - text: "Pull the lid off the clams. Stir lemon zest and lemon juice through the broth; taste and adjust with a flake of salt if needed. Remove from heat."
+    lastUse:
+      - Enameled Dutch oven with lid
+
+  - text: "Ladle the clams and broth into a deep bowl, scatter scallions over the top, and tuck the lemon wedges alongside. Plate the bread for dunking and the salad on its own plate. Eat immediately."
 ---

@@ -40,7 +40,14 @@ const recipes = defineCollection({
       dish_ml: z.number().optional(),
       prep: z.string().optional(),
     })),
-    steps: z.array(z.string()).default([]),
+    steps: z.array(z.object({
+      text: z.string(),
+      timers: z.array(z.object({
+        label: z.string(),
+        minutes: z.number(),
+      })).default([]),
+      lastUse: z.array(z.string()).default([]),
+    })).default([]),
   }),
 });
 
