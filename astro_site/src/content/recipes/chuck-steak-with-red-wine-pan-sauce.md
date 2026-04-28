@@ -12,6 +12,7 @@ equipment:
   - Plate for resting steak
   - Foil for tenting
   - Microplane
+  - Whisk
 prepOnly:
   - Microplane
 ingredients:

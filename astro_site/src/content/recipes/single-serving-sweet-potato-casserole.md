@@ -9,6 +9,7 @@ attribution: "Single-serving riff on Boston Market style"
 equipment:
   - Combo microwave/oven
   - Fork
+  - Knife
   - Mixing bowl
   - Small oven-safe ramekin
   - Spoon

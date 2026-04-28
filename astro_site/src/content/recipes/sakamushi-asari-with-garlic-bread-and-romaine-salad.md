@@ -13,6 +13,7 @@ equipment:
   - Citrus juicer
   - Deep serving bowl for clams
   - Salad plate
+  - Pastry brush
 prepOnly:
   - Cutting board and knife
   - Microplane

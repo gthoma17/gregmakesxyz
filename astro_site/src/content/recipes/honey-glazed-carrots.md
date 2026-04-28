@@ -7,6 +7,11 @@ tags:
 equipment:
   - Enameled Dutch oven with lid
   - Wooden spoon
+  - Vegetable peeler
+  - Cutting board and knife
+prepOnly:
+  - Vegetable peeler
+  - Cutting board and knife
 ingredients:
   - name: carrots
     amount: 4

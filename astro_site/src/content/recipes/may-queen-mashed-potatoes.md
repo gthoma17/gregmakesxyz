@@ -9,6 +9,11 @@ equipment:
   - Colander
   - Potato masher
   - Wooden spoon
+  - Vegetable peeler
+  - Cutting board and knife
+prepOnly:
+  - Vegetable peeler
+  - Cutting board and knife
 ingredients:
   - name: May Queen potatoes
     amount: 680

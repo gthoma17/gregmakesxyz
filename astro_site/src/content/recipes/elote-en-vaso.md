@@ -12,10 +12,12 @@ equipment:
   - Microplane
   - Wooden spoon
   - Serving cups
+  - Citrus juicer
 prepOnly:
   - Colander
   - Paper towels
   - Microplane
+  - Citrus juicer
 ingredients:
   - name: canned whole kernel corn
     amount: 380

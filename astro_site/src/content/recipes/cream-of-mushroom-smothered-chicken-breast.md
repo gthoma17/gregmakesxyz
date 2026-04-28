@@ -11,8 +11,12 @@ equipment:
   - Enameled Dutch oven (small) for carrots
   - Wooden spoon
   - Tongs
+  - Vegetable peeler
+  - Cutting board and knife
 prepOnly:
   - Tongs
+  - Vegetable peeler
+  - Cutting board and knife
 ingredients:
   - name: chicken tenderloins
     amount: 400

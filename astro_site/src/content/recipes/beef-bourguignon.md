@@ -12,8 +12,13 @@ equipment:
   - Tongs
   - Slotted spoon
   - Plate for resting browned beef
+  - Vegetable peeler
+  - Bowl for ice bath
+  - Non-stick grill pan
 prepOnly:
   - Cutting board and knife
+  - Vegetable peeler
+  - Bowl for ice bath
 ingredients:
   - name: chuck steak
     amount: 450

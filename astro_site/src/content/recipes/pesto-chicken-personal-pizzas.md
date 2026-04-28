@@ -10,6 +10,11 @@ equipment:
   - Combo microwave/oven
   - Mixing bowl
   - Spoon
+  - Cutting board and knife
+  - Microplane
+prepOnly:
+  - Cutting board and knife
+  - Microplane
 ingredients:
   - name: par-baked personal pizza doughs
     amount: 2

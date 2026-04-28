@@ -34,11 +34,10 @@ ingredients:
     unit: g
     dish: C
     prep: diced
-  - name: mozzarella
+  - name: shredded mozzarella
     amount: 200
     unit: g
     dish: D
-    prep: shredded
   - name: mixed cheese
     amount: 80
     unit: g

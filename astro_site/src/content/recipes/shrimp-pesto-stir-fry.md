@@ -11,6 +11,7 @@ equipment:
   - Wooden spoon or spatula
   - Small saucepan with tight lid (for rice)
   - Mixing bowl
+  - Whisk
 prepOnly:
   - Cutting board and knife
 ingredients:
