@@ -19,6 +19,10 @@ equipment:
   - Fine mesh sieve
   - Rubber spatula
   - Storage container with lid, 600ml or larger
+prepOnly:
+  - Cutting board and sharp knife
+  - Citrus juicer
+  - Kitchen scale
 ingredients:
   - name: dried ancho chiles
     amount: 2

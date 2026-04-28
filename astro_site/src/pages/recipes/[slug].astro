@@ -138,7 +138,14 @@ if (recipe.data.equipment.length > 0) {
     <section class="equipment">
       <h2>Equipment</h2>
       <ul>
-        {recipe.data.equipment.map(item => <li>{item}</li>)}
+        {recipe.data.equipment.map(item => (
+          <li>
+            {item}
+            {recipe.data.prepOnly.includes(item) && (
+              <span class="prep-only">prep only</span>
+            )}
+          </li>
+        ))}
       </ul>
     </section>
 

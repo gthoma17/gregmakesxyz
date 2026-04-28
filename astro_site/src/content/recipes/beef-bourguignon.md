@@ -12,6 +12,8 @@ equipment:
   - Tongs
   - Slotted spoon
   - Plate for resting browned beef
+prepOnly:
+  - Cutting board and knife
 ingredients:
   - name: chuck steak
     amount: 450

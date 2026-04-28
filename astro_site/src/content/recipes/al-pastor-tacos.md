@@ -14,6 +14,8 @@ equipment:
   - Small serving bowls (for diced onion, charred pineapple)
   - Small plate for lemon wedges
   - Tortilla warmer or clean kitchen towel
+prepOnly:
+  - Cutting board and sharp knife
 ingredients:
   - name: shaved pork shoulder
     amount: 580

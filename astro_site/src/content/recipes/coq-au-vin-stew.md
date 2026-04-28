@@ -13,6 +13,8 @@ equipment:
   - Tongs
   - Slotted spoon
   - Plate for resting browned chicken
+prepOnly:
+  - Cutting board and knife
 ingredients:
   - name: bone-in skin-on chicken thighs
     amount: 1000

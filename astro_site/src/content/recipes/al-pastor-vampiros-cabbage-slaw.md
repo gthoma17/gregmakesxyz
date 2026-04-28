@@ -7,6 +7,11 @@ tags:
 equipment:
   - Cast iron grill plate
   - Salad bowl
+  - Chef knife
+  - Cutting Board
+prepOnly:
+  - Chef knife
+  - Cutting Board
 ingredients:
   - name: 千切りキャベツ (shredded cabbage)
     amount: 150
@@ -21,11 +26,11 @@ ingredients:
     unit: g
     dish: Salad Bowl
   - name: al pastor
-    amount: 200
+    amount: 160
     unit: g
     dish: B
   - name: fresh pineapple
-    amount: 100
+    amount: 80
     unit: g
     dish: C
     prep: diced
@@ -35,7 +40,7 @@ ingredients:
     dish: D
     prep: shredded
   - name: mixed cheese
-    amount: 100
+    amount: 80
     unit: g
     dish: E
   - name: chipotle salsa

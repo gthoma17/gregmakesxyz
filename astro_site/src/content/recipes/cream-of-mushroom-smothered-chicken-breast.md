@@ -11,6 +11,8 @@ equipment:
   - Enameled Dutch oven (small) for carrots
   - Wooden spoon
   - Tongs
+prepOnly:
+  - Tongs
 ingredients:
   - name: chicken tenderloins
     amount: 400

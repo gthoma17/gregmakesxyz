@@ -12,6 +12,9 @@ equipment:
   - Citrus juicer
   - Spatula or tongs
   - Heavy pan or lid for pressing
+prepOnly:
+  - Microplane
+  - Citrus juicer
 ingredients:
   - name: cooked chicken breast
     amount: 220

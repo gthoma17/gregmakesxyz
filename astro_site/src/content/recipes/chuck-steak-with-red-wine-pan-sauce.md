@@ -12,6 +12,8 @@ equipment:
   - Plate for resting steak
   - Foil for tenting
   - Microplane
+prepOnly:
+  - Microplane
 ingredients:
   - name: chuck steak
     amount: 550

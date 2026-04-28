@@ -13,6 +13,8 @@ equipment:
   - 1.5L baking dish
   - Two forks (for shredding)
   - Combo microwave/oven
+prepOnly:
+  - Two forks
 ingredients:
   - name: cooked chicken thighs
     amount: 300

@@ -11,6 +11,8 @@ equipment:
   - Heat diffuser
   - Cutting board and knife
   - Freezer-safe containers
+prepOnly:
+  - Cutting board and knife
 ingredients:
   - name: canned diced tomatoes
     amount: 800

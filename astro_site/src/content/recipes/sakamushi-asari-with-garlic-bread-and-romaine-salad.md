@@ -13,6 +13,10 @@ equipment:
   - Citrus juicer
   - Deep serving bowl for clams
   - Salad plate
+prepOnly:
+  - Cutting board and knife
+  - Microplane
+  - Citrus juicer
 ingredients:
   - name: asari clams
     amount: 600

@@ -12,6 +12,10 @@ equipment:
   - Microplane
   - Wooden spoon
   - Serving cups
+prepOnly:
+  - Colander
+  - Paper towels
+  - Microplane
 ingredients:
   - name: canned whole kernel corn
     amount: 380

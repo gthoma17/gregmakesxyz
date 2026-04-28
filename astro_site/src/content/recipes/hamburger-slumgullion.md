@@ -1,5 +1,5 @@
 ---
-title: "Slumgullion"
+title: "Hamburger Slumgullion"
 date: 2026-01-01
 tags:
   - heritage

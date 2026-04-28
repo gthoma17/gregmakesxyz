@@ -84,6 +84,8 @@
 
 	// ── Equipment ───────────────────────────────────────
 	.equipment {
+		margin-bottom: 1.5rem;
+
 		ul {
 			list-style: none;
 			padding: 0;
@@ -92,6 +94,16 @@
 			flex-wrap: wrap;
 			gap: 0.3rem 1.25rem;
 			font-size: 0.95rem;
+		}
+
+		.prep-only {
+			font-size: 0.72rem;
+			padding: 0.15rem 0.55rem;
+			border-radius: 999px;
+			border: 1px solid currentColor;
+			opacity: 0.5;
+			margin-left: 0.4rem;
+			white-space: nowrap;
 		}
 	}
 
