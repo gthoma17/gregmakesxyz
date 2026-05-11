@@ -240,6 +240,59 @@
 		}
 	}
 
+	// ── Notes for next time ──────────────────────────────
+	.recipe-notes {
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			padding: 0.5rem 0 0.5rem 1.25rem;
+			border-bottom: 1px solid;
+			font-size: 0.95rem;
+			font-style: italic;
+			position: relative;
+
+			&::before {
+				content: '→';
+				position: absolute;
+				left: 0;
+				opacity: 0.4;
+			}
+
+			&:last-child { border-bottom: none; }
+		}
+	}
+
+	// ── Cook log ─────────────────────────────────────────
+	.recipe-history {
+		ol {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			display: grid;
+			grid-template-columns: 6rem 1fr;
+			gap: 0.75rem;
+			padding: 0.6rem 0;
+			border-bottom: 1px solid;
+			font-size: 0.95rem;
+			align-items: baseline;
+
+			&:last-child { border-bottom: none; }
+		}
+
+		time {
+			font-size: 0.78rem;
+			opacity: 0.5;
+			white-space: nowrap;
+		}
+	}
+
 	// ── Checkboxes ───────────────────────────────────────
 	input[type="checkbox"] {
 		// Explicit size for reliable touch targets on iOS

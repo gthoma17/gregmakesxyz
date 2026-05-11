@@ -30,6 +30,10 @@ steps:                          # required
         minutes: number         # decimal minutes — 30s = 0.5, 90s = 1.5
     lastUse:                    # omit entirely if no equipment is finished after this step
       - string                  # exact equipment name from the equipment list above
+notes: [string]                 # optional — evergreen improvement notes, things to try next time
+history:                        # optional — dated cook log
+  - date: YYYY-MM-DD
+    note: string
 ```
 
 ## The judgment calls
@@ -107,12 +111,37 @@ Add a `lastUse` entry naming each piece of equipment that won't be used again af
 
 ### 7. prepOnly
 
-List any equipment that's only needed for mise en place — it won't appear in any step. The recipe card shows an "after prep" badge next to these items so the cook knows they can be put away before cooking starts.
+List any equipment that's only needed for mise en place — it won't appear in any step. The recipe card shows a "prep only" badge next to these items so the cook knows they can be put away before cooking starts.
 
 - Use the **exact string** from the `equipment:` list.
 - Typical candidates: chef knife, cutting board, peeler, grater, zester, mortar and pestle — anything used purely for prep transformations.
 - Include the item in `equipment` as normal; `prepOnly` is just a subset of that list.
 - Omit the `prepOnly` key entirely if all equipment carries through to the cooking steps.
+- **`prepOnly` equipment must never appear in any step's `lastUse`.** These two lists are mutually exclusive. If a strainer is only used to drain blanched vegetables during mise en place, it goes in `prepOnly` — not in a step's `lastUse`. Adding it to `lastUse` on the final step as a bookkeeping trick is wrong; the site already handles mise-only equipment as implicitly "done before cooking."
+
+### 8. notes and history
+
+`notes` is a list of **evergreen improvement ideas** — things Greg wants to try next time, substitutions that worked, things to watch out for. Think margin notes on a paper recipe card. Each entry is a single string, no dates.
+
+`history` is a **dated cook log** — each entry records a specific cook: what changed, how it went, what was learned. Displayed newest-first on the detail page. The listing page shows "last made: [date]" for any recipe with history.
+
+**When converting a recipe for the first time:** omit both fields unless Greg explicitly provides notes or cook history. A freshly converted recipe hasn't been cooked from the file yet.
+
+**When Greg asks you to update an existing recipe:** add entries rather than replace. Append a new `history` entry for the cook being described. Revise `notes` if Greg says a note is no longer relevant or has been superseded.
+
+```yaml
+notes:
+  - Try a small amount of fish sauce in the sauce base for more depth
+  - Works with fusilli; better sauce adhesion than rigatoni
+
+history:
+  - date: 2026-03-15
+    note: Added anchovy to the oil with the garlic. Much better depth. Will do this every time.
+  - date: 2026-01-20
+    note: First cook. Followed recipe exactly. Sauce a touch thin — reduce pasta water addition next time.
+```
+
+History entries sort newest-first automatically on the page — write them in whatever order is natural, the template handles display order.
 
 ## Other style guidance
 
@@ -268,10 +297,11 @@ steps:
 5. Write each step's `text` in 1–2 sentences, referring to ingredients by name.
 6. Identify equipment used only during mise en place → add to `prepOnly` using exact equipment names.
 7. For each step, identify explicit durations → add `timers` entries.
-8. For each step, identify equipment that won't be used again → add `lastUse` entries using exact equipment names.
-9. Generate the kebab-case slug from the title.
-10. Write the file to `/mnt/user-data/outputs/<slug>.md` with `create_file`.
-11. Present it with `present_files` and tell Greg it goes in `src/content/recipes/<slug>.md` in his repo.
+8. For each step, identify equipment that won't be used again → add `lastUse` entries using exact equipment names. Never add `prepOnly` items here.
+9. Add `notes` and `history` only if Greg explicitly provides them. Omit both fields for a fresh conversion.
+10. Generate the kebab-case slug from the title.
+11. Write the file to `/mnt/user-data/outputs/<slug>.md` with `create_file`.
+12. Present it with `present_files` and tell Greg it goes in `src/content/recipes/<slug>.md` in his repo.
 
 Convert imperial measurements (cups/tbsp/tsp/oz) to g and ml without asking. If a source measurement is genuinely ambiguous (e.g. "a glug of olive oil"), pick a reasonable amount and mention what you assumed in the chat reply (not in the file).
 

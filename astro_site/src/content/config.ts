@@ -49,6 +49,11 @@ const recipes = defineCollection({
       })).default([]),
       lastUse: z.array(z.string()).default([]),
     })).default([]),
+    notes: z.array(z.string()).optional(),
+    history: z.array(z.object({
+      date: z.date(),
+      note: z.string(),
+    })).optional(),
   }),
 });
 

@@ -214,6 +214,34 @@ if (recipe.data.equipment.length > 0) {
         </div>
       </section>
     </div>
+
+    {recipe.data.notes && recipe.data.notes.length > 0 && (
+      <section class="recipe-notes">
+        <h2>Notes for next time</h2>
+        <ul>
+          {recipe.data.notes.map(note => <li>{note}</li>)}
+        </ul>
+      </section>
+    )}
+
+    {recipe.data.history && recipe.data.history.length > 0 && (
+      <section class="recipe-history">
+        <h2>Cook log</h2>
+        <ol>
+          {[...recipe.data.history]
+            .sort((a, b) => b.date.valueOf() - a.date.valueOf())
+            .map(entry => (
+              <li>
+                <time datetime={entry.date.toISOString()}>
+                  {entry.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                </time>
+                <span>{entry.note}</span>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+    )}
   </article>
 </Layout>
 

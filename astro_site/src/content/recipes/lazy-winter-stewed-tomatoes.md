@@ -55,4 +55,12 @@ steps:
     lastUse:
       - Enameled dutch oven
   - text: Cool to room temperature, then portion into freezer containers.
+notes:
+  - Try a small amount of tomato paste stirred in at the start for more depth
+  - Fresh thyme in the pot works well if you have it
+history:
+  - date: 2026-04-26
+    note: First cook following grandma's proportions. Good but slightly thin — ran it the full 90 min next time.
+  - date: 2026-04-27
+    note: Full 90 min simmer, much better texture. Froze 4 portions.
 ---
