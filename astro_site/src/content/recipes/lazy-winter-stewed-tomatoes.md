@@ -59,8 +59,8 @@ notes:
   - Try a small amount of tomato paste stirred in at the start for more depth
   - Fresh thyme in the pot works well if you have it
 history:
-  - date: 2026-04-26
-    note: First cook following grandma's proportions. Good but slightly thin — ran it the full 90 min next time.
   - date: 2026-04-27
-    note: Full 90 min simmer, much better texture. Froze 4 portions.
+    note: Full 90 min simmer. Tastes like I remember, great texture. Froze 4 portions.
+  - date: 2026-05-24
+    note: 2.5x batch as the control half of an elevated-technique A/B (see separate notes). Lazy ran clean. Elevated pot caught a tej patta accident — froze as "warm base" for curry/dal/chili. Retest elevated technique with proper Mediterranean bay in a couple weeks. 6 portions frozen
 ---
