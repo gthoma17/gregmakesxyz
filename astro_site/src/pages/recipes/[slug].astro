@@ -168,7 +168,7 @@ if (recipe.data.equipment.length > 0) {
                   const id = `dish-${dish}-${i}`;
                   return (
                     <li class="p-ingredient">
-                      <input type="checkbox" id={id} />
+                      <input type="checkbox" hidden id={id} />
                       <label for={id}>
                         <span class="ing-amount" data-amount={ing.amount} data-unit={ing.unit ?? ''}>{ing.amount}{ing.unit ? ` ${ing.unit}` : ''}</span>{' '}{ing.name}{ing.prep ? `, ${ing.prep}` : ''}
                       </label>

@@ -16,6 +16,10 @@
 	.recipe input[type="checkbox"]:checked + label {
 		color: rgba(255, 255, 255, 0.3);
 	}
+	.recipe input[type="checkbox"]:checked + label::before {
+		background-color: rgba(255, 255, 255, 0.5);
+		border-color: rgba(255, 255, 255, 0.5);
+	}
 }
 
 @media (prefers-color-scheme: light) {
@@ -32,6 +36,10 @@
 	.recipe input[type="checkbox"]:checked + .step-content label,
 	.recipe input[type="checkbox"]:checked + label {
 		color: rgba(0, 0, 0, 0.3);
+	}
+	.recipe input[type="checkbox"]:checked + label::before {
+		background-color: rgba(0, 0, 0, 0.4);
+		border-color: rgba(0, 0, 0, 0.4);
 	}
 }
 
@@ -164,17 +172,30 @@
 			margin: 0;
 		}
 
-		// Each ingredient row — sized for finger tapping
+		// Each ingredient row
 		li {
-			display: grid;
-			grid-template-columns: 1.5rem 1fr;
-			align-items: start;
-			gap: 0.5rem;
+			display: block;
 			padding: 0.65rem 0;
 			border-bottom: 1px solid;
 			font-size: 1rem;
 
 			&:last-child { border-bottom: none; }
+		}
+
+		li label {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.5rem;
+
+			&::before {
+				content: '';
+				flex: 0 0 1.1rem;
+				height: 1.1rem;
+				border: 1.5px solid currentColor;
+				border-radius: 2px;
+				opacity: 0.4;
+				margin-top: 0.2rem;
+			}
 		}
 	}
 
@@ -308,10 +329,12 @@
 		text-decoration: line-through;
 	}
 
+	input[type="checkbox"]:checked + label::before {
+		opacity: 1;
+	}
+
 	label {
 		cursor: pointer;
 		line-height: 1.5;
-		// Extend tap area to fill the row
-		// (label is already full-width in the grid cell)
 	}
 }
