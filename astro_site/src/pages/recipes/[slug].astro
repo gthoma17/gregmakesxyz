@@ -191,8 +191,8 @@ if (recipe.data.equipment.length > 0) {
             <ol>
               {recipe.data.steps.map((step, i) => (
                 <li id={`step-${i}`}>
-                  <input type="checkbox" id={`step-cb-${i}`} />
                   <div class="step-content">
+                    <input type="checkbox" hidden id={`step-cb-${i}`} />
                     <label for={`step-cb-${i}`}>{step.text}</label>
                     {(step.timers.length > 0 || step.lastUse.length > 0) && (
                       <div class="step-meta">
