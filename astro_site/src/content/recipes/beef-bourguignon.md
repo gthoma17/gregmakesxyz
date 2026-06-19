@@ -121,7 +121,7 @@ steps:
       - label: Cook flour
         minutes: 2
 
-  - text: "Pour in the red wine, scraping the fond off the bottom of the pot. Let it simmer hard for 3 minutes to cook off the alcohol's harshness."
+  - text: "Pour in the red wine, scraping the fond off the bottom of the pot. Let it simmer hard for 3 minutes to cook off the alcohol."
     timers:
       - label: Reduce wine
         minutes: 3

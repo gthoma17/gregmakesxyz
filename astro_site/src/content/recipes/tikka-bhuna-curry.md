@@ -16,12 +16,12 @@ prepOnly:
   - Chef's knife
   - Cutting board
 ingredients:
-  - name: stewing meat - bone in mutton is ideal, but pork or pork substitute with no changes. Beef works but needs an extra 30-60m to braise. Chicken can also work, just reduce the water amount and shorten the braise to 30m
+  - name: stewing meat - mutton is ideal, but pork or similar work with no changes. Beef works but needs an extra 30–60m to braise. Chicken can also work, just reduce the water amount and shorten the braise to 30m
     amount: 800
     unit: g
     dish: Marinade Bag
     prep: 3-4cm cubes
-  - name: plain yogurt (vanilla is also nice)
+  - name: plain yogurt
     amount: 150
     unit: g
     dish: Marinade Bag
@@ -105,7 +105,7 @@ ingredients:
     dish: G
     prep: chopped
 steps:
-  - text: "Marinate the meat in the fridge overnight — minimum 2 hours, ideally 12-24. Shake the bag anytime you go into the fridge"
+  - text: "Marinate the meat in the fridge overnight — minimum 2 hours, ideally 12–24. Shake the bag any time you go into the fridge."
         
   - text: "Heat ghee in the dutch oven over medium until shimmering, then add the cardamom pods and stir until fragrant and the pods darken slightly."
     timers:
@@ -145,7 +145,7 @@ steps:
       - label: Braise 2
         minutes: 45
 
-  - text: "Test a piece of meat for fork-tender. If not yet, cover and continue cooking in 15-minute increments until tender, then uncover."
+  - text: "Test the meat for tenderness — it should yield to a fork without resistance. If not yet tender, cover and continue in 15-minute increments, then uncover."
 
   - text: "Increase heat to medium-high and reduce the sauce to coat-the-spoon consistency."
     timers:
@@ -170,4 +170,5 @@ steps:
       - Large enameled Dutch oven
 notes:
   - "If using plain stewed tomatoes, add in 3 tej patta leaves during the braise step"
+  - "Vanilla yogurt works in place of plain and gives a slightly sweeter result"
 ---

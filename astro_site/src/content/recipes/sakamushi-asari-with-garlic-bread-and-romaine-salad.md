@@ -103,11 +103,11 @@ ingredients:
     dish: J
     prep: chopped fine
 steps:
-  - text: "Preheat the fish grill (or oven to 220°C). Bring sake to room temp if it's cold."
+  - text: "Preheat the fish grill (or oven to 220°C). Bring the sake to room temperature."
 
   - text: "Whisk olive oil, garlic powder, and dried oregano together until uniform; brush over the cut faces of the garlic bread."
 
-  - text: "Toss the romaine, Italian dressing, and mikkusu cheese together in a bowl and set aside in the fridge — done with the salad."
+  - text: "Toss the romaine, Italian dressing, and mikkusu cheese together in a bowl and refrigerate until serving."
 
   - text: "Heat the Dutch oven over medium-high. Add butter, minced garlic, and red pepper flakes; cook 60 seconds until fragrant but not browned."
     timers:

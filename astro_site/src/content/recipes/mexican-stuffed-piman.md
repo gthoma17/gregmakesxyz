@@ -90,8 +90,10 @@ steps:
     timers:
       - label: Bloom spices
         minutes: 1
-  - text: "Add the onion and garlic and cook until soft, then stir in the tomato paste and cook about 1 minute."
+  - text: "Add the onion and garlic and cook until the onion is translucent, 3–4 minutes, then stir in the tomato paste and cook 1 minute."
     timers:
+      - label: Cook onion and garlic
+        minutes: 4
       - label: Cook tomato paste
         minutes: 1
   - text: "Off the heat, fold in the leftover Mexican rice and drained beans. Season with salt to taste."

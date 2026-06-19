@@ -135,7 +135,7 @@ steps:
     lastUse:
       - Microwave spaghetti cooker
   - text: "Drop the heat to low and whisk in the 60 g of cold butter a few cubes at a time, until the sauce turns glossy."
-  - text: "Stir in the lemon zest and juice, the grated garlic, and the salt and black pepper. This is the rich base for both the dip and the pasta."
+  - text: "Stir in the lemon zest and juice, the grated garlic, and the salt and black pepper."
   - text: "Ladle about 150 ml of the sauce into the ramekin and keep it warm — this is the dipping butter."
   - text: "Off the heat, swirl the remaining 30 g of cold butter and about 120 ml of the reserved pasta water into the pot until glossy. Taste and adjust."
     lastUse:

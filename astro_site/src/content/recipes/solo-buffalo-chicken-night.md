@@ -102,7 +102,7 @@ steps:
       - label: Bake chicken
         minutes: 30
 
-  - text: "Meanwhile, whisk the yogurt with the ranch spice mix and the lemon juice plus thinning milk until smooth. Taste, adjust salt, and refrigerate. Done with the ranch — fresh ranch is good, day-old ranch is great."
+  - text: "Meanwhile, whisk the yogurt with the ranch spice mix and the lemon juice plus thinning milk until smooth. Taste, adjust salt, and refrigerate."
 
   - text: "Pull the baking sheet from the oven and let the chicken rest uncovered for 8 minutes. The oven/microwave is now free."
     timers:
@@ -122,5 +122,5 @@ steps:
 
   - text: "Weigh out 250–300g of shredded chicken into a bowl, pour over buffalo sauce, and toss to coat. Refrigerate the remaining ~700g for leftovers — wraps, salads, or rice bowls all week."
 
-  - text: "Plate buffalo chicken alongside mash, with ranch for dipping. Crudités on the side if you want them."
+  - text: "Plate buffalo chicken alongside mash, with ranch for dipping. Serve with crudités on the side."
 ---

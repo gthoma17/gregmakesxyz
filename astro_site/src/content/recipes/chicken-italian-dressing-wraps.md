@@ -80,7 +80,7 @@ ingredients:
     unit: g
     dish: I
 steps:
-  - text: "Combine the shredded chicken with the Italian dressing, grated garlic, and lemon juice. Toss well and let it sit 10–15 minutes — this is your hands-off window for prepping the rest."
+  - text: "Combine the shredded chicken with the Italian dressing, grated garlic, and lemon juice. Toss well and let it sit 10–15 minutes."
     timers:
       - label: Marinate chicken
         minutes: 15

@@ -46,7 +46,7 @@ ingredients:
     unit: g
     dish: E
 steps:
-  - text: "Set the wok over medium heat — your stove runs hot, stay here. Add butter and let it foam, about 30 seconds."
+  - text: "Set the wok over medium heat. Add butter and let it foam, about 30 seconds."
     timers:
       - label: Melt butter
         minutes: 0.5

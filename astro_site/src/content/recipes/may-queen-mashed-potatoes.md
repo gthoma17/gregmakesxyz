@@ -51,7 +51,7 @@ steps:
     lastUse:
       - Colander
 
-  - text: "Mash the potatoes with the butter until smooth. Stir in the warm milk a splash at a time until you hit the consistency you want."
+  - text: "Mash the potatoes with the butter until smooth. Stir in the warm milk a splash at a time until smooth and just loose enough to mound on the plate."
 
   - text: "Season with salt and pepper, taste, and adjust. Serve immediately."
 ---

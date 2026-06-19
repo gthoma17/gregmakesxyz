@@ -138,7 +138,7 @@ steps:
 
   - text: "With the blender running, drizzle in the neutral oil to emulsify. Pour the marinade through a fine mesh sieve into the storage container, pressing solids with a rubber spatula to extract every drop."
 
-  - text: "Drop the tejpat leaf into the marinade and seal the container. Refrigerate at least 12 hours before adding pork (the flavors need time to marry)."
+  - text: "Drop the tejpat leaf into the marinade and seal the container. Refrigerate at least 12 hours before adding pork."
 
-  - text: "Add shaved pork shoulder no more than 2 hours before cooking. Set a timer the moment the pork hits the marinade — fresh pineapple's bromelain will turn shaved shoulder mushy past 2 hours."
+  - text: "Add shaved pork shoulder no more than 2 hours before cooking — fresh pineapple's bromelain will turn shaved shoulder mushy past that point."
 ---

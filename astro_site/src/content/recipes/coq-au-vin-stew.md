@@ -134,7 +134,7 @@ steps:
 
   - text: "Meanwhile, sauté the mushrooms in butter in a separate pan until deeply browned. Set aside."
 
-  - text: "After 90 minutes, lift the chicken thighs out with tongs. Pull the meat off the bone and shred — it should fall apart. Discard skin if you like, or chop it back in."
+  - text: "After 90 minutes, lift the chicken thighs out with tongs. Pull the meat off the bone and shred — it should fall apart. Discard the skin, or chop it back into the pot."
 
   - text: "Fish out and discard the wing tips and bay leaves. Return the shredded meat to the pot with the pearl onions and sautéed mushrooms."
 

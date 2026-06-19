@@ -5,7 +5,7 @@ tags:
   - freezer
   - vegetarian
   - make-ahead
-attribution: "Adapted from my grandma's recipe"
+attribution: "Adapted from Grandma's recipe"
 equipment:
   - Enameled dutch oven
   - Heat diffuser
@@ -62,5 +62,5 @@ history:
   - date: 2026-04-27
     note: Full 90 min simmer. Tastes like I remember, great texture. Froze 4 portions.
   - date: 2026-05-24
-    note: 2.5x batch as the control half of an elevated-technique A/B (see separate notes). Lazy ran clean. Elevated pot caught a tej patta accident — froze as "warm base" for curry/dal/chili. Retest elevated technique with proper Mediterranean bay in a couple weeks. 6 portions frozen
+    note: 2.5x batch. Lazy half ran clean. Elevated-technique half contaminated with tejpat leaf — frozen as warm base for curry/dal/chili. Will retest elevated technique with Mediterranean bay. 6 portions frozen.
 ---

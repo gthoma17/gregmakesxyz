@@ -5,7 +5,7 @@ tags:
   - heritage
   - beef
   - comfort
-attribution: "Approximated from memory of Grandma's. To the Bros."
+attribution: "Approximated from memory of mom's. To the Bros."
 equipment:
   - Enameled Dutch oven
   - Wooden spoon
@@ -13,13 +13,13 @@ equipment:
   - Strainer (Optional)
 ingredients:
   - name: ground beef
-    amount: 500
+    amount: 250
     unit: g
     dish: In its Package
-  - name: stewed tomatoes (Grandma's, thawed)
-    amount: 1000
+  - name: stewed tomatoes
+    amount: 500
     unit: g
-    dish: In its Jar
+    dish: In its bag
     prep: thawed overnight in the fridge
   - name: salt
     amount: 4
@@ -30,21 +30,21 @@ ingredients:
     unit: g
     dish: A
   - name: white rice
-    amount: 360
+    amount: 180
     unit: g
     dish: B
     prep: rinsed until water runs clear
   - name: water for rice
-    amount: 540
+    amount: 270
     unit: ml
     dish: C
   - name: white sandwich bread
-    amount: 4
+    amount: 2
     unit: null
     dish: D
     dish_ml: 400
   - name: butter for bread
-    amount: 40
+    amount: 20
     unit: g
     dish: E
     prep: room temperature, soft enough to spread
@@ -69,7 +69,7 @@ steps:
 
   - text: "Pour in the thawed stewed tomatoes, scraping any fond off the bottom of the pot. Stir in salt and pepper."
 
-  - text: "Drop the heat to low and simmer uncovered for 30 minutes, stirring every 5 minutes or so. The mixture should thicken to a loose stew — coats the spoon but still pours."
+  - text: "Drop the heat to low and simmer uncovered for 30 minutes, stirring every 5 minutes. The mixture should thicken to a loose stew — coats the spoon but still pours."
     timers:
       - label: Simmer stew
         minutes: 30
@@ -80,5 +80,8 @@ steps:
 
   - text: "Spread butter generously across one side of each slice of bread — do not toast. The whole point is the soft cold bread against the hot stew."
 
-  - text: "Plate over rice. Serve the buttered bread on the side. If you have ginger brandy, raise a glass: \"To the Bros.\""
+  - text: "Plate over rice. Serve the buttered bread on the side."
+
+notes:
+  - "If you have ginger brandy, raise a glass: \"To the Bros.\""
 ---
