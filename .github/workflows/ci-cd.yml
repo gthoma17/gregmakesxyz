@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - "*"
+  pull_request:
+    branches:
+      - main
 jobs:
   Build-Site:
     runs-on: ubuntu-latest
@@ -25,6 +28,9 @@ jobs:
 
       - name: Install ImageMagick for HEIC conversion
         run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Run microformats tests
+        run: cd astro_site && npm run test:microformats
 
       - name: Build
         run: make build
@@ -52,6 +58,9 @@ jobs:
 
       - name: Install ImageMagick for HEIC conversion
         run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Run microformats tests
+        run: cd astro_site && npm run test:microformats
 
       - name: Set up SSH key
         run: |

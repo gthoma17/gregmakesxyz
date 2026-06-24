@@ -114,6 +114,18 @@ You can create iPhone shortcuts to add notes directly to your repository using t
 - You can omit the `featuredImage` field entirely for text-only notes
 - Consider using shortcuts that prompt for tags if you want to categorize your notes
 
+## Testing
+
+The site includes automated tests to ensure microformats compliance:
+
+```bash
+cd astro_site
+npm run test:microformats  # Test microformats compliance
+npm test                   # Run all tests
+```
+
+The test suite validates that the site maintains proper microformats structure for IndieWeb compatibility and webmention support. Tests run against a live `astro dev` server and validate h-card, h-entry, and h-feed structures across all pages.
+
 ## Deployment
 
 The site is deployed using the makefile commands:
